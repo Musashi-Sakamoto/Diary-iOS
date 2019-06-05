@@ -10,12 +10,21 @@
 		1178721894E35055CE367CFB /* Pods_MyDiaryiOSUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DDD6CBB69C27037C693BC0BE /* Pods_MyDiaryiOSUITests.framework */; };
 		175DE509FC2FC4C65D42B35B /* Pods_MyDiaryiOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 588AFB760B2EEEBB9CDA5AFB /* Pods_MyDiaryiOS.framework */; };
 		4153B15F22A75460008A216B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4153B15E22A75460008A216B /* AppDelegate.swift */; };
-		4153B16122A75460008A216B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4153B16022A75460008A216B /* ViewController.swift */; };
+		4153B16122A75460008A216B /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4153B16022A75460008A216B /* LoginViewController.swift */; };
 		4153B16422A75460008A216B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4153B16222A75460008A216B /* Main.storyboard */; };
 		4153B16622A75462008A216B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4153B16522A75462008A216B /* Assets.xcassets */; };
 		4153B16922A75462008A216B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4153B16722A75462008A216B /* LaunchScreen.storyboard */; };
 		4153B17422A75462008A216B /* MyDiaryiOSTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4153B17322A75462008A216B /* MyDiaryiOSTests.swift */; };
 		4153B17F22A75462008A216B /* MyDiaryiOSUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4153B17E22A75462008A216B /* MyDiaryiOSUITests.swift */; };
+		4153B19222A763CB008A216B /* BaseWireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4153B19122A763CB008A216B /* BaseWireframe.swift */; };
+		4153B19622A77406008A216B /* PresenterInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4153B19522A77406008A216B /* PresenterInterface.swift */; };
+		4153B19822A77520008A216B /* ViewInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4153B19722A77520008A216B /* ViewInterface.swift */; };
+		4153B19A22A7754C008A216B /* InteractorInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4153B19922A7754C008A216B /* InteractorInterface.swift */; };
+		4153B19C22A775B0008A216B /* LoginInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4153B19B22A775B0008A216B /* LoginInterface.swift */; };
+		4153B19E22A77BB0008A216B /* LoginWireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4153B19D22A77BB0008A216B /* LoginWireframe.swift */; };
+		4153B1A122A77D05008A216B /* LoginPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4153B1A022A77D05008A216B /* LoginPresenter.swift */; };
+		4153B1A322A77DD9008A216B /* LoginInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4153B1A222A77DD9008A216B /* LoginInteractor.swift */; };
+		4153B1A522A78033008A216B /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4153B1A422A78033008A216B /* Login.storyboard */; };
 		A4F6C1F1BCECCEBB0CE5B9F0 /* Pods_MyDiaryiOSTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F9E209CE35E3661977A2AFB /* Pods_MyDiaryiOSTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -45,7 +54,7 @@
 		36920EA390C901E0A4CE4A33 /* Pods-MyDiaryiOSUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyDiaryiOSUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-MyDiaryiOSUITests/Pods-MyDiaryiOSUITests.release.xcconfig"; sourceTree = "<group>"; };
 		4153B15B22A7545F008A216B /* MyDiaryiOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyDiaryiOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4153B15E22A75460008A216B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		4153B16022A75460008A216B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		4153B16022A75460008A216B /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		4153B16322A75460008A216B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		4153B16522A75462008A216B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4153B16822A75462008A216B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -56,6 +65,15 @@
 		4153B17A22A75462008A216B /* MyDiaryiOSUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MyDiaryiOSUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4153B17E22A75462008A216B /* MyDiaryiOSUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyDiaryiOSUITests.swift; sourceTree = "<group>"; };
 		4153B18022A75462008A216B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4153B19122A763CB008A216B /* BaseWireframe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseWireframe.swift; sourceTree = "<group>"; };
+		4153B19522A77406008A216B /* PresenterInterface.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresenterInterface.swift; sourceTree = "<group>"; };
+		4153B19722A77520008A216B /* ViewInterface.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewInterface.swift; sourceTree = "<group>"; };
+		4153B19922A7754C008A216B /* InteractorInterface.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InteractorInterface.swift; sourceTree = "<group>"; };
+		4153B19B22A775B0008A216B /* LoginInterface.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginInterface.swift; sourceTree = "<group>"; };
+		4153B19D22A77BB0008A216B /* LoginWireframe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginWireframe.swift; sourceTree = "<group>"; };
+		4153B1A022A77D05008A216B /* LoginPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginPresenter.swift; sourceTree = "<group>"; };
+		4153B1A222A77DD9008A216B /* LoginInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginInteractor.swift; sourceTree = "<group>"; };
+		4153B1A422A78033008A216B /* Login.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
 		588AFB760B2EEEBB9CDA5AFB /* Pods_MyDiaryiOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MyDiaryiOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AE0F71C094C4DD4230837626 /* Pods-MyDiaryiOSTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyDiaryiOSTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-MyDiaryiOSTests/Pods-MyDiaryiOSTests.release.xcconfig"; sourceTree = "<group>"; };
 		DDD6CBB69C27037C693BC0BE /* Pods_MyDiaryiOSUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MyDiaryiOSUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -114,12 +132,11 @@
 		4153B15D22A7545F008A216B /* MyDiaryiOS */ = {
 			isa = PBXGroup;
 			children = (
-				4153B15E22A75460008A216B /* AppDelegate.swift */,
-				4153B16022A75460008A216B /* ViewController.swift */,
-				4153B16222A75460008A216B /* Main.storyboard */,
-				4153B16522A75462008A216B /* Assets.xcassets */,
-				4153B16722A75462008A216B /* LaunchScreen.storyboard */,
 				4153B16A22A75462008A216B /* Info.plist */,
+				4153B19022A76222008A216B /* Modules */,
+				4153B18F22A76217008A216B /* Resources */,
+				4153B18E22A7620F008A216B /* Common */,
+				4153B18D22A761F2008A216B /* Application */,
 			);
 			path = MyDiaryiOS;
 			sourceTree = "<group>";
@@ -140,6 +157,56 @@
 				4153B18022A75462008A216B /* Info.plist */,
 			);
 			path = MyDiaryiOSUITests;
+			sourceTree = "<group>";
+		};
+		4153B18D22A761F2008A216B /* Application */ = {
+			isa = PBXGroup;
+			children = (
+				4153B15E22A75460008A216B /* AppDelegate.swift */,
+			);
+			path = Application;
+			sourceTree = "<group>";
+		};
+		4153B18E22A7620F008A216B /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				4153B19122A763CB008A216B /* BaseWireframe.swift */,
+				4153B19522A77406008A216B /* PresenterInterface.swift */,
+				4153B19722A77520008A216B /* ViewInterface.swift */,
+				4153B19922A7754C008A216B /* InteractorInterface.swift */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		4153B18F22A76217008A216B /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				4153B16222A75460008A216B /* Main.storyboard */,
+				4153B16722A75462008A216B /* LaunchScreen.storyboard */,
+				4153B16522A75462008A216B /* Assets.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		4153B19022A76222008A216B /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				4153B19F22A77BF0008A216B /* Login */,
+			);
+			path = Modules;
+			sourceTree = "<group>";
+		};
+		4153B19F22A77BF0008A216B /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				4153B16022A75460008A216B /* LoginViewController.swift */,
+				4153B19B22A775B0008A216B /* LoginInterface.swift */,
+				4153B19D22A77BB0008A216B /* LoginWireframe.swift */,
+				4153B1A022A77D05008A216B /* LoginPresenter.swift */,
+				4153B1A222A77DD9008A216B /* LoginInteractor.swift */,
+				4153B1A422A78033008A216B /* Login.storyboard */,
+			);
+			path = Login;
 			sourceTree = "<group>";
 		};
 		4A3F9A5FC6E1489E0AD802A3 /* Pods */ = {
@@ -273,6 +340,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4153B1A522A78033008A216B /* Login.storyboard in Resources */,
 				4153B16922A75462008A216B /* LaunchScreen.storyboard in Resources */,
 				4153B16622A75462008A216B /* Assets.xcassets in Resources */,
 				4153B16422A75460008A216B /* Main.storyboard in Resources */,
@@ -386,7 +454,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4153B16122A75460008A216B /* ViewController.swift in Sources */,
+				4153B19A22A7754C008A216B /* InteractorInterface.swift in Sources */,
+				4153B19C22A775B0008A216B /* LoginInterface.swift in Sources */,
+				4153B19E22A77BB0008A216B /* LoginWireframe.swift in Sources */,
+				4153B1A122A77D05008A216B /* LoginPresenter.swift in Sources */,
+				4153B19822A77520008A216B /* ViewInterface.swift in Sources */,
+				4153B19622A77406008A216B /* PresenterInterface.swift in Sources */,
+				4153B19222A763CB008A216B /* BaseWireframe.swift in Sources */,
+				4153B16122A75460008A216B /* LoginViewController.swift in Sources */,
+				4153B1A322A77DD9008A216B /* LoginInteractor.swift in Sources */,
 				4153B15F22A75460008A216B /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
