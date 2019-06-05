@@ -10,4 +10,9 @@ import Foundation
 
 final class LoginInteractor {}
 
-extension LoginInteractor: LoginInteractorInterface {}
+extension LoginInteractor: LoginInteractorInterface {
+    func loginUser(username: String, password: String) {
+        print(username)
+        print(password)
+    }
+}

@@ -9,11 +9,19 @@
 import UIKit
 
 class LoginViewController: UIViewController {
+    @IBOutlet var userNameTextField: UITextField!
+    @IBOutlet var passwordTextField: UITextField!
     var presenter: LoginPresenterInterface!
 
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+    }
+
+    @IBAction func onLoginButtonClicked(_: UIButton) {
+        guard let username = userNameTextField.text else { return }
+        guard let password = passwordTextField.text else { return }
+        self.presenter.loginButtonClicked(username: username, password: password)
     }
 }
 

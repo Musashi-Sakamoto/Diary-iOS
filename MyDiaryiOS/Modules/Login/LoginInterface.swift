@@ -16,6 +16,10 @@ protocol LoginWireframeInterface: WireframeInterface {
 
 protocol LoginViewInterface: ViewInterface {}
 
-protocol LoginPresenterInterface: PresenterInterface {}
+protocol LoginPresenterInterface: PresenterInterface {
+    func loginButtonClicked(username: String, password: String)
+}
 
-protocol LoginInteractorInterface: InteractorInterface {}
+protocol LoginInteractorInterface: InteractorInterface {
+    func loginUser(username: String, password: String)
+}

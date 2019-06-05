@@ -20,4 +20,32 @@ final class LoginPresenter {
     }
 }
 
-extension LoginPresenter: LoginPresenterInterface {}
+extension LoginPresenter: LoginPresenterInterface {
+    func loginButtonClicked(username: String, password: String) {
+        guard username.count > 0 else {
+            _showUsernameValidationError()
+            return
+        }
+
+        guard password.count > 0 else {
+            _showPasswordValidationError()
+            return
+        }
+
+        self._interactor.loginUser(username: username, password: password)
+    }
+}
+
+private extension LoginPresenter {
+    func _showLoginValidationError() {
+        self._wireframe.showAlert(with: "Error", message: "Please enter email and password")
+    }
+
+    func _showUsernameValidationError() {
+        self._wireframe.showAlert(with: "Error", message: "Please enter valid username")
+    }
+
+    func _showPasswordValidationError() {
+        self._wireframe.showAlert(with: "Error", message: "Password should be at least 6 characters long")
+    }
+}

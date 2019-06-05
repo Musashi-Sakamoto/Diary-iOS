@@ -9,7 +9,14 @@
 import Foundation
 import UIKit
 
-protocol WireframeInterface: class {}
+protocol WireframeInterface: class {
+    func popFromNavigationController(animated: Bool)
+    func dismiss(animated: Bool)
+
+    func showErrorAlert(with message: String?)
+    func showAlert(with title: String?, message: String?)
+    func showAlert(with title: String?, message: String?, actions: [UIAlertAction])
+}
 
 class BaseWireframe {
     private unowned var _viewController: UIViewController
@@ -22,7 +29,31 @@ class BaseWireframe {
     }
 }
 
-extension BaseWireframe: WireframeInterface {}
+extension BaseWireframe: WireframeInterface {
+    func popFromNavigationController(animated: Bool) {
+        navigationController?.popViewController(animated: animated)
+    }
+
+    func dismiss(animated: Bool) {
+        navigationController?.dismiss(animated: animated)
+    }
+
+    func showErrorAlert(with message: String?) {
+        let okAction = UIAlertAction(title: "OK", style: .default, handler: nil)
+        showAlert(with: "Something went wrong", message: message, actions: [okAction])
+    }
+
+    func showAlert(with title: String?, message: String?) {
+        let okAction = UIAlertAction(title: "OK", style: .default, handler: nil)
+        showAlert(with: title, message: message, actions: [okAction])
+    }
+
+    func showAlert(with title: String?, message: String?, actions: [UIAlertAction]) {
+        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        actions.forEach { alert.addAction($0) }
+        navigationController?.present(alert, animated: true, completion: nil)
+    }
+}
 
 extension BaseWireframe {
     var viewController: UIViewController {
