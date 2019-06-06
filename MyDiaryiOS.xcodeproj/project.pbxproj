@@ -25,6 +25,12 @@
 		4153B1A122A77D05008A216B /* LoginPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4153B1A022A77D05008A216B /* LoginPresenter.swift */; };
 		4153B1A322A77DD9008A216B /* LoginInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4153B1A222A77DD9008A216B /* LoginInteractor.swift */; };
 		4153B1A522A78033008A216B /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4153B1A422A78033008A216B /* Login.storyboard */; };
+		4153B1AA22A79782008A216B /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4153B1A922A79782008A216B /* Constants.swift */; };
+		4153B1AD22A7A14A008A216B /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4153B1AC22A7A14A008A216B /* UserService.swift */; };
+		4153B1B022A7A382008A216B /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4153B1AF22A7A382008A216B /* User.swift */; };
+		4153B1B322A7B858008A216B /* AuthorizationAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4153B1B222A7B858008A216B /* AuthorizationAdapter.swift */; };
+		4153B1B622A7B98E008A216B /* Initializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4153B1B522A7B98E008A216B /* Initializer.swift */; };
+		4153B1B822A7B9C6008A216B /* AlamofireInitializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4153B1B722A7B9C6008A216B /* AlamofireInitializer.swift */; };
 		A4F6C1F1BCECCEBB0CE5B9F0 /* Pods_MyDiaryiOSTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F9E209CE35E3661977A2AFB /* Pods_MyDiaryiOSTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -74,6 +80,12 @@
 		4153B1A022A77D05008A216B /* LoginPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginPresenter.swift; sourceTree = "<group>"; };
 		4153B1A222A77DD9008A216B /* LoginInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginInteractor.swift; sourceTree = "<group>"; };
 		4153B1A422A78033008A216B /* Login.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
+		4153B1A922A79782008A216B /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		4153B1AC22A7A14A008A216B /* UserService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserService.swift; sourceTree = "<group>"; };
+		4153B1AF22A7A382008A216B /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		4153B1B222A7B858008A216B /* AuthorizationAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizationAdapter.swift; sourceTree = "<group>"; };
+		4153B1B522A7B98E008A216B /* Initializer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Initializer.swift; sourceTree = "<group>"; };
+		4153B1B722A7B9C6008A216B /* AlamofireInitializer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlamofireInitializer.swift; sourceTree = "<group>"; };
 		588AFB760B2EEEBB9CDA5AFB /* Pods_MyDiaryiOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MyDiaryiOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AE0F71C094C4DD4230837626 /* Pods-MyDiaryiOSTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyDiaryiOSTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-MyDiaryiOSTests/Pods-MyDiaryiOSTests.release.xcconfig"; sourceTree = "<group>"; };
 		DDD6CBB69C27037C693BC0BE /* Pods_MyDiaryiOSUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MyDiaryiOSUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -162,7 +174,9 @@
 		4153B18D22A761F2008A216B /* Application */ = {
 			isa = PBXGroup;
 			children = (
+				4153B1B422A7B963008A216B /* Initializers */,
 				4153B15E22A75460008A216B /* AppDelegate.swift */,
+				4153B1A922A79782008A216B /* Constants.swift */,
 			);
 			path = Application;
 			sourceTree = "<group>";
@@ -170,6 +184,9 @@
 		4153B18E22A7620F008A216B /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				4153B1B122A7B7F2008A216B /* API */,
+				4153B1AE22A7A374008A216B /* Models */,
+				4153B1AB22A7A135008A216B /* Services */,
 				4153B19122A763CB008A216B /* BaseWireframe.swift */,
 				4153B19522A77406008A216B /* PresenterInterface.swift */,
 				4153B19722A77520008A216B /* ViewInterface.swift */,
@@ -209,6 +226,39 @@
 			path = Login;
 			sourceTree = "<group>";
 		};
+		4153B1AB22A7A135008A216B /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				4153B1AC22A7A14A008A216B /* UserService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		4153B1AE22A7A374008A216B /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				4153B1AF22A7A382008A216B /* User.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		4153B1B122A7B7F2008A216B /* API */ = {
+			isa = PBXGroup;
+			children = (
+				4153B1B222A7B858008A216B /* AuthorizationAdapter.swift */,
+			);
+			path = API;
+			sourceTree = "<group>";
+		};
+		4153B1B422A7B963008A216B /* Initializers */ = {
+			isa = PBXGroup;
+			children = (
+				4153B1B522A7B98E008A216B /* Initializer.swift */,
+				4153B1B722A7B9C6008A216B /* AlamofireInitializer.swift */,
+			);
+			path = Initializers;
+			sourceTree = "<group>";
+		};
 		4A3F9A5FC6E1489E0AD802A3 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -244,6 +294,7 @@
 				4153B15822A7545F008A216B /* Frameworks */,
 				4153B15922A7545F008A216B /* Resources */,
 				4153B18C22A756BF008A216B /* ShellScript */,
+				AFD290A1C7BC18C28038D0A3 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -425,6 +476,30 @@
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/SwiftLint/swiftlint\"\n\"${PODS_ROOT}/SwiftFormat/CommandLineTool/swiftformat\" . --self insert\n";
 		};
+		AFD290A1C7BC18C28038D0A3 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-MyDiaryiOS/Pods-MyDiaryiOS-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MyDiaryiOS/Pods-MyDiaryiOS-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		D6C26F843C0026018451B10A /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -454,16 +529,22 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4153B1B022A7A382008A216B /* User.swift in Sources */,
 				4153B19A22A7754C008A216B /* InteractorInterface.swift in Sources */,
+				4153B1AA22A79782008A216B /* Constants.swift in Sources */,
 				4153B19C22A775B0008A216B /* LoginInterface.swift in Sources */,
 				4153B19E22A77BB0008A216B /* LoginWireframe.swift in Sources */,
 				4153B1A122A77D05008A216B /* LoginPresenter.swift in Sources */,
 				4153B19822A77520008A216B /* ViewInterface.swift in Sources */,
 				4153B19622A77406008A216B /* PresenterInterface.swift in Sources */,
 				4153B19222A763CB008A216B /* BaseWireframe.swift in Sources */,
+				4153B1B822A7B9C6008A216B /* AlamofireInitializer.swift in Sources */,
+				4153B1AD22A7A14A008A216B /* UserService.swift in Sources */,
 				4153B16122A75460008A216B /* LoginViewController.swift in Sources */,
 				4153B1A322A77DD9008A216B /* LoginInteractor.swift in Sources */,
 				4153B15F22A75460008A216B /* AppDelegate.swift in Sources */,
+				4153B1B322A7B858008A216B /* AuthorizationAdapter.swift in Sources */,
+				4153B1B622A7B98E008A216B /* Initializer.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

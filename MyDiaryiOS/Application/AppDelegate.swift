@@ -12,8 +12,13 @@ import UIKit
 class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
 
+    lazy var initializers: [Initializerable] = [
+        AlamofireInitializer(),
+    ]
+
     func application(_: UIApplication, didFinishLaunchingWithOptions _: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        self.initializers.forEach { $0.performInitialization() }
         let initialController = UINavigationController()
         initialController.setRootWireframe(LoginWireframe())
         self.window = UIWindow(frame: UIScreen.main.bounds)

@@ -1,5 +1,5 @@
 //
-//  ViewInterface.swift
+//  Initializer.swift
 //  MyDiaryiOS
 //
 //  Created by 坂元 武佐志 on 2019/06/05.
@@ -8,6 +8,6 @@
 
 import Foundation
 
-protocol ViewInterface: AnyObject {}
-
-extension ViewInterface {}
+protocol Initializerable: AnyObject {
+    func performInitialization()
+}

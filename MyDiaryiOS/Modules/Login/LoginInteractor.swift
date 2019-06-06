@@ -6,13 +6,15 @@
 //  Copyright © 2019 musashi. All rights reserved.
 //
 
+import Alamofire
 import Foundation
 
-final class LoginInteractor {}
+final class LoginInteractor {
+    private var _userService = UserService()
+}
 
 extension LoginInteractor: LoginInteractorInterface {
-    func loginUser(username: String, password: String) {
-        print(username)
-        print(password)
+    func loginUser(username: String, password: String, completion: @escaping LoginCompletionBlock) -> DataRequest {
+        return self._userService.loginUser(username: username, password: password, completion: completion)
     }
 }

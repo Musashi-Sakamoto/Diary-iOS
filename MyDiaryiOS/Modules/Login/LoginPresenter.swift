@@ -6,17 +6,21 @@
 //  Copyright © 2019 musashi. All rights reserved.
 //
 
+import Alamofire
 import Foundation
+import SwiftyJSON
 
 final class LoginPresenter {
     private unowned let _view: LoginViewInterface
     private let _interactor: LoginInteractorInterface
     private let _wireframe: LoginWireframeInterface
+    private let _authorizationManager: AuthorizationAdapter
 
-    init(wireframe: LoginWireframeInterface, view: LoginViewInterface, interactor: LoginInteractorInterface) {
+    init(wireframe: LoginWireframeInterface, view: LoginViewInterface, interactor: LoginInteractorInterface, authorizationManager: AuthorizationAdapter = AuthorizationAdapter.shared) {
         self._wireframe = wireframe
         self._view = view
         self._interactor = interactor
+        self._authorizationManager = authorizationManager
     }
 }
 
@@ -32,11 +36,24 @@ extension LoginPresenter: LoginPresenterInterface {
             return
         }
 
-        self._interactor.loginUser(username: username, password: password)
+        self._interactor.loginUser(username: username, password: password) { [weak self] response in
+            self?._handleLoginResult(response)
+        }
     }
 }
 
 private extension LoginPresenter {
+    private func _handleLoginResult(_ response: DataResponse<Any>) {
+        switch response.response!.statusCode {
+        case 200:
+            let user = JSON(response.result.value)
+            self._authorizationManager.authorizationHeader = "Bearer \(user["token"].stringValue)"
+        default:
+            let error = JSON(response.result.value)
+            self._wireframe.showErrorAlert(with: error["error"]["message"].stringValue)
+        }
+    }
+
     func _showLoginValidationError() {
         self._wireframe.showAlert(with: "Error", message: "Please enter email and password")
     }

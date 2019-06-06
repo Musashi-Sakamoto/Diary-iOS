@@ -6,6 +6,7 @@
 //  Copyright © 2019 musashi. All rights reserved.
 //
 
+import Alamofire
 import Foundation
 
 enum LoginNavigationOption {}
@@ -21,5 +22,5 @@ protocol LoginPresenterInterface: PresenterInterface {
 }
 
 protocol LoginInteractorInterface: InteractorInterface {
-    func loginUser(username: String, password: String)
+    func loginUser(username: String, password: String, completion: @escaping LoginCompletionBlock) -> DataRequest
 }

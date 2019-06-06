@@ -8,6 +8,6 @@
 
 import Foundation
 
-protocol InteractorInterface: class {}
+protocol InteractorInterface: AnyObject {}
 
 extension InteractorInterface {}
