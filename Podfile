@@ -8,6 +8,11 @@ target 'MyDiaryiOS' do
   # Pods for MyDiaryiOS
   pod 'SwiftLint'
   pod 'SwiftFormat/CLI'
+  pod 'Alamofire'
+  pod 'AlamofireImage'
+  pod 'AlamofireNetworkActivityIndicator'
+  pod 'SVProgressHUD'
+  pod 'SwiftyJSON', '4.0'
 
   target 'MyDiaryiOSTests' do
     inherit! :search_paths

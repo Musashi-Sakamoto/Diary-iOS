@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Post List View Controller-->
+        <scene sceneID="f3F-4f-wek">
+            <objects>
+                <viewController storyboardIdentifier="PostListViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="jEj-2f-fV3" customClass="PostListViewController" customModule="MyDiaryiOS" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="wYw-4X-zwn">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="TTR-8Y-aQj">
+                                <rect key="frame" x="0.0" y="100" width="375" height="567"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="jEj-2f-fV3" id="Lg3-02-hXJ"/>
+                                    <outlet property="delegate" destination="jEj-2f-fV3" id="z7A-Cy-wiy"/>
+                                </connections>
+                            </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jbE-Cg-E9r">
+                                <rect key="frame" x="16" y="36" width="48" height="30"/>
+                                <state key="normal" title="Logout"/>
+                                <connections>
+                                    <action selector="logoutButtonActionHandler:" destination="jEj-2f-fV3" eventType="touchUpInside" id="AUE-oy-kMO"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xpc-aS-lxa">
+                                <rect key="frame" x="329" y="36" width="30" height="30"/>
+                                <state key="normal" title="+"/>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="lda-mS-r1I" firstAttribute="bottom" secondItem="TTR-8Y-aQj" secondAttribute="bottom" id="0FY-Nj-ukU"/>
+                            <constraint firstItem="TTR-8Y-aQj" firstAttribute="top" secondItem="lda-mS-r1I" secondAttribute="top" constant="80" id="NsQ-pI-Ns3"/>
+                            <constraint firstItem="xpc-aS-lxa" firstAttribute="top" secondItem="lda-mS-r1I" secondAttribute="top" constant="16" id="Z4j-om-uWN"/>
+                            <constraint firstItem="lda-mS-r1I" firstAttribute="trailing" secondItem="TTR-8Y-aQj" secondAttribute="trailing" id="eKD-gj-Dch"/>
+                            <constraint firstItem="lda-mS-r1I" firstAttribute="trailing" secondItem="xpc-aS-lxa" secondAttribute="trailing" constant="16" id="mUk-t5-5hY"/>
+                            <constraint firstItem="jbE-Cg-E9r" firstAttribute="top" secondItem="lda-mS-r1I" secondAttribute="top" constant="16" id="qeu-UL-CTZ"/>
+                            <constraint firstItem="jbE-Cg-E9r" firstAttribute="leading" secondItem="lda-mS-r1I" secondAttribute="leading" constant="16" id="s4g-SN-mHU"/>
+                            <constraint firstItem="TTR-8Y-aQj" firstAttribute="leading" secondItem="lda-mS-r1I" secondAttribute="leading" id="zuI-1Y-wha"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="lda-mS-r1I"/>
+                    </view>
+                    <connections>
+                        <outlet property="postTableView" destination="TTR-8Y-aQj" id="51B-Cu-wiK"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="DEm-gr-Iwq" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="92" y="236.13193403298354"/>
+        </scene>
+    </scenes>
+</document>
