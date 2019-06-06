@@ -67,15 +67,10 @@ extension PostListPresenter: PostListPresenterInterface {
 
 private extension PostListPresenter {
     private func _handlePostListResult(_ response: DataResponse<Any>) {
-        print(response.request)
         switch response.response!.statusCode {
         case 200:
             let posts = JSON(response.result.value)["posts"]["rows"].arrayValue
-            posts.forEach { post in
-                _items.append(
-                    Post(id: post["id"].stringValue, mainTitle: post["title"].stringValue, description: post["description"].stringValue, updatedAt: post["updatedAt"].stringValue, url: post["presignedUrl"].stringValue, mediaType: MediaType(rawValue: post["mediaType"].stringValue)!)
-                )
-            }
+            self._items = posts.map { Post(jsonObject: $0) }
             self._view.setEmptyPlaceholderHidden(true)
         default:
             let error = JSON(response.result.value)

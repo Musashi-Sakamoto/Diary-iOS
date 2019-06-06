@@ -13,6 +13,6 @@ typealias PostCompletionBlock = (DataResponse<Any>) -> Void
 
 class PostService: NSObject {
     func getPosts(completion: @escaping PostCompletionBlock) -> DataRequest {
-        return SessionManager.default.request(URL(string: Constants.API.URLBase!.appendingPathComponent("posts?limit=50&offset=0").absoluteString.removingPercentEncoding!)!, method: .get).responseJSON(completionHandler: completion)
+        return SessionManager.default.request(URL(string: Constants.API.URLBase!.appendingPathComponent("posts?limit=20&offset=0").absoluteString.removingPercentEncoding!)!, method: .get).responseJSON(completionHandler: completion)
     }
 }

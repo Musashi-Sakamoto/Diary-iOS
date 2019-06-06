@@ -7,6 +7,8 @@
 //
 
 import AlamofireImage
+import AssetsLibrary
+import AVFoundation
 import UIKit
 
 class PostListTableViewCell: UITableViewCell {
@@ -32,8 +34,16 @@ class PostListTableViewCell: UITableViewCell {
     func configure(with item: PostViewItemInterface) {
         self.cellTextLabel.text = item.title
 
-        if let url = item.imageURL {
+        guard let url = item.imageURL else { return }
+        guard let mediaType = item.mediaType else { return }
+        switch mediaType {
+        case .image:
             self.cellImageView.af_setImage(withURL: url)
+        case .video:
+            let avAsset = AVURLAsset(url: url, options: ["AVURLAssetOutOfBandMIMETypeKey": "video/mp4"])
+            let generator = AVAssetImageGenerator(asset: avAsset)
+            let capturedImage = try! generator.copyCGImage(at: avAsset.duration, actualTime: nil)
+            self.cellImageView.image = UIImage(cgImage: capturedImage)
         }
     }
 }

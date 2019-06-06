@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import SwiftyJSON
 
 enum MediaType: String {
     case video
@@ -21,7 +22,16 @@ struct Post: Any {
 
     var url: String
 
-    var mediaType: MediaType
+    var media: MediaType
+
+    init(jsonObject: JSON) {
+        self.id = jsonObject["id"].stringValue
+        self.mainTitle = jsonObject["title"].stringValue
+        self.description = jsonObject["description"].stringValue
+        self.updatedAt = jsonObject["updatedAt"].stringValue
+        self.url = jsonObject["presignedUrl"].stringValue
+        self.media = MediaType(rawValue: jsonObject["mediaType"].stringValue)!
+    }
 }
 
 extension Post: PostViewItemInterface {
@@ -31,5 +41,9 @@ extension Post: PostViewItemInterface {
 
     var title: String? {
         return self.mainTitle
+    }
+
+    var mediaType: MediaType? {
+        return self.media
     }
 }

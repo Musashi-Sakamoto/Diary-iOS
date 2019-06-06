@@ -44,4 +44,5 @@ protocol PostListInteractorInterface: InteractorInterface {
 protocol PostViewItemInterface {
     var title: String? { get }
     var imageURL: URL? { get }
+    var mediaType: MediaType? { get }
 }

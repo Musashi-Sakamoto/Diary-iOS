@@ -12,44 +12,43 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="114" id="KGk-i7-Jjw" customClass="PostListTableViewCell" customModule="MyDiaryiOS" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="374" height="114"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="409" id="KGk-i7-Jjw" customClass="PostListTableViewCell" customModule="MyDiaryiOS" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="374" height="409"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <rect key="frame" x="0.0" y="0.0" width="374" height="113.5"/>
+                <rect key="frame" x="0.0" y="0.0" width="374" height="408.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Rgc-sW-CNT">
-                        <rect key="frame" x="36" y="32" width="50" height="50"/>
+                        <rect key="frame" x="36" y="31" width="300" height="300"/>
                         <constraints>
-                            <constraint firstAttribute="width" constant="50" id="DIk-cU-WgI"/>
+                            <constraint firstAttribute="width" constant="300" id="DIk-cU-WgI"/>
                             <constraint firstAttribute="width" secondItem="Rgc-sW-CNT" secondAttribute="height" multiplier="1:1" id="m9a-Z6-Fok"/>
                         </constraints>
                     </imageView>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tUM-IO-mld">
-                        <rect key="frame" x="116" y="32" width="226" height="50"/>
-                        <constraints>
-                            <constraint firstAttribute="height" constant="50" id="hAx-Dn-lex"/>
-                        </constraints>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dzt-ew-MWC">
+                        <rect key="frame" x="36" y="351" width="300" height="21"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                 </subviews>
                 <constraints>
-                    <constraint firstAttribute="trailingMargin" secondItem="tUM-IO-mld" secondAttribute="trailing" constant="16" id="PPz-IV-kxF"/>
-                    <constraint firstItem="tUM-IO-mld" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="VZn-KL-xb7"/>
-                    <constraint firstItem="Rgc-sW-CNT" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="20" id="fWt-Bx-0XB"/>
-                    <constraint firstItem="Rgc-sW-CNT" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="gAP-Pc-qww"/>
-                    <constraint firstItem="tUM-IO-mld" firstAttribute="leading" secondItem="Rgc-sW-CNT" secondAttribute="trailing" constant="30" id="nZZ-7c-d94"/>
+                    <constraint firstItem="Dzt-ew-MWC" firstAttribute="width" secondItem="Rgc-sW-CNT" secondAttribute="width" id="2K8-3o-A5z"/>
+                    <constraint firstItem="Rgc-sW-CNT" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="20" id="O8Q-ha-5dr"/>
+                    <constraint firstItem="Dzt-ew-MWC" firstAttribute="top" secondItem="Rgc-sW-CNT" secondAttribute="bottom" constant="20" id="UZD-HB-MbG"/>
+                    <constraint firstItem="Dzt-ew-MWC" firstAttribute="leading" secondItem="Rgc-sW-CNT" secondAttribute="leading" id="WfC-xd-TG7"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="Rgc-sW-CNT" secondAttribute="trailing" constant="20" id="fVm-wU-HHa"/>
+                    <constraint firstItem="Dzt-ew-MWC" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" id="iSc-Mz-RGu"/>
+                    <constraint firstItem="Rgc-sW-CNT" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="20" id="qBG-ql-hYw"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
                 <outlet property="cellImageView" destination="Rgc-sW-CNT" id="Z8s-Wc-3g6"/>
-                <outlet property="cellTextLabel" destination="tUM-IO-mld" id="yJg-Wn-Ygv"/>
+                <outlet property="cellTextLabel" destination="Dzt-ew-MWC" id="pug-IM-Fxi"/>
             </connections>
-            <point key="canvasLocation" x="96" y="75.562218890554732"/>
+            <point key="canvasLocation" x="96" y="156.97151424287858"/>
         </tableViewCell>
     </objects>
 </document>
