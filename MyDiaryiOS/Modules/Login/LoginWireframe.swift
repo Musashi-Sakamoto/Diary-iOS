@@ -23,5 +23,11 @@ final class LoginWireframe: BaseWireframe {
 }
 
 extension LoginWireframe: LoginWireframeInterface {
-    func navigate(to _: LoginNavigationOption) {}
+    func navigate(to: LoginNavigationOption) {
+        switch to {
+        case .postList:
+            let wireframe = PostListWireframe()
+            navigationController?.pushWireframe(wireframe)
+        }
+    }
 }

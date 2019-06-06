@@ -7,10 +7,14 @@
 //
 
 import Alamofire
+import AlamofireNetworkActivityIndicator
 import Foundation
 
 class AlamofireInitializer: Initializerable {
     func performInitialization() {
-        Alamofire.SessionManager.default.adapter = AuthorizationAdapter.shared
+        let networkActivityManager = NetworkActivityIndicatorManager.shared
+        networkActivityManager.isEnabled = true
+        networkActivityManager.startDelay = 0
+        SessionManager.default.adapter = AuthorizationAdapter.shared
     }
 }

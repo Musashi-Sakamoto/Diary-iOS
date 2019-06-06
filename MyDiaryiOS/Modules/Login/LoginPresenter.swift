@@ -44,10 +44,12 @@ extension LoginPresenter: LoginPresenterInterface {
 
 private extension LoginPresenter {
     private func _handleLoginResult(_ response: DataResponse<Any>) {
+        print(response.result.value)
         switch response.response!.statusCode {
         case 200:
             let user = JSON(response.result.value)
             self._authorizationManager.authorizationHeader = "Bearer \(user["token"].stringValue)"
+            self._wireframe.navigate(to: .postList)
         default:
             let error = JSON(response.result.value)
             self._wireframe.showErrorAlert(with: error["error"]["message"].stringValue)

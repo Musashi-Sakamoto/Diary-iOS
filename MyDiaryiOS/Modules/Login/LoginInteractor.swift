@@ -14,6 +14,7 @@ final class LoginInteractor {
 }
 
 extension LoginInteractor: LoginInteractorInterface {
+    @discardableResult
     func loginUser(username: String, password: String, completion: @escaping LoginCompletionBlock) -> DataRequest {
         return self._userService.loginUser(username: username, password: password, completion: completion)
     }

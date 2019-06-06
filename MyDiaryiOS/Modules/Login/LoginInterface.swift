@@ -9,7 +9,9 @@
 import Alamofire
 import Foundation
 
-enum LoginNavigationOption {}
+enum LoginNavigationOption {
+    case postList
+}
 
 protocol LoginWireframeInterface: WireframeInterface {
     func navigate(to option: LoginNavigationOption)
