@@ -7,6 +7,7 @@
 //
 
 import Alamofire
+import PKHUD
 import UIKit
 
 class PostListViewController: UIViewController {
@@ -49,7 +50,13 @@ extension PostListViewController: PostListViewInterface {
 
     func setEmptyPlaceholderHidden(_: Bool) {}
 
-    func setLoadingVisible(_: Bool) {}
+    func setLoadingVisible(_ visible: Bool) {
+        if visible {
+            HUD.show(.progress)
+        } else {
+            HUD.hide()
+        }
+    }
 }
 
 extension PostListViewController: UITableViewDataSource {
