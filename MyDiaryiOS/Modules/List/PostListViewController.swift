@@ -34,12 +34,12 @@ class PostListViewController: UIViewController {
         navigationItem.hidesBackButton = true
         let button = FABButton(image: Icon.cm.add, tintColor: .white)
         button.pulseColor = .white
-        button.backgroundColor = Color.blueGrey.base
+        button.backgroundColor = UIColor.purple
 
         view.layout(button)
             .width(60)
             .height(60)
-            .bottomTrailingSafe(bottom: 10, trailing: 10)
+            .bottomTrailingSafe(bottom: 20, trailing: 20)
     }
 
     /*
