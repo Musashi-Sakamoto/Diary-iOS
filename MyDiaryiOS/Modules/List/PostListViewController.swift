@@ -22,6 +22,11 @@ class PostListViewController: UIViewController {
         self.presenter.viewDidLoad()
     }
 
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationController?.setNavigationBarHidden(false, animated: animated)
+    }
+
     private func _setupView() {
         let nib = UINib(nibName: "PostListTableViewCell", bundle: nil)
         postTableView.register(nib, forCellReuseIdentifier: "cell")

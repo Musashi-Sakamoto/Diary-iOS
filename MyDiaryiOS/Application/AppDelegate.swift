@@ -14,6 +14,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     lazy var initializers: [Initializerable] = [
         AlamofireInitializer(),
+        ThemeInitializer(),
     ]
 
     func application(_: UIApplication, didFinishLaunchingWithOptions _: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
