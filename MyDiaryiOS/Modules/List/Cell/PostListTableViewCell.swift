@@ -14,6 +14,7 @@ import UIKit
 class PostListTableViewCell: UITableViewCell {
     @IBOutlet var cellTextLabel: UILabel!
     @IBOutlet var cellImageView: UIImageView!
+    @IBOutlet var videoContainerView: VideoContainerView!
 
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -24,6 +25,7 @@ class PostListTableViewCell: UITableViewCell {
         super.prepareForReuse()
         self.cellImageView.af_cancelImageRequest()
         self.cellImageView.isHidden = false
+        self.videoContainerView.isHidden = false
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
@@ -38,17 +40,19 @@ class PostListTableViewCell: UITableViewCell {
         guard let url = item.imageURL else {
             self.cellImageView.image = nil
             self.cellImageView.isHidden = true
+            self.videoContainerView.isHidden = true
             return
         }
         guard let mediaType = item.mediaType else { return }
         switch mediaType {
         case .image:
+            self.videoContainerView.isHidden = true
             self.cellImageView.af_setImage(withURL: url)
         case .video:
-            let avAsset = AVURLAsset(url: url, options: ["AVURLAssetOutOfBandMIMETypeKey": "video/mp4"])
-            let generator = AVAssetImageGenerator(asset: avAsset)
-            let capturedImage = try! generator.copyCGImage(at: avAsset.duration, actualTime: nil)
-            self.cellImageView.image = UIImage(cgImage: capturedImage)
+            self.cellImageView.isHidden = true
+            let player = AVPlayer(url: url)
+            videoContainerView.set(player: player)
+            self.videoContainerView.play()
         }
     }
 }

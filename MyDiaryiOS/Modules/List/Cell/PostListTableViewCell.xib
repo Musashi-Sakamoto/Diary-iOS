@@ -20,17 +20,25 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="5l1-PY-Rcu">
-                        <rect key="frame" x="32" y="27" width="300" height="355"/>
+                        <rect key="frame" x="32" y="27" width="300" height="661"/>
                         <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eq5-1d-AIE" customClass="VideoContainerView" customModule="MyDiaryiOS" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="300" height="300.5"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="300" id="MIw-4N-dmS"/>
+                                    <constraint firstAttribute="width" secondItem="eq5-1d-AIE" secondAttribute="height" multiplier="1:1" id="nBE-Du-dXX"/>
+                                </constraints>
+                            </view>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Rgc-sW-CNT">
-                                <rect key="frame" x="0.0" y="0.0" width="300" height="300"/>
+                                <rect key="frame" x="0.0" y="320.5" width="300" height="300"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="300" id="ca4-o0-abx"/>
                                     <constraint firstAttribute="width" secondItem="Rgc-sW-CNT" secondAttribute="height" multiplier="1:1" id="m9a-Z6-Fok"/>
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dzt-ew-MWC">
-                                <rect key="frame" x="0.0" y="320" width="300" height="35"/>
+                                <rect key="frame" x="0.0" y="640.5" width="300" height="20.5"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="300" id="RzN-YR-ZNk"/>
                                 </constraints>
@@ -52,6 +60,7 @@
             <connections>
                 <outlet property="cellImageView" destination="Rgc-sW-CNT" id="Z8s-Wc-3g6"/>
                 <outlet property="cellTextLabel" destination="Dzt-ew-MWC" id="pug-IM-Fxi"/>
+                <outlet property="videoContainerView" destination="eq5-1d-AIE" id="rrR-xU-Arl"/>
             </connections>
             <point key="canvasLocation" x="96" y="156.97151424287858"/>
         </tableViewCell>
