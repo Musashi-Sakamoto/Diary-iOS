@@ -23,6 +23,7 @@ class PostListTableViewCell: UITableViewCell {
     override func prepareForReuse() {
         super.prepareForReuse()
         self.cellImageView.af_cancelImageRequest()
+        self.cellImageView.isHidden = false
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
@@ -34,7 +35,11 @@ class PostListTableViewCell: UITableViewCell {
     func configure(with item: PostViewItemInterface) {
         self.cellTextLabel.text = item.title
 
-        guard let url = item.imageURL else { return }
+        guard let url = item.imageURL else {
+            self.cellImageView.image = nil
+            self.cellImageView.isHidden = true
+            return
+        }
         guard let mediaType = item.mediaType else { return }
         switch mediaType {
         case .image:

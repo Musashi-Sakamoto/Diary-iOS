@@ -23,7 +23,6 @@ class PostListViewController: UIViewController {
     }
 
     private func _setupView() {
-        self.postTableView.estimatedRowHeight = 100
         let nib = UINib(nibName: "PostListTableViewCell", bundle: nil)
         postTableView.register(nib, forCellReuseIdentifier: "cell")
     }
@@ -77,10 +76,6 @@ extension PostListViewController: UITableViewDataSource {
 }
 
 extension PostListViewController: UITableViewDelegate {
-    func tableView(_ tableView: UITableView, heightForRowAt _: IndexPath) -> CGFloat {
-        return 450
-    }
-
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
         self.presenter.didSelectItem(at: indexPath)

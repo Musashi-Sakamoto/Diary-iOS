@@ -20,23 +20,29 @@ struct Post: Any {
     var description: String
     var updatedAt: String
 
-    var url: String
+    var url: String?
 
-    var media: MediaType
+    var media: MediaType?
 
     init(jsonObject: JSON) {
         self.id = jsonObject["id"].stringValue
         self.mainTitle = jsonObject["title"].stringValue
         self.description = jsonObject["description"].stringValue
         self.updatedAt = jsonObject["updatedAt"].stringValue
-        self.url = jsonObject["presignedUrl"].stringValue
-        self.media = MediaType(rawValue: jsonObject["mediaType"].stringValue)!
+        guard let url = jsonObject["presignedUrl"].string else { return }
+        self.url = url
+        guard let media = jsonObject["mediaType"].string else { return }
+        self.media = MediaType(rawValue: media)
     }
 }
 
 extension Post: PostViewItemInterface {
     var imageURL: URL? {
-        return URL(string: self.url)
+        if let url = self.url {
+            return URL(string: url)
+        } else {
+            return nil
+        }
     }
 
     var title: String? {
