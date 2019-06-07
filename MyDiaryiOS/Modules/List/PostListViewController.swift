@@ -7,6 +7,7 @@
 //
 
 import Alamofire
+import Material
 import PKHUD
 import UIKit
 
@@ -31,6 +32,14 @@ class PostListViewController: UIViewController {
         let nib = UINib(nibName: "PostListTableViewCell", bundle: nil)
         postTableView.register(nib, forCellReuseIdentifier: "cell")
         navigationItem.hidesBackButton = true
+        let button = FABButton(image: Icon.cm.add, tintColor: .white)
+        button.pulseColor = .white
+        button.backgroundColor = Color.blueGrey.base
+
+        view.layout(button)
+            .width(60)
+            .height(60)
+            .bottomTrailingSafe(bottom: 10, trailing: 10)
     }
 
     /*

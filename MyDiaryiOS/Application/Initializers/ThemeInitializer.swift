@@ -12,7 +12,7 @@ class ThemeInitializer: Initializerable {
     func performInitialization() {
         UINavigationBar.appearance().tintColor = .white
         UINavigationBar.appearance().titleTextAttributes = [
-            .foregroundColor: UIColor.white,
+            .foregroundColor: UIColor.white
         ]
         UINavigationBar.appearance().barTintColor = .purple
     }

@@ -15,7 +15,7 @@ class UserService: NSObject {
     func loginUser(username: String, password: String, completion: @escaping LoginCompletionBlock) -> DataRequest {
         let parameters: Parameters = [
             "username": username,
-            "password": password,
+            "password": password
         ]
         return Alamofire.request(Constants.API.URLBase!.appendingPathComponent("login"), method: .post, parameters: parameters).responseJSON(completionHandler: completion)
     }
