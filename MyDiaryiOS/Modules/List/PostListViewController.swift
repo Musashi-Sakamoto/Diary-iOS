@@ -30,6 +30,7 @@ class PostListViewController: UIViewController {
     private func _setupView() {
         let nib = UINib(nibName: "PostListTableViewCell", bundle: nil)
         postTableView.register(nib, forCellReuseIdentifier: "cell")
+        navigationItem.hidesBackButton = true
     }
 
     /*
