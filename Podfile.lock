@@ -4,7 +4,7 @@ PODS:
     - Alamofire (~> 4.8)
   - AlamofireNetworkActivityIndicator (2.4.0):
     - Alamofire (~> 4.8)
-  - SVProgressHUD (2.2.5)
+  - PKHUD (5.3.0)
   - SwiftFormat/CLI (0.40.9)
   - SwiftLint (0.33.0)
   - SwiftyJSON (4.0.0)
@@ -13,7 +13,7 @@ DEPENDENCIES:
   - Alamofire
   - AlamofireImage
   - AlamofireNetworkActivityIndicator
-  - SVProgressHUD
+  - PKHUD
   - SwiftFormat/CLI
   - SwiftLint
   - SwiftyJSON (= 4.0)
@@ -23,7 +23,7 @@ SPEC REPOS:
     - Alamofire
     - AlamofireImage
     - AlamofireNetworkActivityIndicator
-    - SVProgressHUD
+    - PKHUD
     - SwiftFormat
     - SwiftLint
     - SwiftyJSON
@@ -32,11 +32,11 @@ SPEC CHECKSUMS:
   Alamofire: ae5c501addb7afdbb13687d7f2f722c78734c2d3
   AlamofireImage: 63cfe3baf1370be6c498149687cf6db3e3b00999
   AlamofireNetworkActivityIndicator: 9acc3de3ca6645bf0efed462396b0df13dd3e7b8
-  SVProgressHUD: 1428aafac632c1f86f62aa4243ec12008d7a51d6
+  PKHUD: 98f3e4bc904b9c916f1c5bb6d765365b5357291b
   SwiftFormat: 6b67b6e7fe73d664f0cbb4f13721f130462c86a5
   SwiftLint: fed9c66336e41fc74dc48a73678380718f0c8b0e
   SwiftyJSON: 070dabdcb1beb81b247c65ffa3a79dbbfb3b48aa
 
-PODFILE CHECKSUM: f3f499af7fe512f7c055a0a2441240da4d70b7ce
+PODFILE CHECKSUM: 14732a6d9e3f091188168b56fefcbd63d2d82b05
 
 COCOAPODS: 1.5.3

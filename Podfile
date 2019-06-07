@@ -11,7 +11,7 @@ target 'MyDiaryiOS' do
   pod 'Alamofire'
   pod 'AlamofireImage'
   pod 'AlamofireNetworkActivityIndicator'
-  pod 'SVProgressHUD'
+  pod 'PKHUD'
   pod 'SwiftyJSON', '4.0'
 
   target 'MyDiaryiOSTests' do
