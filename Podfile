@@ -13,6 +13,7 @@ target 'MyDiaryiOS' do
   pod 'AlamofireNetworkActivityIndicator'
   pod 'PKHUD'
   pod 'SwiftyJSON', '4.0'
+  pod 'Material'
 
   target 'MyDiaryiOSTests' do
     inherit! :search_paths
