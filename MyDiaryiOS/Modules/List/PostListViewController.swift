@@ -23,11 +23,6 @@ class PostListViewController: UIViewController {
         self.presenter.viewDidLoad()
     }
 
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        navigationController?.setNavigationBarHidden(false, animated: animated)
-    }
-
     private func _setupView() {
         let nib = UINib(nibName: "PostListTableViewCell", bundle: nil)
         postTableView.register(nib, forCellReuseIdentifier: "cell")
@@ -40,6 +35,10 @@ class PostListViewController: UIViewController {
             .width(60)
             .height(60)
             .bottomTrailingSafe(bottom: 20, trailing: 20)
+        if let toolbar = toolbarController?.toolbar {
+            toolbar.title = "PostList"
+            toolbar.leftViews.forEach { $0.isHidden = false }
+        }
     }
 
     /*

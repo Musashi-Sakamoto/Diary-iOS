@@ -6,6 +6,7 @@
 //  Copyright © 2019 musashi. All rights reserved.
 //
 
+import Material
 import UIKit
 
 class LoginViewController: UIViewController {
@@ -16,11 +17,19 @@ class LoginViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        self._setupView()
     }
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         navigationController?.setNavigationBarHidden(true, animated: animated)
+    }
+
+    private func _setupView() {
+        if let toolbar = toolbarController?.toolbar {
+            toolbar.title = "Login"
+            toolbar.leftViews.forEach { $0.isHidden = true }
+        }
     }
 
     @IBAction func onLoginButtonClicked(_: UIButton) {
