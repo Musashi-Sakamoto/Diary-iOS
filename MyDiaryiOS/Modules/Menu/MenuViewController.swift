@@ -9,6 +9,8 @@
 import UIKit
 
 class MenuViewController: UIViewController {
+    var presenter: MenuPresenterInterface!
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -24,4 +26,14 @@ class MenuViewController: UIViewController {
          // Pass the selected object to the new view controller.
      }
      */
+    @IBAction func logoutButtonHandler(_ sender: UIButton) {
+        self.presenter.logoutButtonClicked()
+    }
+}
+
+extension MenuViewController: MenuViewInterface {
+    func backToLogin() {
+        navigationDrawerController?.closeLeftView()
+        navigationController?.popToRootViewController(animated: false)
+    }
 }
