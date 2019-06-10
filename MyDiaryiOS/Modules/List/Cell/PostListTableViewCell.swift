@@ -56,25 +56,6 @@ class PostListTableViewCell: UITableViewCell {
         self.prepareContentView()
         self.prepareBottomBar()
         self.preparePresenterCard()
-//        self.cellTextLabel.text = item.title
-
-//        guard let url = item.imageURL else {
-//            self.cellImageView.image = nil
-//            self.cellImageView.isHidden = true
-//            self.videoContainerView.isHidden = true
-//            return
-//        }
-//        guard let mediaType = item.mediaType else { return }
-//        switch mediaType {
-//        case .image:
-//            self.videoContainerView.isHidden = true
-//            self.cellImageView.af_setImage(withURL: url)
-//        case .video:
-//            self.cellImageView.isHidden = true
-//            let player = AVPlayer(url: url)
-//            videoContainerView.set(player: player)
-//            self.videoContainerView.play()
-//        }
     }
 
     fileprivate func preparePresenterView(_ item: PostViewItemInterface) {
@@ -85,9 +66,7 @@ class PostListTableViewCell: UITableViewCell {
         guard let mediaType = item.mediaType else { return }
         switch mediaType {
         case .image:
-            let imageView = UIImageView()
-            imageView.image?.resize(toWidth: 300)
-            imageView.image?.resize(toHeight: 300)
+            let imageView = UIImageView(frame: CGRect(origin: CGPoint.zero, size: CGSize(width: 300, height: 300)))
             imageView.af_setImage(withURL: url)
             imageView.contentMode = .scaleAspectFill
             self.presenterView = imageView

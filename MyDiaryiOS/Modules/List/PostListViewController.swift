@@ -94,4 +94,11 @@ extension PostListViewController: UITableViewDelegate {
         tableView.deselectRow(at: indexPath, animated: true)
         self.presenter.didSelectItem(at: indexPath)
     }
+
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        if let _ = presenter.item(at: indexPath).imageURL {
+            return 500
+        }
+        return 200
+    }
 }
