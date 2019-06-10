@@ -45,4 +45,6 @@ protocol PostViewItemInterface {
     var title: String? { get }
     var imageURL: URL? { get }
     var mediaType: MediaType? { get }
+    var timeStamp: String? { get }
+    var detail: String? { get }
 }

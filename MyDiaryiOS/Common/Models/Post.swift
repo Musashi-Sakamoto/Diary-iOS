@@ -18,7 +18,7 @@ struct Post: Any {
     var id: String
     var mainTitle: String
     var description: String
-    var updatedAt: String
+    var updatedAt: String?
 
     var url: String?
 
@@ -47,6 +47,14 @@ extension Post: PostViewItemInterface {
 
     var title: String? {
         return self.mainTitle
+    }
+
+    var detail: String? {
+        return self.description
+    }
+
+    var timeStamp: String? {
+        return self.updatedAt
     }
 
     var mediaType: MediaType? {

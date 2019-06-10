@@ -48,12 +48,12 @@ class PostListTableViewCell: UITableViewCell {
     func configure(with item: PostViewItemInterface) {
         self.preparePresenterView(item)
         self.prepareDateFormatter()
-        self.prepareDateLabel()
+        self.prepareDateLabel(item)
         self.prepareFavoriteButton()
         self.prepareShareButton()
         self.prepareMoreButton()
-        self.prepareToolbar()
-        self.prepareContentView()
+        self.prepareToolbar(item)
+        self.prepareContentView(item)
         self.prepareBottomBar()
         self.preparePresenterCard()
     }
@@ -79,10 +79,10 @@ class PostListTableViewCell: UITableViewCell {
         }
     }
 
-    fileprivate func prepareContentView() {
+    fileprivate func prepareContentView(_ item: PostViewItemInterface) {
         self.contentsView = UILabel()
         self.contentsView.numberOfLines = 0
-        self.contentsView.text = "Material is an animation and graphics framework that is used to create beautiful applications."
+        self.contentsView.text = item.detail
         self.contentsView.font = RobotoFont.regular(with: 14)
     }
 
@@ -92,12 +92,12 @@ class PostListTableViewCell: UITableViewCell {
         self.dateFormatter.timeStyle = .none
     }
 
-    fileprivate func prepareDateLabel() {
+    fileprivate func prepareDateLabel(_ item: PostViewItemInterface) {
         self.dateLabel = UILabel()
         self.dateLabel.font = RobotoFont.regular(with: 12)
         self.dateLabel.textColor = Color.blueGrey.base
         self.dateLabel.textAlignment = .center
-        self.dateLabel.text = self.dateFormatter.string(from: Date.distantFuture)
+        self.dateLabel.text = item.timeStamp
     }
 
     fileprivate func prepareFavoriteButton() {
@@ -112,10 +112,10 @@ class PostListTableViewCell: UITableViewCell {
         self.moreButton = IconButton(image: Icon.cm.moreHorizontal, tintColor: Color.blueGrey.base)
     }
 
-    fileprivate func prepareToolbar() {
+    fileprivate func prepareToolbar(_ item: PostViewItemInterface) {
         self.toolbar = Toolbar(rightViews: [moreButton])
 
-        self.toolbar.title = "Material"
+        self.toolbar.title = item.title
         self.toolbar.titleLabel.textAlignment = .left
 
         self.toolbar.detail = "Build Beautiful Software"
