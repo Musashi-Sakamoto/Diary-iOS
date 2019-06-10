@@ -29,6 +29,7 @@ protocol PostListViewInterface: ViewInterface {
 protocol PostListPresenterInterface: PresenterInterface {
     func didSelectLogoutAction()
     func didSelectAddAction()
+    func pulledToRefresh()
 
     func numberOfSections() -> Int
     func numberOrItems(in section: Int) -> Int

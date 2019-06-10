@@ -14,6 +14,7 @@ import UIKit
 class PostListViewController: UIViewController {
     var presenter: PostListPresenterInterface!
     @IBOutlet var postTableView: UITableView!
+    fileprivate let refreshCtl = UIRefreshControl()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,13 +24,21 @@ class PostListViewController: UIViewController {
         self.presenter.viewDidLoad()
     }
 
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.presenter.viewWillAppear(animated: animated)
+    }
+
     private func _setupView() {
         let nib = UINib(nibName: "PostListTableViewCell", bundle: nil)
         postTableView.register(nib, forCellReuseIdentifier: "cell")
+        self.postTableView.refreshControl = self.refreshCtl
+        self.refreshCtl.addTarget(self, action: #selector(self.pullToRefresh), for: .valueChanged)
         navigationItem.hidesBackButton = true
         let button = FABButton(image: Icon.cm.add, tintColor: .white)
         button.pulseColor = .white
         button.backgroundColor = UIColor.purple
+        button.addTarget(self, action: #selector(self.postButtonActionHandler(_:)), for: .touchUpInside)
 
         view.layout(button)
             .width(60)
@@ -39,6 +48,17 @@ class PostListViewController: UIViewController {
             toolbar.title = "PostList"
             toolbar.leftViews.forEach { $0.isHidden = false }
         }
+    }
+
+    @objc
+    func pullToRefresh() {
+        self.presenter.pulledToRefresh()
+        self.refreshCtl.endRefreshing()
+    }
+
+    @objc
+    func postButtonActionHandler(_: UIButton) {
+        self.presenter.didSelectAddAction()
     }
 
     /*

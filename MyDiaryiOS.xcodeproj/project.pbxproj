@@ -3,12 +3,18 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		0967AB70EA3F94D5F7A18214 /* Pods_MyDiaryiOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B9D219A3C6176B32ECECD19A /* Pods_MyDiaryiOS.framework */; };
 		3ABECD5749C285B87466546F /* Pods_MyDiaryiOSUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B1507FA3409E2BB3D6093B02 /* Pods_MyDiaryiOSUITests.framework */; };
+		410DAC3122AE180F00194FB8 /* PostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 410DAC3022AE180F00194FB8 /* PostViewController.swift */; };
+		410DAC3322AE182500194FB8 /* Post.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 410DAC3222AE182500194FB8 /* Post.storyboard */; };
+		410DAC3522AE187900194FB8 /* PostInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = 410DAC3422AE187900194FB8 /* PostInterface.swift */; };
+		410DAC3722AE1DC200194FB8 /* PostWireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 410DAC3622AE1DC200194FB8 /* PostWireframe.swift */; };
+		410DAC3922AE1DFC00194FB8 /* PostPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 410DAC3822AE1DFC00194FB8 /* PostPresenter.swift */; };
+		410DAC3B22AE1E0D00194FB8 /* PostInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 410DAC3A22AE1E0D00194FB8 /* PostInteractor.swift */; };
 		4153B15F22A75460008A216B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4153B15E22A75460008A216B /* AppDelegate.swift */; };
 		4153B16122A75460008A216B /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4153B16022A75460008A216B /* LoginViewController.swift */; };
 		4153B16422A75460008A216B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4153B16222A75460008A216B /* Main.storyboard */; };
@@ -68,6 +74,12 @@
 
 /* Begin PBXFileReference section */
 		19BD1D59F2539F9CC63C3A00 /* Pods-MyDiaryiOSTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyDiaryiOSTests.debug.xcconfig"; path = "Target Support Files/Pods-MyDiaryiOSTests/Pods-MyDiaryiOSTests.debug.xcconfig"; sourceTree = "<group>"; };
+		410DAC3022AE180F00194FB8 /* PostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostViewController.swift; sourceTree = "<group>"; };
+		410DAC3222AE182500194FB8 /* Post.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Post.storyboard; sourceTree = "<group>"; };
+		410DAC3422AE187900194FB8 /* PostInterface.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostInterface.swift; sourceTree = "<group>"; };
+		410DAC3622AE1DC200194FB8 /* PostWireframe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostWireframe.swift; sourceTree = "<group>"; };
+		410DAC3822AE1DFC00194FB8 /* PostPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostPresenter.swift; sourceTree = "<group>"; };
+		410DAC3A22AE1E0D00194FB8 /* PostInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostInteractor.swift; sourceTree = "<group>"; };
 		4153B15B22A7545F008A216B /* MyDiaryiOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyDiaryiOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4153B15E22A75460008A216B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4153B16022A75460008A216B /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -157,6 +169,19 @@
 				B1507FA3409E2BB3D6093B02 /* Pods_MyDiaryiOSUITests.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		410DAC2F22AE16CB00194FB8 /* Post */ = {
+			isa = PBXGroup;
+			children = (
+				410DAC3022AE180F00194FB8 /* PostViewController.swift */,
+				410DAC3222AE182500194FB8 /* Post.storyboard */,
+				410DAC3422AE187900194FB8 /* PostInterface.swift */,
+				410DAC3622AE1DC200194FB8 /* PostWireframe.swift */,
+				410DAC3822AE1DFC00194FB8 /* PostPresenter.swift */,
+				410DAC3A22AE1E0D00194FB8 /* PostInteractor.swift */,
+			);
+			path = Post;
 			sourceTree = "<group>";
 		};
 		4153B15222A7545F008A216B = {
@@ -251,6 +276,7 @@
 		4153B19022A76222008A216B /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				410DAC2F22AE16CB00194FB8 /* Post */,
 				41B8E87D22A8ADB4003157C8 /* List */,
 				4153B19F22A77BF0008A216B /* Login */,
 			);
@@ -465,6 +491,7 @@
 				4153B16622A75462008A216B /* Assets.xcassets in Resources */,
 				4153B16422A75460008A216B /* Main.storyboard in Resources */,
 				41B8E88B22A8B0FD003157C8 /* PostList.storyboard in Resources */,
+				410DAC3322AE182500194FB8 /* Post.storyboard in Resources */,
 				41B8E89A22A8EB1E003157C8 /* PostListTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -598,6 +625,7 @@
 				4153B19A22A7754C008A216B /* InteractorInterface.swift in Sources */,
 				4153B1AA22A79782008A216B /* Constants.swift in Sources */,
 				4153B19C22A775B0008A216B /* LoginInterface.swift in Sources */,
+				410DAC3922AE1DFC00194FB8 /* PostPresenter.swift in Sources */,
 				41B8E89922A8EB1E003157C8 /* PostListTableViewCell.swift in Sources */,
 				4153B19E22A77BB0008A216B /* LoginWireframe.swift in Sources */,
 				41B8E88D22A8C7DF003157C8 /* PostService.swift in Sources */,
@@ -615,10 +643,14 @@
 				4153B1AD22A7A14A008A216B /* UserService.swift in Sources */,
 				4153B16122A75460008A216B /* LoginViewController.swift in Sources */,
 				EB6B0D1F22AB6D8E007B14F5 /* AppNavigatinoDrawerController.swift in Sources */,
+				410DAC3722AE1DC200194FB8 /* PostWireframe.swift in Sources */,
+				410DAC3B22AE1E0D00194FB8 /* PostInteractor.swift in Sources */,
 				4153B1A322A77DD9008A216B /* LoginInteractor.swift in Sources */,
 				41B8E89E22AA2DF3003157C8 /* ThemeInitializer.swift in Sources */,
+				410DAC3122AE180F00194FB8 /* PostViewController.swift in Sources */,
 				41B8E88522A8AF8C003157C8 /* PostListPresenter.swift in Sources */,
 				4153B15F22A75460008A216B /* AppDelegate.swift in Sources */,
+				410DAC3522AE187900194FB8 /* PostInterface.swift in Sources */,
 				4153B1B322A7B858008A216B /* AuthorizationAdapter.swift in Sources */,
 				4153B1B622A7B98E008A216B /* Initializer.swift in Sources */,
 				41B8E89C22AA297E003157C8 /* AVPlayerView.swift in Sources */,

@@ -32,11 +32,23 @@ final class PostListPresenter {
 
 extension PostListPresenter: PostListPresenterInterface {
     func viewDidLoad() {
+        self._reload()
+    }
+
+    func viewWillAppear(animated _: Bool) {
+        self._reload()
+    }
+
+    private func _reload() {
         self._view.setLoadingVisible(true)
         self._interactor.getPosts { [weak self] response in
             self?._view.setLoadingVisible(false)
             self?._handlePostListResult(response)
         }
+    }
+
+    func pulledToRefresh() {
+        self._reload()
     }
 
     func didSelectLogoutAction() {

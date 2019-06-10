@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Post View Controller-->
+        <scene sceneID="UiL-W0-zd9">
+            <objects>
+                <viewController storyboardIdentifier="PostViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="sIG-ZX-j4Q" customClass="PostViewController" customModule="MyDiaryiOS" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="3cQ-c5-74C">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="aAJ-hh-4C2" customClass="TextField" customModule="Material">
+                                <rect key="frame" x="16" y="94" width="382" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="title"/>
+                                </userDefinedRuntimeAttributes>
+                            </textField>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="FxE-Sa-fFh">
+                                <rect key="frame" x="16" y="140" width="382" height="656"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Nie-2Q-ASo" customClass="RaisedButton" customModule="Material">
+                                <rect key="frame" x="348" y="816" width="50" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="50" id="sYJ-BD-06O"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="title" value="Post"/>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="postButtonHandler:" destination="sIG-ZX-j4Q" eventType="touchUpInside" id="XGj-3V-hDG"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6i5-ss-q1Q" customClass="RaisedButton" customModule="Material">
+                                <rect key="frame" x="282" y="816" width="50" height="30"/>
+                                <state key="normal" title="Button"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="title" value="Cancel"/>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="cancelButtonHandler:" destination="sIG-ZX-j4Q" eventType="touchUpInside" id="dVe-xx-hMf"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="Nie-2Q-ASo" firstAttribute="top" secondItem="FxE-Sa-fFh" secondAttribute="bottom" constant="20" id="C1i-Yk-OTt"/>
+                            <constraint firstItem="6i5-ss-q1Q" firstAttribute="width" secondItem="Nie-2Q-ASo" secondAttribute="width" id="IRe-1P-qjw"/>
+                            <constraint firstItem="sBp-PD-NsU" firstAttribute="trailing" secondItem="aAJ-hh-4C2" secondAttribute="trailing" constant="16" id="QFX-0f-WSR"/>
+                            <constraint firstItem="Nie-2Q-ASo" firstAttribute="leading" secondItem="6i5-ss-q1Q" secondAttribute="trailing" constant="16" id="TR2-he-Cbg"/>
+                            <constraint firstItem="6i5-ss-q1Q" firstAttribute="height" secondItem="Nie-2Q-ASo" secondAttribute="height" id="UNH-L8-wud"/>
+                            <constraint firstItem="sBp-PD-NsU" firstAttribute="trailing" secondItem="FxE-Sa-fFh" secondAttribute="trailing" constant="16" id="VX5-bk-JE0"/>
+                            <constraint firstItem="sBp-PD-NsU" firstAttribute="trailing" secondItem="Nie-2Q-ASo" secondAttribute="trailing" constant="16" id="XCV-Ve-URr"/>
+                            <constraint firstItem="6i5-ss-q1Q" firstAttribute="bottom" secondItem="Nie-2Q-ASo" secondAttribute="bottom" id="fZb-S7-EVN"/>
+                            <constraint firstItem="aAJ-hh-4C2" firstAttribute="leading" secondItem="sBp-PD-NsU" secondAttribute="leading" constant="16" id="ffP-lU-G2P"/>
+                            <constraint firstItem="FxE-Sa-fFh" firstAttribute="leading" secondItem="sBp-PD-NsU" secondAttribute="leading" constant="16" id="fj5-u1-KxN"/>
+                            <constraint firstItem="FxE-Sa-fFh" firstAttribute="top" secondItem="aAJ-hh-4C2" secondAttribute="bottom" constant="16" id="hqq-B6-9Ga"/>
+                            <constraint firstItem="aAJ-hh-4C2" firstAttribute="top" secondItem="sBp-PD-NsU" secondAttribute="top" constant="50" id="uYY-eQ-yKJ"/>
+                            <constraint firstItem="sBp-PD-NsU" firstAttribute="bottom" secondItem="Nie-2Q-ASo" secondAttribute="bottom" constant="16" id="vV0-ty-6wg"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="sBp-PD-NsU"/>
+                    </view>
+                    <connections>
+                        <outlet property="descriptionTextView" destination="FxE-Sa-fFh" id="LNW-wO-yHO"/>
+                        <outlet property="titleTextField" destination="aAJ-hh-4C2" id="LPH-jC-hzf"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ec4-Me-DTO" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="126" y="241"/>
+        </scene>
+    </scenes>
+</document>

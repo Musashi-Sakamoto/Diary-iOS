@@ -26,6 +26,9 @@ extension PostListWireframe: PostListWireframeInterface {
         switch option {
         case .login:
             self._openLogin()
+        case .add:
+            let postCreateWireframe = PostWireframe()
+            navigationController?.presentWifreframe(postCreateWireframe)
         default:
             print("detault")
         }
