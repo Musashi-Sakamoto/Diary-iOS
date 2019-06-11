@@ -48,6 +48,7 @@ private extension LoginPresenter {
         switch response.response!.statusCode {
         case 200:
             let user = JSON(response.result.value)
+            mainStore.dispatch(LoginUserState.Action.LoginAction(username: user["user"]["name"].stringValue, email: user["user"]["email"].stringValue))
             self._authorizationManager.authorizationHeader = "Bearer \(user["token"].stringValue)"
             self._wireframe.navigate(to: .postList)
         default:

@@ -11,6 +11,8 @@ import UIKit
 class MenuViewController: UITableViewController {
     var presenter: MenuPresenterInterface!
 
+    @IBOutlet var usernameLabel: UILabel!
+    @IBOutlet var emailLabel: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -31,4 +33,9 @@ class MenuViewController: UITableViewController {
     }
 }
 
-extension MenuViewController: MenuViewInterface {}
+extension MenuViewController: MenuViewInterface {
+    func showProfileInfo(username: String, email: String) {
+        self.usernameLabel.text = username
+        self.emailLabel.text = email
+    }
+}

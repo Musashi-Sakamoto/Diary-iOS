@@ -8,9 +8,28 @@
 
 import Alamofire
 import Foundation
+import ReSwift
 
 final class MenuInteractor {
+    public weak var presenter: MenuPresenterInterface?
     private var _userService = UserService()
+
+    init() {
+        mainStore.subscribe(self) { subscription in
+            subscription.select { state in state.loginUserState }
+        }
+    }
+
+    deinit {
+        mainStore.unsubscribe(self)
+    }
+}
+
+extension MenuInteractor: StoreSubscriber {
+    func newState(state: LoginUserState) {
+        print(state)
+        self.presenter?.showProfileInfo(username: state.username, email: state.email)
+    }
 }
 
 extension MenuInteractor: MenuInteractorInterface {
