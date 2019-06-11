@@ -7,8 +7,8 @@
 //
 
 import Foundation
-import UIKit
 import Material
+import UIKit
 
 final class MenuWireframe: BaseWireframe {
     private let _storyboard = UIStoryboard(name: "Menu", bundle: nil)
@@ -27,7 +27,11 @@ extension MenuWireframe: MenuWireframeInterface {
     func navigate(to option: MenuNavigationOption) {
         switch option {
         case .login:
-            navigationController?.popToRootViewController(animated: true)
+            viewController.navigationDrawerController?.closeLeftView()
+            if let appToolC = viewController.navigationDrawerController?.rootViewController as? AppToolbarController,
+                let navigationVC = appToolC.rootViewController as? UINavigationController {
+                navigationVC.popToRootViewController(animated: true)
+            }
         default:
             print("default")
         }

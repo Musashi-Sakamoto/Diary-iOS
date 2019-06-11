@@ -23,7 +23,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let initialController = UINavigationController()
         initialController.setRootWireframe(LoginWireframe())
         let appToolbarController = AppToolbarController(rootViewController: initialController)
-        let navigationDrawerController = AppNavigatinoDrawerController(rootViewController: appToolbarController, leftViewController: MenuWireframe().viewController, rightViewController: nil)
+        let navigationDrawerController = AppNavigatinoDrawerController(rootViewController: appToolbarController, menuWireframe: MenuWireframe())
+
         self.window = UIWindow(frame: UIScreen.main.bounds)
         self.window?.rootViewController = navigationDrawerController
         self.window?.makeKeyAndVisible()

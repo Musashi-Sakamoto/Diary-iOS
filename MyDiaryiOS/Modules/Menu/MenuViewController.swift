@@ -8,7 +8,7 @@
 
 import UIKit
 
-class MenuViewController: UIViewController {
+class MenuViewController: UITableViewController {
     var presenter: MenuPresenterInterface!
 
     override func viewDidLoad() {
@@ -31,9 +31,4 @@ class MenuViewController: UIViewController {
     }
 }
 
-extension MenuViewController: MenuViewInterface {
-    func backToLogin() {
-        navigationDrawerController?.closeLeftView()
-        navigationController?.popToRootViewController(animated: false)
-    }
-}
+extension MenuViewController: MenuViewInterface {}

@@ -54,3 +54,9 @@ extension AppNavigatinoDrawerController: NavigationDrawerControllerDelegate {
         print("navigationDrawerController statusBar is hidden:", isHidden ? "Yes" : "No")
     }
 }
+
+extension AppNavigatinoDrawerController {
+    convenience init(rootViewController: UIViewController, menuWireframe: BaseWireframe) {
+        self.init(rootViewController: rootViewController, leftViewController: menuWireframe.viewController, rightViewController: nil)
+    }
+}

@@ -18,9 +18,7 @@ protocol MenuWireframeInterface: WireframeInterface {
     func navigate(to option: MenuNavigationOption)
 }
 
-protocol MenuViewInterface: ViewInterface {
-    func backToLogin()
-}
+protocol MenuViewInterface: ViewInterface {}
 
 protocol MenuPresenterInterface: PresenterInterface {
     func logoutButtonClicked()
