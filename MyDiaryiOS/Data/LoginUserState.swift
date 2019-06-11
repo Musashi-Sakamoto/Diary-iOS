@@ -10,8 +10,8 @@ import Foundation
 import ReSwift
 
 public struct LoginUserState: StateType {
-    public var username = ""
-    public var email = ""
+    private(set) var username = ""
+    private(set) var email = ""
 }
 
 extension LoginUserState {
@@ -21,7 +21,7 @@ extension LoginUserState {
 }
 
 extension LoginUserState {
-    public static func reducer(action: Action, state: LoginUserState?) -> LoginUserState {
+    public static func reducer(action: ReSwift.Action, state: LoginUserState?) -> LoginUserState {
         var state = state ?? LoginUserState()
 
         switch action {

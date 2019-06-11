@@ -31,6 +31,10 @@ final class PostListPresenter {
 }
 
 extension PostListPresenter: PostListPresenterInterface {
+    func setPost(_ posts: [Post]?) {
+        self._items = posts ?? []
+    }
+
     func viewDidLoad() {
         self._reload()
     }
@@ -83,6 +87,7 @@ private extension PostListPresenter {
         case 200:
             let posts = JSON(response.result.value)["posts"]["rows"].arrayValue
             self._items = posts.map { Post(jsonObject: $0) }
+            mainStore.dispatch(PostDataState.Action.setPosts(posts: posts.map { Post(jsonObject: $0) }))
             self._view.setEmptyPlaceholderHidden(true)
         default:
             let error = JSON(response.result.value)

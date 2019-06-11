@@ -11,4 +11,5 @@ import ReSwift
 
 struct AppState: StateType {
     public var loginUserState: LoginUserState = LoginUserState()
+    public var postDataState: PostDataState = PostDataState()
 }
