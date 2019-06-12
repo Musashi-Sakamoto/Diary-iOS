@@ -31,6 +31,8 @@ protocol PostListPresenterInterface: PresenterInterface {
     func didSelectAddAction()
     func pulledToRefresh()
 
+    func setPost(_ posts: [Post]?)
+
     func numberOfSections() -> Int
     func numberOrItems(in section: Int) -> Int
     func item(at indexPath: IndexPath) -> PostViewItemInterface

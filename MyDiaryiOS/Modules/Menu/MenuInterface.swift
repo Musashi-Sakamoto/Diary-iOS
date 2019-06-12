@@ -18,10 +18,13 @@ protocol MenuWireframeInterface: WireframeInterface {
     func navigate(to option: MenuNavigationOption)
 }
 
-protocol MenuViewInterface: ViewInterface {}
+protocol MenuViewInterface: ViewInterface {
+    func showProfileInfo(username: String, email: String)
+}
 
 protocol MenuPresenterInterface: PresenterInterface {
     func logoutButtonClicked()
+    func showProfileInfo(username: String, email: String)
 }
 
 protocol MenuInteractorInterface: InteractorInterface {

@@ -6,7 +6,10 @@
 //  Copyright © 2019 musashi. All rights reserved.
 //
 
+import ReSwift
 import UIKit
+
+let mainStore = Store<AppState>(reducer: appReducer, state: AppState())
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {

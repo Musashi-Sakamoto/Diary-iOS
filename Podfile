@@ -14,6 +14,7 @@ target 'MyDiaryiOS' do
   pod 'PKHUD'
   pod 'SwiftyJSON', '4.0'
   pod 'Material'
+  pod 'ReSwift'
 
   target 'MyDiaryiOSTests' do
     inherit! :search_paths

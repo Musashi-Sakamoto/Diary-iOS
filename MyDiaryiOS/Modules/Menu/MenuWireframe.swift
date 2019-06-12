@@ -19,6 +19,7 @@ final class MenuWireframe: BaseWireframe {
 
         let interactor = MenuInteractor()
         let presenter = MenuPresenter(wireframe: self, view: moduleViewController, interactor: interactor)
+        interactor.presenter = presenter
         moduleViewController.presenter = presenter
     }
 }

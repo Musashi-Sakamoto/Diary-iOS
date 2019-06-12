@@ -42,6 +42,10 @@
 		4153B1B322A7B858008A216B /* AuthorizationAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4153B1B222A7B858008A216B /* AuthorizationAdapter.swift */; };
 		4153B1B622A7B98E008A216B /* Initializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4153B1B522A7B98E008A216B /* Initializer.swift */; };
 		4153B1B822A7B9C6008A216B /* AlamofireInitializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4153B1B722A7B9C6008A216B /* AlamofireInitializer.swift */; };
+		419AFCAC22AF8A0C0081892A /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 419AFCAB22AF8A0C0081892A /* AppState.swift */; };
+		419AFCAE22AF8ABE0081892A /* AppReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 419AFCAD22AF8ABE0081892A /* AppReducer.swift */; };
+		419AFCB222AF96C70081892A /* LoginUserState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 419AFCB122AF96C70081892A /* LoginUserState.swift */; };
+		419AFCB422AF9EA50081892A /* PostDataState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 419AFCB322AF9EA50081892A /* PostDataState.swift */; };
 		41B8E87F22A8AE03003157C8 /* PostListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41B8E87E22A8AE03003157C8 /* PostListViewController.swift */; };
 		41B8E88122A8AE13003157C8 /* PostListInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41B8E88022A8AE13003157C8 /* PostListInterface.swift */; };
 		41B8E88322A8AF7D003157C8 /* PostListWireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41B8E88222A8AF7D003157C8 /* PostListWireframe.swift */; };
@@ -118,6 +122,10 @@
 		4153B1B222A7B858008A216B /* AuthorizationAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizationAdapter.swift; sourceTree = "<group>"; };
 		4153B1B522A7B98E008A216B /* Initializer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Initializer.swift; sourceTree = "<group>"; };
 		4153B1B722A7B9C6008A216B /* AlamofireInitializer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlamofireInitializer.swift; sourceTree = "<group>"; };
+		419AFCAB22AF8A0C0081892A /* AppState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppState.swift; sourceTree = "<group>"; };
+		419AFCAD22AF8ABE0081892A /* AppReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppReducer.swift; sourceTree = "<group>"; };
+		419AFCB122AF96C70081892A /* LoginUserState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginUserState.swift; sourceTree = "<group>"; };
+		419AFCB322AF9EA50081892A /* PostDataState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostDataState.swift; sourceTree = "<group>"; };
 		41B8E87E22A8AE03003157C8 /* PostListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostListViewController.swift; sourceTree = "<group>"; };
 		41B8E88022A8AE13003157C8 /* PostListInterface.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostListInterface.swift; sourceTree = "<group>"; };
 		41B8E88222A8AF7D003157C8 /* PostListWireframe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostListWireframe.swift; sourceTree = "<group>"; };
@@ -219,6 +227,7 @@
 		4153B15D22A7545F008A216B /* MyDiaryiOS */ = {
 			isa = PBXGroup;
 			children = (
+				419AFCA822AF86B30081892A /* Data */,
 				4153B16A22A75462008A216B /* Info.plist */,
 				4153B19022A76222008A216B /* Modules */,
 				4153B18F22A76217008A216B /* Resources */,
@@ -341,6 +350,17 @@
 				41B8E89D22AA2DF3003157C8 /* ThemeInitializer.swift */,
 			);
 			path = Initializers;
+			sourceTree = "<group>";
+		};
+		419AFCA822AF86B30081892A /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				419AFCAB22AF8A0C0081892A /* AppState.swift */,
+				419AFCAD22AF8ABE0081892A /* AppReducer.swift */,
+				419AFCB122AF96C70081892A /* LoginUserState.swift */,
+				419AFCB322AF9EA50081892A /* PostDataState.swift */,
+			);
+			path = Data;
 			sourceTree = "<group>";
 		};
 		41B8E87D22A8ADB4003157C8 /* List */ = {
@@ -636,6 +656,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				419AFCAE22AF8ABE0081892A /* AppReducer.swift in Sources */,
 				4153B1B022A7A382008A216B /* User.swift in Sources */,
 				EB6B0D1D22AB65BD007B14F5 /* AppToolbarController.swift in Sources */,
 				4153B19A22A7754C008A216B /* InteractorInterface.swift in Sources */,
@@ -647,7 +668,9 @@
 				4153B19E22A77BB0008A216B /* LoginWireframe.swift in Sources */,
 				41B8E88D22A8C7DF003157C8 /* PostService.swift in Sources */,
 				41B8E88122A8AE13003157C8 /* PostListInterface.swift in Sources */,
+				419AFCAC22AF8A0C0081892A /* AppState.swift in Sources */,
 				EB6B0D2222AB6E23007B14F5 /* MenuViewController.swift in Sources */,
+				419AFCB222AF96C70081892A /* LoginUserState.swift in Sources */,
 				410DAC4322AE496F00194FB8 /* MenuPresenter.swift in Sources */,
 				41B8E88322A8AF7D003157C8 /* PostListWireframe.swift in Sources */,
 				4153B1A122A77D05008A216B /* LoginPresenter.swift in Sources */,
@@ -661,6 +684,7 @@
 				4153B1B822A7B9C6008A216B /* AlamofireInitializer.swift in Sources */,
 				4153B1AD22A7A14A008A216B /* UserService.swift in Sources */,
 				4153B16122A75460008A216B /* LoginViewController.swift in Sources */,
+				419AFCB422AF9EA50081892A /* PostDataState.swift in Sources */,
 				EB6B0D1F22AB6D8E007B14F5 /* AppNavigatinoDrawerController.swift in Sources */,
 				410DAC3722AE1DC200194FB8 /* PostWireframe.swift in Sources */,
 				410DAC4122AE48DA00194FB8 /* MenuWireframe.swift in Sources */,

@@ -14,7 +14,7 @@ enum MediaType: String {
     case image
 }
 
-struct Post: Any {
+public struct Post: Any {
     var id: String
     var mainTitle: String
     var description: String
