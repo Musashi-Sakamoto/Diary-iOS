@@ -77,6 +77,7 @@
                     </view>
                     <connections>
                         <outlet property="descriptionTextView" destination="FxE-Sa-fFh" id="LNW-wO-yHO"/>
+                        <outlet property="postButton" destination="Nie-2Q-ASo" id="ERh-qy-4PH"/>
                         <outlet property="titleTextField" destination="aAJ-hh-4C2" id="LPH-jC-hzf"/>
                     </connections>
                 </viewController>
