@@ -27,6 +27,17 @@ extension PostWireframe: PostWireframeInterface {
         switch option {
         case .dismiss:
             viewController.dismiss(animated: true, completion: nil)
+        case .library:
+            self._openImagePicker()
+        }
+    }
+
+    private func _openImagePicker() {
+        if UIImagePickerController.isSourceTypeAvailable(.photoLibrary) {
+            let picker = UIImagePickerController()
+            picker.delegate = viewController as? PostViewController
+            picker.sourceType = .photoLibrary
+            viewController.present(picker, animated: true, completion: nil)
         }
     }
 }

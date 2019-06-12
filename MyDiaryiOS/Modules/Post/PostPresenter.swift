@@ -25,6 +25,10 @@ final class PostPresenter {
 }
 
 extension PostPresenter: PostPresenterInterface {
+    func addMediaButtonClicked() {
+        self._wireframe.navigate(to: .library)
+    }
+
     func postButtonClicked(title: String, description: String) {
         guard title.count > 0 else {
             _showTitleValidationError()

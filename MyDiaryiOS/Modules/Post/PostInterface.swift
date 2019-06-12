@@ -11,6 +11,7 @@ import Foundation
 
 enum PostNavigationOption {
     case dismiss
+    case library
 }
 
 protocol PostWireframeInterface: WireframeInterface {
@@ -22,6 +23,7 @@ protocol PostViewInterface: ViewInterface {}
 protocol PostPresenterInterface: PresenterInterface {
     func postButtonClicked(title: String, description: String)
     func cancelButtonClicked()
+    func addMediaButtonClicked()
 }
 
 protocol PostInteractorInterface: InteractorInterface {

@@ -26,6 +26,7 @@ class PostViewController: UIViewController {
         let button = FABButton(image: Icon.cm.photoLibrary, tintColor: .white)
         button.pulseColor = .white
         button.backgroundColor = .purple
+        button.addTarget(self, action: #selector(self.addImageButtonClicked), for: .touchUpInside)
         view.layout(button).width(48).height(48).above(self.postButton, 8).trailing(self.postButton)
 
         self.postButton.pulseColor = .white
@@ -39,6 +40,26 @@ class PostViewController: UIViewController {
 
     @IBAction func postButtonHandler(_ sender: Button) {
         self.presenter.postButtonClicked(title: self.titleTextField.text!, description: self.descriptionTextView.text)
+    }
+
+    @objc
+    func addImageButtonClicked() {
+        self.presenter.addMediaButtonClicked()
+    }
+}
+
+extension PostViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+        picker.dismiss(animated: true, completion: nil)
+    }
+
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey: Any]) {
+        if let image = info[.originalImage] as? UIImage {
+            print("image: \(image)")
+            let imageView = UIImageView(image: image)
+            view.layout(imageView).width(UIScreen.main.bounds.width - 16).height(300).centerX().above(self.postButton, 64)
+        }
+        dismiss(animated: true, completion: nil)
     }
 }
 
