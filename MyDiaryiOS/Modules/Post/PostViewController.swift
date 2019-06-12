@@ -83,4 +83,24 @@ extension PostViewController: UIImagePickerControllerDelegate, UINavigationContr
     }
 }
 
-extension PostViewController: PostViewInterface {}
+extension PostViewController: PostViewInterface {
+    func showEditedPost(post: Post?) {
+        guard let editedPost = post else { return }
+        self.titleTextField.text = editedPost.title
+        self.descriptionTextView.text = editedPost.description
+        self.postButton.title = "Edit"
+        guard let media = editedPost.mediaType else { return }
+        if media == .image {
+            self.imageView = UIImageView()
+            self.imageView?.af_setImage(withURL: editedPost.imageURL!)
+            view.layout(self.imageView!).width(UIScreen.main.bounds.width - 16).height(300).centerX().above(self.postButton, 64)
+        } else if media == .video {
+            self.videoContainerView = VideoContainerView()
+            let player = AVPlayer(url: editedPost.imageURL!)
+            self.videoContainerView?.set(player: player)
+            self.videoContainerView?.play()
+            view.layout(self.videoContainerView!).width(UIScreen.main.bounds.width - 16)
+                .height(300).centerX().above(self.postButton, 64)
+        }
+    }
+}

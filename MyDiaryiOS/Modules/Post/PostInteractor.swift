@@ -8,9 +8,29 @@
 
 import Alamofire
 import Foundation
+import ReSwift
 
 final class PostInteractor {
     private var _postService = PostService()
+
+    public weak var presenter: PostPresenterInterface?
+
+    init() {
+        mainStore.subscribe(self) { subscription in
+            subscription.select { state in state.postDataState }
+        }
+    }
+
+    deinit {
+        mainStore.unsubscribe(self)
+    }
+}
+
+extension PostInteractor: StoreSubscriber {
+    func newState(state: PostDataState) {
+        print("state: \(state.editedPost)")
+        self.presenter?.setEditedPost(post: state.editedPost)
+    }
 }
 
 extension PostInteractor: PostInteractorInterface {

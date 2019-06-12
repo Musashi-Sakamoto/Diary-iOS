@@ -31,6 +31,11 @@ final class PostListPresenter {
 }
 
 extension PostListPresenter: PostListPresenterInterface {
+    func didSelectEditPost(post: Post) {
+        self._wireframe.navigate(to: .edit)
+        mainStore.dispatch(PostDataState.Action.editPosts(post: post))
+    }
+
     func didSelectDeletePost(postId: Int) {
         self._interactor.deletePost(postId: postId) { [weak self] _ in
             self?._reload()
@@ -67,6 +72,7 @@ extension PostListPresenter: PostListPresenterInterface {
     }
 
     func didSelectAddAction() {
+        mainStore.dispatch(PostDataState.Action.addPost)
         self._wireframe.navigate(to: .add)
     }
 

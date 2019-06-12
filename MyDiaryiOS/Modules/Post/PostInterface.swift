@@ -18,12 +18,15 @@ protocol PostWireframeInterface: WireframeInterface {
     func navigate(to option: PostNavigationOption)
 }
 
-protocol PostViewInterface: ViewInterface {}
+protocol PostViewInterface: ViewInterface {
+    func showEditedPost(post: Post?)
+}
 
 protocol PostPresenterInterface: PresenterInterface {
     func postButtonClicked(title: String, description: String, data: Data?, isImage: Bool)
     func cancelButtonClicked()
     func addMediaButtonClicked()
+    func setEditedPost(post: Post?)
 }
 
 protocol PostInteractorInterface: InteractorInterface {

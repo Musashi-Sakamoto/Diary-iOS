@@ -25,6 +25,10 @@ final class PostPresenter {
 }
 
 extension PostPresenter: PostPresenterInterface {
+    func setEditedPost(post: Post?) {
+        self._view.showEditedPost(post: post)
+    }
+
     func addMediaButtonClicked() {
         self._wireframe.navigate(to: .library)
     }

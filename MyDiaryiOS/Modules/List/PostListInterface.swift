@@ -13,6 +13,7 @@ import UIKit
 enum PostListNavigationOption {
     case login
     case add
+    case edit
     case detail
 }
 
@@ -32,6 +33,7 @@ protocol PostListPresenterInterface: PresenterInterface {
     func pulledToRefresh()
 
     func didSelectDeletePost(postId: Int)
+    func didSelectEditPost(post: Post)
 
     func setPost(_ posts: [Post]?)
 

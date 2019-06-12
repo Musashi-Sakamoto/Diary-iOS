@@ -18,6 +18,7 @@ final class PostWireframe: BaseWireframe {
 
         let interactor = PostInteractor()
         let presenter = PostPresenter(wireframe: self, view: moduleViewController, interactor: interactor)
+        interactor.presenter = presenter
         moduleViewController.presenter = presenter
     }
 }

@@ -119,6 +119,7 @@ extension PostListViewController: PostListTableViewCellDelegate {
     func editClicked(item: PostViewItemInterface?) {
         guard let post = item as? Post else { return }
         print("edit post: \(post.id)")
+        self.presenter.didSelectEditPost(post: post)
     }
 }
 

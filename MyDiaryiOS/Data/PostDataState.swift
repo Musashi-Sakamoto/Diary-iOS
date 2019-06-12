@@ -11,11 +11,14 @@ import ReSwift
 
 public struct PostDataState: StateType {
     private(set) var posts: [Post]?
+    private(set) var editedPost: Post?
 }
 
 extension PostDataState {
     public enum Action: ReSwift.Action {
         case setPosts(posts: [Post])
+        case editPosts(post: Post)
+        case addPost
     }
 }
 
@@ -28,6 +31,10 @@ extension PostDataState {
             switch postData {
             case let .setPosts(posts):
                 state.posts = posts
+            case let .editPosts(post):
+                state.editedPost = post
+            case .addPost:
+                state.editedPost = nil
             }
         default:
             break
