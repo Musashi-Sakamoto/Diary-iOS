@@ -36,6 +36,7 @@ extension PostWireframe: PostWireframeInterface {
         if UIImagePickerController.isSourceTypeAvailable(.photoLibrary) {
             let picker = UIImagePickerController()
             picker.delegate = viewController as? PostViewController
+            picker.mediaTypes = ["public.movie", "public.image"]
             picker.sourceType = .photoLibrary
             viewController.present(picker, animated: true, completion: nil)
         }

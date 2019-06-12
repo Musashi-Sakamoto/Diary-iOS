@@ -6,6 +6,7 @@
 //  Copyright © 2019 musashi. All rights reserved.
 //
 
+import AVFoundation
 import Material
 import UIKit
 
@@ -16,6 +17,8 @@ class PostViewController: UIViewController {
     @IBOutlet var titleTextField: TextField!
     @IBOutlet var descriptionTextView: UITextView!
     var imageView: UIImageView?
+    var videoContainerView: VideoContainerView?
+    var movieUrl: URL?
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -40,7 +43,15 @@ class PostViewController: UIViewController {
     }
 
     @IBAction func postButtonHandler(_ sender: Button) {
-        self.presenter.postButtonClicked(title: self.titleTextField.text!, description: self.descriptionTextView.text, image: self.imageView?.image)
+        var data: Data?
+        var isImage = false
+        if let image = imageView?.image {
+            data = image.jpegData(compressionQuality: 0.9)
+            isImage = true
+        } else if let movie = movieUrl {
+            data = try! Data(contentsOf: movie, options: .mappedIfSafe)
+        }
+        self.presenter.postButtonClicked(title: self.titleTextField.text!, description: self.descriptionTextView.text, data: data, isImage: isImage)
     }
 
     @objc
@@ -59,6 +70,14 @@ extension PostViewController: UIImagePickerControllerDelegate, UINavigationContr
             print("image: \(image)")
             self.imageView = UIImageView(image: image)
             view.layout(self.imageView!).width(UIScreen.main.bounds.width - 16).height(300).centerX().above(self.postButton, 64)
+        } else if let movieUrl = info[.mediaURL] as? URL {
+            self.movieUrl = movieUrl
+            self.videoContainerView = VideoContainerView()
+            let avPlayer = AVPlayer(url: movieUrl)
+            videoContainerView?.set(player: avPlayer)
+            self.videoContainerView?.play()
+            view.layout(self.videoContainerView!).width(UIScreen.main.bounds.width - 16)
+                .height(300).centerX().above(self.postButton, 64)
         }
         dismiss(animated: true, completion: nil)
     }

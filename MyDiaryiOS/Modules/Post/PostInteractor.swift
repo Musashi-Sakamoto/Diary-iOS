@@ -19,7 +19,7 @@ extension PostInteractor: PostInteractorInterface {
         return self._postService.createPost(title: title, description: description, completion: completion)
     }
 
-    func createImage(image: UIImage, postId: Int, completion: @escaping ImageCompletionBlock) {
-        return self._postService.uploadImage(image: image, postId: postId, completion: completion)
+    func createImage(data: Data, postId: Int, isImage: Bool, completion: @escaping ImageCompletionBlock) {
+        return self._postService.uploadImage(data: data, postId: postId, isImage: isImage, completion: completion)
     }
 }

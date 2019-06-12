@@ -25,10 +25,9 @@ class PostService: NSObject {
         return SessionManager.default.request(Constants.API.URLBase!.appendingPathComponent("posts"), method: .post, parameters: parameters).responseJSON(completionHandler: completion)
     }
 
-    func uploadImage(image: UIImage, postId: Int, completion: @escaping ImageCompletionBlock) {
-        let data = image.jpegData(compressionQuality: 0.9)
+    func uploadImage(data: Data, postId: Int, isImage: Bool, completion: @escaping ImageCompletionBlock) {
         return SessionManager.default.upload(multipartFormData: { multipartFormData in
-            multipartFormData.append(data!, withName: "image", fileName: "\(postId)", mimeType: "image/jpeg")
+            multipartFormData.append(data, withName: "image", fileName: "\(postId)", mimeType: isImage ? "image/jpeg" : "video/mp4")
         }, to: Constants.API.URLBase!.appendingPathComponent("images")) { encodingResult in
             switch encodingResult {
             case .success(let upload, _, _):
