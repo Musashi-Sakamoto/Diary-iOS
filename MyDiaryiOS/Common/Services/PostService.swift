@@ -17,6 +17,10 @@ class PostService: NSObject {
         return SessionManager.default.request(URL(string: Constants.API.URLBase!.appendingPathComponent("posts?limit=20&offset=0").absoluteString.removingPercentEncoding!)!, method: .get).responseJSON(completionHandler: completion)
     }
 
+    func deletePost(_ postId: Int, completion: @escaping PostCompletionBlock) -> DataRequest {
+        return SessionManager.default.request(Constants.API.URLBase!.appendingPathComponent("posts/\(postId)"), method: .delete).responseJSON(completionHandler: completion)
+    }
+
     func createPost(title: String, description: String, completion: @escaping PostCompletionBlock) -> DataRequest {
         let parameters: Parameters = [
             "title": title,

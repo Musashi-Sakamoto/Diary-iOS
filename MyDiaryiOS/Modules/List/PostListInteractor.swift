@@ -36,4 +36,9 @@ extension PostListInteractor: PostListInteractorInterface {
     func getPosts(completion: @escaping PostCompletionBlock) -> DataRequest {
         return self._postService.getPosts(completion: completion)
     }
+
+    @discardableResult
+    func deletePost(postId: Int, completion: @escaping PostCompletionBlock) -> DataRequest {
+        return self._postService.deletePost(postId, completion: completion)
+    }
 }

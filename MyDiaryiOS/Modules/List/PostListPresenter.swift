@@ -31,6 +31,12 @@ final class PostListPresenter {
 }
 
 extension PostListPresenter: PostListPresenterInterface {
+    func didSelectDeletePost(postId: Int) {
+        self._interactor.deletePost(postId: postId) { [weak self] _ in
+            self?._reload()
+        }
+    }
+
     func setPost(_ posts: [Post]?) {
         self._items = posts ?? []
     }

@@ -113,7 +113,7 @@ extension PostListViewController: UITableViewDataSource {
 extension PostListViewController: PostListTableViewCellDelegate {
     func deleteClicked(item: PostViewItemInterface?) {
         guard let post = item as? Post else { return }
-        print("delete post: \(post.id)")
+        self.presenter.didSelectDeletePost(postId: Int(post.id) ?? 0)
     }
 
     func editClicked(item: PostViewItemInterface?) {
