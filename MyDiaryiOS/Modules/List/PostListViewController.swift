@@ -103,9 +103,22 @@ extension PostListViewController: UITableViewDataSource {
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell") as! PostListTableViewCell
+        cell.delegate = self
         let item = self.presenter.item(at: indexPath)
         cell.configure(with: item)
         return cell
+    }
+}
+
+extension PostListViewController: PostListTableViewCellDelegate {
+    func deleteClicked(item: PostViewItemInterface?) {
+        guard let post = item as? Post else { return }
+        print("delete post: \(post.id)")
+    }
+
+    func editClicked(item: PostViewItemInterface?) {
+        guard let post = item as? Post else { return }
+        print("edit post: \(post.id)")
     }
 }
 

@@ -12,8 +12,16 @@ import AVFoundation
 import Material
 import UIKit
 
+protocol PostListTableViewCellDelegate {
+    func deleteClicked(item: PostViewItemInterface?)
+    func editClicked(item: PostViewItemInterface?)
+}
+
 class PostListTableViewCell: UITableViewCell {
+    var delegate: PostListTableViewCellDelegate?
+
     @IBOutlet var card: PresenterCard!
+    var item: PostViewItemInterface?
 
     /// Conent area.
     fileprivate var presenterView: UIView?
@@ -23,12 +31,11 @@ class PostListTableViewCell: UITableViewCell {
     fileprivate var bottomBar: Bar!
     fileprivate var dateFormatter: DateFormatter!
     fileprivate var dateLabel: UILabel!
-    fileprivate var favoriteButton: IconButton!
-    fileprivate var shareButton: IconButton!
+    fileprivate var fabMenu: FABMenu!
 
     /// Toolbar views.
     fileprivate var toolbar: Toolbar!
-    fileprivate var moreButton: IconButton!
+    fileprivate var moreButton: FABButton!
 
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -46,12 +53,12 @@ class PostListTableViewCell: UITableViewCell {
     }
 
     func configure(with item: PostViewItemInterface) {
+        self.item = item
         self.preparePresenterView(item)
         self.prepareDateFormatter()
         self.prepareDateLabel(item)
-        self.prepareFavoriteButton()
-        self.prepareShareButton()
         self.prepareMoreButton()
+        self.prepareFabMenu()
         self.prepareToolbar(item)
         self.prepareContentView(item)
         self.prepareBottomBar()
@@ -100,20 +107,36 @@ class PostListTableViewCell: UITableViewCell {
         self.dateLabel.text = item.timeStamp
     }
 
-    fileprivate func prepareFavoriteButton() {
-        self.favoriteButton = IconButton(image: Icon.favorite, tintColor: Color.red.base)
-    }
-
-    fileprivate func prepareShareButton() {
-        self.shareButton = IconButton(image: Icon.cm.share, tintColor: Color.blueGrey.base)
-    }
-
     fileprivate func prepareMoreButton() {
-        self.moreButton = IconButton(image: Icon.cm.moreHorizontal, tintColor: Color.blueGrey.base)
+        self.moreButton = FABButton(image: Icon.cm.moreHorizontal, tintColor: Color.white)
+        self.moreButton.backgroundColor = .gray
+    }
+
+    fileprivate func prepareFabMenu() {
+        self.fabMenu = FABMenu()
+        self.fabMenu.delegate = self
+        self.contentView.layout(self.fabMenu).width(40).height(40).bottomRight(bottom: 20, right: 20)
+        self.fabMenu.fabButton = self.moreButton
+
+        let deleteFabMenuItem = FABMenuItem()
+        deleteFabMenuItem.fabButton.image = Icon.cm.clear
+        deleteFabMenuItem.fabButton.tintColor = .white
+        deleteFabMenuItem.fabButton.pulseColor = .white
+        deleteFabMenuItem.fabButton.backgroundColor = Color.red.darken1
+        deleteFabMenuItem.fabButton.addTarget(self, action: #selector(handleDeleteFABMenuItem(button:)), for: .touchUpInside)
+
+        let editFabMenuItem = FABMenuItem()
+        editFabMenuItem.fabButton.image = Icon.cm.edit
+        editFabMenuItem.fabButton.tintColor = .white
+        editFabMenuItem.fabButton.pulseColor = .white
+        editFabMenuItem.fabButton.backgroundColor = Color.green.darken1
+        editFabMenuItem.fabButton.addTarget(self, action: #selector(handleEditFABMenuItem(button:)), for: .touchUpInside)
+
+        self.fabMenu.fabMenuItems = [deleteFabMenuItem, editFabMenuItem]
     }
 
     fileprivate func prepareToolbar(_ item: PostViewItemInterface) {
-        self.toolbar = Toolbar(rightViews: [moreButton])
+        self.toolbar = Toolbar(rightViews: nil)
 
         self.toolbar.title = item.title
         self.toolbar.titleLabel.textAlignment = .left
@@ -124,7 +147,7 @@ class PostListTableViewCell: UITableViewCell {
     }
 
     fileprivate func prepareBottomBar() {
-        self.bottomBar = Bar(leftViews: [favoriteButton], rightViews: [shareButton], centerViews: [dateLabel])
+        self.bottomBar = Bar(leftViews: nil, rightViews: nil, centerViews: [dateLabel])
     }
 
     fileprivate func preparePresenterCard() {
@@ -139,5 +162,31 @@ class PostListTableViewCell: UITableViewCell {
         self.card.bottomBar = self.bottomBar
         self.card.bottomBarEdgeInsetsPreset = .wideRectangle2
         contentView.layout(self.card).center()
+    }
+}
+
+extension PostListTableViewCell {
+    @objc
+    fileprivate func handleEditFABMenuItem(button: FABButton) {
+        self.fabMenu.close()
+        self.fabMenu.fabButton?.animate(.rotate(0))
+        self.delegate?.editClicked(item: self.item)
+    }
+
+    @objc
+    fileprivate func handleDeleteFABMenuItem(button: FABButton) {
+        self.fabMenu.close()
+        self.fabMenu.fabButton?.animate(.rotate(0))
+        self.delegate?.deleteClicked(item: self.item)
+    }
+}
+
+extension PostListTableViewCell: FABMenuDelegate {
+    func fabMenuWillOpen(fabMenu: FABMenu) {
+        fabMenu.fabButton?.animate(.rotate(180))
+    }
+
+    func fabMenuWillClose(fabMenu: FABMenu) {
+        fabMenu.fabButton?.animate(.rotate(0))
     }
 }
