@@ -21,11 +21,12 @@ protocol PostWireframeInterface: WireframeInterface {
 protocol PostViewInterface: ViewInterface {}
 
 protocol PostPresenterInterface: PresenterInterface {
-    func postButtonClicked(title: String, description: String)
+    func postButtonClicked(title: String, description: String, image: UIImage?)
     func cancelButtonClicked()
     func addMediaButtonClicked()
 }
 
 protocol PostInteractorInterface: InteractorInterface {
     func creartePost(title: String, description: String, completion: @escaping PostCompletionBlock) -> DataRequest
+    func createImage(image: UIImage, postId: Int, completion: @escaping ImageCompletionBlock)
 }

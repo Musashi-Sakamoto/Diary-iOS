@@ -29,7 +29,7 @@ extension PostPresenter: PostPresenterInterface {
         self._wireframe.navigate(to: .library)
     }
 
-    func postButtonClicked(title: String, description: String) {
+    func postButtonClicked(title: String, description: String, image: UIImage?) {
         guard title.count > 0 else {
             _showTitleValidationError()
             return
@@ -41,7 +41,7 @@ extension PostPresenter: PostPresenterInterface {
         }
 
         self._interactor.creartePost(title: title, description: description) { [weak self] response in
-            self?._handlePostResult(response)
+            self?._handlePostResult(response, image)
         }
     }
 
@@ -51,11 +51,18 @@ extension PostPresenter: PostPresenterInterface {
 }
 
 private extension PostPresenter {
-    private func _handlePostResult(_ response: DataResponse<Any>) {
+    private func _handlePostResult(_ response: DataResponse<Any>, _ image: UIImage?) {
         print(response.result.value)
         switch response.response!.statusCode {
         case 201:
-            self._wireframe.navigate(to: .dismiss)
+            if let image = image {
+                let postId = JSON(response.result.value)["post"]["id"].intValue
+                self._interactor.createImage(image: image, postId: postId) { _ in
+                    self._wireframe.navigate(to: .dismiss)
+                }
+            } else {
+                self._wireframe.navigate(to: .dismiss)
+            }
         default:
             let error = JSON(response.result.value)
             self._wireframe.showErrorAlert(with: error["error"]["message"].stringValue)

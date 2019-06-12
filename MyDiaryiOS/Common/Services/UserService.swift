@@ -13,6 +13,7 @@ typealias LoginCompletionBlock = (DataResponse<Any>) -> Void
 typealias LogoutCompletionBlock = (DataResponse<Any>) -> Void
 
 class UserService: NSObject {
+    @discardableResult
     func loginUser(username: String, password: String, completion: @escaping LoginCompletionBlock) -> DataRequest {
         let parameters: Parameters = [
             "username": username,
@@ -21,6 +22,7 @@ class UserService: NSObject {
         return Alamofire.request(Constants.API.URLBase!.appendingPathComponent("login"), method: .post, parameters: parameters).responseJSON(completionHandler: completion)
     }
 
+    @discardableResult
     func logoutUser(completion: @escaping LogoutCompletionBlock) -> DataRequest {
         return SessionManager.default.request(Constants.API.URLBase!.appendingPathComponent("logout"), method: .get).responseJSON(completionHandler: completion)
     }

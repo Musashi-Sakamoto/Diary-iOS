@@ -24,5 +24,6 @@ protocol LoginPresenterInterface: PresenterInterface {
 }
 
 protocol LoginInteractorInterface: InteractorInterface {
+    @discardableResult
     func loginUser(username: String, password: String, completion: @escaping LoginCompletionBlock) -> DataRequest
 }

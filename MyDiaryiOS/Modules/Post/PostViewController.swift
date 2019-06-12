@@ -15,6 +15,7 @@ class PostViewController: UIViewController {
     @IBOutlet var postButton: RaisedButton!
     @IBOutlet var titleTextField: TextField!
     @IBOutlet var descriptionTextView: UITextView!
+    var imageView: UIImageView?
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -39,7 +40,7 @@ class PostViewController: UIViewController {
     }
 
     @IBAction func postButtonHandler(_ sender: Button) {
-        self.presenter.postButtonClicked(title: self.titleTextField.text!, description: self.descriptionTextView.text)
+        self.presenter.postButtonClicked(title: self.titleTextField.text!, description: self.descriptionTextView.text, image: self.imageView?.image)
     }
 
     @objc
@@ -56,8 +57,8 @@ extension PostViewController: UIImagePickerControllerDelegate, UINavigationContr
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey: Any]) {
         if let image = info[.originalImage] as? UIImage {
             print("image: \(image)")
-            let imageView = UIImageView(image: image)
-            view.layout(imageView).width(UIScreen.main.bounds.width - 16).height(300).centerX().above(self.postButton, 64)
+            self.imageView = UIImageView(image: image)
+            view.layout(self.imageView!).width(UIScreen.main.bounds.width - 16).height(300).centerX().above(self.postButton, 64)
         }
         dismiss(animated: true, completion: nil)
     }
