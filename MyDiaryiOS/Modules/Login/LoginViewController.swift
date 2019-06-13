@@ -10,8 +10,9 @@ import Material
 import UIKit
 
 class LoginViewController: UIViewController {
-    @IBOutlet var userNameTextField: UITextField!
-    @IBOutlet var passwordTextField: UITextField!
+    @IBOutlet var emailTextField: TextField!
+    @IBOutlet var userNameTextField: TextField!
+    @IBOutlet var passwordTextField: TextField!
     var presenter: LoginPresenterInterface!
 
     @IBOutlet var toLoginButton: RaisedButton!
@@ -30,6 +31,7 @@ class LoginViewController: UIViewController {
     private func _setupView() {
         if let toolbar = toolbarController?.toolbar {
             toolbar.title = "Login"
+            self.emailTextField.isHidden = true
             toolbar.leftViews.forEach { $0.isHidden = true }
         }
     }
@@ -52,6 +54,7 @@ extension LoginViewController: LoginViewInterface {
         }
         self.loginButton.setTitle("Signup", for: .normal)
         self.toLoginButton.setTitle("To Login", for: .normal)
+        self.emailTextField.isHidden = false
     }
 
     func showLogin() {
@@ -60,5 +63,6 @@ extension LoginViewController: LoginViewInterface {
         }
         self.loginButton.setTitle("Login", for: .normal)
         self.toLoginButton.setTitle("To Signup", for: .normal)
+        self.emailTextField.isHidden = true
     }
 }
