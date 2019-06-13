@@ -22,7 +22,7 @@ class UserService: NSObject {
         ]
         return Alamofire.request(Constants.API.URLBase!.appendingPathComponent("login"), method: .post, parameters: parameters).responseJSON(completionHandler: completion)
     }
-    
+
     @discardableResult
     func signupUser(email: String, username: String, password: String, completion: @escaping SignupCompletionBlock) -> DataRequest {
         let parameters: Parameters = [

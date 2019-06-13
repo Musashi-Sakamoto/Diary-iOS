@@ -42,6 +42,7 @@
 		4153B1B322A7B858008A216B /* AuthorizationAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4153B1B222A7B858008A216B /* AuthorizationAdapter.swift */; };
 		4153B1B622A7B98E008A216B /* Initializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4153B1B522A7B98E008A216B /* Initializer.swift */; };
 		4153B1B822A7B9C6008A216B /* AlamofireInitializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4153B1B722A7B9C6008A216B /* AlamofireInitializer.swift */; };
+		4187A35722B20A930064DF8D /* AppSnackbarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4187A35622B20A930064DF8D /* AppSnackbarController.swift */; };
 		419AFCAC22AF8A0C0081892A /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 419AFCAB22AF8A0C0081892A /* AppState.swift */; };
 		419AFCAE22AF8ABE0081892A /* AppReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 419AFCAD22AF8ABE0081892A /* AppReducer.swift */; };
 		419AFCB222AF96C70081892A /* LoginUserState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 419AFCB122AF96C70081892A /* LoginUserState.swift */; };
@@ -122,6 +123,7 @@
 		4153B1B222A7B858008A216B /* AuthorizationAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizationAdapter.swift; sourceTree = "<group>"; };
 		4153B1B522A7B98E008A216B /* Initializer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Initializer.swift; sourceTree = "<group>"; };
 		4153B1B722A7B9C6008A216B /* AlamofireInitializer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlamofireInitializer.swift; sourceTree = "<group>"; };
+		4187A35622B20A930064DF8D /* AppSnackbarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppSnackbarController.swift; sourceTree = "<group>"; };
 		419AFCAB22AF8A0C0081892A /* AppState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppState.swift; sourceTree = "<group>"; };
 		419AFCAD22AF8ABE0081892A /* AppReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppReducer.swift; sourceTree = "<group>"; };
 		419AFCB122AF96C70081892A /* LoginUserState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginUserState.swift; sourceTree = "<group>"; };
@@ -263,6 +265,7 @@
 				4153B15E22A75460008A216B /* AppDelegate.swift */,
 				4153B1A922A79782008A216B /* Constants.swift */,
 				EB6B0D1E22AB6D8E007B14F5 /* AppNavigatinoDrawerController.swift */,
+				4187A35622B20A930064DF8D /* AppSnackbarController.swift */,
 			);
 			path = Application;
 			sourceTree = "<group>";
@@ -675,6 +678,7 @@
 				41B8E88322A8AF7D003157C8 /* PostListWireframe.swift in Sources */,
 				4153B1A122A77D05008A216B /* LoginPresenter.swift in Sources */,
 				410DAC3F22AE46AA00194FB8 /* MenuInterface.swift in Sources */,
+				4187A35722B20A930064DF8D /* AppSnackbarController.swift in Sources */,
 				4153B19822A77520008A216B /* ViewInterface.swift in Sources */,
 				41B8E87F22A8AE03003157C8 /* PostListViewController.swift in Sources */,
 				4153B19622A77406008A216B /* PresenterInterface.swift in Sources */,

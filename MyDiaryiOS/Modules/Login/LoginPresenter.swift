@@ -30,26 +30,26 @@ extension LoginPresenter: LoginPresenterInterface {
             _showEmailValidationError()
             return
         }
-        
+
         guard username.count > 0 else {
             _showUsernameValidationError()
             return
         }
-        
+
         guard password.count > 0 else {
             _showPasswordValidationError()
             return
         }
-        
-        _interactor.signupUser(email: email, username: username, password: password) { [weak self] response in
+
+        self._interactor.signupUser(email: email, username: username, password: password) { [weak self] response in
             self?._handleSignupResult(response)
         }
     }
-    
+
     func isLogin() -> Bool {
-        return _interactor.isLogin()
+        return self._interactor.isLogin()
     }
-    
+
     func toLoginButtonClicked() {
         mainStore.dispatch(LoginUserState.Action.ToggleLoginAction)
     }
@@ -61,7 +61,7 @@ extension LoginPresenter: LoginPresenterInterface {
             self._view.showSignup()
         }
     }
-    
+
     func loginButtonClicked(username: String, password: String) {
         guard username.count > 0 else {
             _showUsernameValidationError()
@@ -93,18 +93,19 @@ private extension LoginPresenter {
             self._wireframe.showErrorAlert(with: error["error"]["message"].stringValue)
         }
     }
-    
+
     private func _handleSignupResult(_ response: DataResponse<Any>) {
         print(response.result.value)
         switch response.response!.statusCode {
         case 201:
             let user = JSON(response.result.value)
+            self._view.showSnackBar(text: "Confirmation mail has been sent")
         default:
             let error = JSON(response.result.value)
             self._wireframe.showErrorAlert(with: error["error"]["message"].stringValue)
         }
     }
-    
+
     func _showEmailValidationError() {
         self._wireframe.showAlert(with: "Error", message: "Please enter valid email")
     }

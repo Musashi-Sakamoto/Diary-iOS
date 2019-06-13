@@ -27,9 +27,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         initialController.setRootWireframe(LoginWireframe())
         let appToolbarController = AppToolbarController(rootViewController: initialController)
         let navigationDrawerController = AppNavigatinoDrawerController(rootViewController: appToolbarController, menuWireframe: MenuWireframe())
+        let appSnackbarController = AppSnackbarController(rootViewController: navigationDrawerController)
 
         self.window = UIWindow(frame: UIScreen.main.bounds)
-        self.window?.rootViewController = navigationDrawerController
+        self.window?.rootViewController = appSnackbarController
         self.window?.makeKeyAndVisible()
         return true
     }
