@@ -36,4 +36,13 @@ extension LoginInteractor: LoginInteractorInterface {
     func loginUser(username: String, password: String, completion: @escaping LoginCompletionBlock) -> DataRequest {
         return self._userService.loginUser(username: username, password: password, completion: completion)
     }
+    
+    @discardableResult
+    func signupUser(email: String, username: String, password: String, completion: @escaping SignupCompletionBlock) -> DataRequest {
+        return self._userService.signupUser(email: email, username: username, password: password, completion: completion)
+    }
+    
+    func isLogin() -> Bool {
+        return mainStore.state.loginUserState.isLogin
+    }
 }

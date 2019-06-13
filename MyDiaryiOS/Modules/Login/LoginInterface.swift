@@ -20,15 +20,23 @@ protocol LoginWireframeInterface: WireframeInterface {
 protocol LoginViewInterface: ViewInterface {
     func showLogin()
     func showSignup()
+    func showSnackBar(text: String)
 }
 
 protocol LoginPresenterInterface: PresenterInterface {
     func loginButtonClicked(username: String, password: String)
+    func signupButtonClicked(email: String, username: String, password: String)
     func toLoginButtonClicked()
     func setLoginState(isLogin: Bool)
+    func isLogin() -> Bool
 }
 
 protocol LoginInteractorInterface: InteractorInterface {
     @discardableResult
     func loginUser(username: String, password: String, completion: @escaping LoginCompletionBlock) -> DataRequest
+    
+    @discardableResult
+    func signupUser(email: String, username: String, password: String, completion: @escaping SignupCompletionBlock) -> DataRequest
+    
+    func isLogin() -> Bool
 }

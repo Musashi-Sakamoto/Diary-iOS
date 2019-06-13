@@ -10,6 +10,7 @@ import Alamofire
 import Foundation
 
 typealias LoginCompletionBlock = (DataResponse<Any>) -> Void
+typealias SignupCompletionBlock = (DataResponse<Any>) -> Void
 typealias LogoutCompletionBlock = (DataResponse<Any>) -> Void
 
 class UserService: NSObject {
@@ -20,6 +21,16 @@ class UserService: NSObject {
             "password": password
         ]
         return Alamofire.request(Constants.API.URLBase!.appendingPathComponent("login"), method: .post, parameters: parameters).responseJSON(completionHandler: completion)
+    }
+    
+    @discardableResult
+    func signupUser(email: String, username: String, password: String, completion: @escaping SignupCompletionBlock) -> DataRequest {
+        let parameters: Parameters = [
+            "email": email,
+            "name": username,
+            "password": password
+        ]
+        return Alamofire.request(Constants.API.URLBase!.appendingPathComponent("users"), method: .post, parameters: parameters).responseJSON(completionHandler: completion)
     }
 
     @discardableResult

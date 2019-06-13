@@ -39,7 +39,12 @@ class LoginViewController: UIViewController {
     @IBAction func onLoginButtonClicked(_: UIButton) {
         guard let username = userNameTextField.text else { return }
         guard let password = passwordTextField.text else { return }
-        self.presenter.loginButtonClicked(username: username, password: password)
+        if presenter.isLogin() {
+            self.presenter.loginButtonClicked(username: username, password: password)
+        } else {
+            guard let email = emailTextField.text else { return }
+            self.presenter.signupButtonClicked(email: email, username: username, password: password)
+        }
     }
 
     @IBAction func onToLoginButtonClicked(_ sender: RaisedButton) {
@@ -64,5 +69,9 @@ extension LoginViewController: LoginViewInterface {
         self.loginButton.setTitle("Login", for: .normal)
         self.toLoginButton.setTitle("To Signup", for: .normal)
         self.emailTextField.isHidden = true
+    }
+    
+    func showSnackBar(text: String) {
+        
     }
 }
