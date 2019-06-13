@@ -61,13 +61,35 @@
                                     <action selector="onLoginButtonClicked:" destination="o9m-yt-G4X" eventType="touchUpInside" id="M2R-fu-vOX"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CFm-Ew-4gN" customClass="RaisedButton" customModule="Material">
+                                <rect key="frame" x="80" y="406" width="215" height="30"/>
+                                <state key="normal" title="Button"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="backgroundColor">
+                                        <color key="value" red="0.57045853140000002" green="0.57047235969999999" blue="0.57046490910000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="pulseColor">
+                                        <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="title" value="To Signup"/>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="titleColor">
+                                        <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="onToLoginButtonClicked:" destination="o9m-yt-G4X" eventType="touchUpInside" id="e17-hq-eQu"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="CFm-Ew-4gN" firstAttribute="width" secondItem="gwO-hF-MOA" secondAttribute="width" id="8Yh-Fv-h6b"/>
+                            <constraint firstItem="CFm-Ew-4gN" firstAttribute="centerX" secondItem="gwO-hF-MOA" secondAttribute="centerX" id="ATp-aX-twT"/>
                             <constraint firstItem="gwO-hF-MOA" firstAttribute="centerX" secondItem="gYl-tK-Bwz" secondAttribute="centerX" id="AcV-nk-Thj"/>
                             <constraint firstItem="U7N-pr-7RT" firstAttribute="centerX" secondItem="gYl-tK-Bwz" secondAttribute="centerX" id="DGF-K6-a61"/>
                             <constraint firstItem="JzM-pz-8ly" firstAttribute="trailing" secondItem="Cfg-ei-Uae" secondAttribute="trailing" constant="80" id="OGO-J5-ETS"/>
                             <constraint firstItem="Cfg-ei-Uae" firstAttribute="centerX" secondItem="gYl-tK-Bwz" secondAttribute="centerX" id="Xck-nI-jpQ"/>
+                            <constraint firstItem="CFm-Ew-4gN" firstAttribute="top" secondItem="gwO-hF-MOA" secondAttribute="bottom" constant="16" id="Xy8-py-1DN"/>
                             <constraint firstItem="Cfg-ei-Uae" firstAttribute="leading" secondItem="JzM-pz-8ly" secondAttribute="leading" constant="80" id="e7F-FI-KYR"/>
                             <constraint firstItem="U7N-pr-7RT" firstAttribute="top" secondItem="Cfg-ei-Uae" secondAttribute="bottom" constant="80" id="ecj-rr-Hpz"/>
                             <constraint firstItem="gwO-hF-MOA" firstAttribute="top" secondItem="U7N-pr-7RT" secondAttribute="bottom" constant="80" id="meY-Pr-8aY"/>
@@ -78,7 +100,9 @@
                         <viewLayoutGuide key="safeArea" id="JzM-pz-8ly"/>
                     </view>
                     <connections>
+                        <outlet property="loginButton" destination="gwO-hF-MOA" id="idL-4H-sEQ"/>
                         <outlet property="passwordTextField" destination="U7N-pr-7RT" id="roI-n8-3ok"/>
+                        <outlet property="toLoginButton" destination="CFm-Ew-4gN" id="zdc-yA-DV2"/>
                         <outlet property="userNameTextField" destination="Cfg-ei-Uae" id="45a-E6-Xzn"/>
                     </connections>
                 </viewController>

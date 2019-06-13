@@ -18,6 +18,7 @@ final class LoginWireframe: BaseWireframe {
 
         let interactor = LoginInteractor()
         let presenter = LoginPresenter(wireframe: self, view: moduleViewController, interactor: interactor)
+        interactor.presenter = presenter
         moduleViewController.presenter = presenter
     }
 }

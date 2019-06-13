@@ -25,6 +25,18 @@ final class LoginPresenter {
 }
 
 extension LoginPresenter: LoginPresenterInterface {
+    func toLoginButtonClicked() {
+        mainStore.dispatch(LoginUserState.Action.ToggleLoginAction)
+    }
+
+    func setLoginState(isLogin: Bool) {
+        if isLogin {
+            self._view.showLogin()
+        } else {
+            self._view.showSignup()
+        }
+    }
+
     func loginButtonClicked(username: String, password: String) {
         guard username.count > 0 else {
             _showUsernameValidationError()

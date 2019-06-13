@@ -14,6 +14,8 @@ class LoginViewController: UIViewController {
     @IBOutlet var passwordTextField: UITextField!
     var presenter: LoginPresenterInterface!
 
+    @IBOutlet var toLoginButton: RaisedButton!
+    @IBOutlet var loginButton: RaisedButton!
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -37,6 +39,26 @@ class LoginViewController: UIViewController {
         guard let password = passwordTextField.text else { return }
         self.presenter.loginButtonClicked(username: username, password: password)
     }
+
+    @IBAction func onToLoginButtonClicked(_ sender: RaisedButton) {
+        self.presenter.toLoginButtonClicked()
+    }
 }
 
-extension LoginViewController: LoginViewInterface {}
+extension LoginViewController: LoginViewInterface {
+    func showSignup() {
+        if let toolbar = toolbarController?.toolbar {
+            toolbar.title = "Signup"
+        }
+        self.loginButton.setTitle("Signup", for: .normal)
+        self.toLoginButton.setTitle("To Login", for: .normal)
+    }
+
+    func showLogin() {
+        if let toolbar = toolbarController?.toolbar {
+            toolbar.title = "Login"
+        }
+        self.loginButton.setTitle("Login", for: .normal)
+        self.toLoginButton.setTitle("To Signup", for: .normal)
+    }
+}

@@ -17,10 +17,15 @@ protocol LoginWireframeInterface: WireframeInterface {
     func navigate(to option: LoginNavigationOption)
 }
 
-protocol LoginViewInterface: ViewInterface {}
+protocol LoginViewInterface: ViewInterface {
+    func showLogin()
+    func showSignup()
+}
 
 protocol LoginPresenterInterface: PresenterInterface {
     func loginButtonClicked(username: String, password: String)
+    func toLoginButtonClicked()
+    func setLoginState(isLogin: Bool)
 }
 
 protocol LoginInteractorInterface: InteractorInterface {

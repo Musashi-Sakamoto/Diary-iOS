@@ -12,11 +12,14 @@ import ReSwift
 public struct LoginUserState: StateType {
     private(set) var username = ""
     private(set) var email = ""
+
+    private(set) var isLogin = true
 }
 
 extension LoginUserState {
     public enum Action: ReSwift.Action {
         case LoginAction(username: String, email: String)
+        case ToggleLoginAction
     }
 }
 
@@ -30,6 +33,8 @@ extension LoginUserState {
             case let .LoginAction(name, email):
                 state.username = name
                 state.email = email
+            case .ToggleLoginAction:
+                state.isLogin = !state.isLogin
             }
         default:
             break

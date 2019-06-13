@@ -8,9 +8,27 @@
 
 import Alamofire
 import Foundation
+import ReSwift
 
 final class LoginInteractor {
     private var _userService = UserService()
+    public weak var presenter: LoginPresenterInterface?
+
+    init() {
+        mainStore.subscribe(self) { subscription in
+            subscription.select { state in state.loginUserState }
+        }
+    }
+
+    deinit {
+        mainStore.unsubscribe(self)
+    }
+}
+
+extension LoginInteractor: StoreSubscriber {
+    func newState(state: LoginUserState) {
+        self.presenter?.setLoginState(isLogin: state.isLogin)
+    }
 }
 
 extension LoginInteractor: LoginInteractorInterface {
