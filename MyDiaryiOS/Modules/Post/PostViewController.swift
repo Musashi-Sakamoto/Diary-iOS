@@ -74,7 +74,7 @@ extension PostViewController: UIImagePickerControllerDelegate, UINavigationContr
         if let image = info[.originalImage] as? UIImage {
             print("image: \(image)")
             self.imageView = UIImageView(image: image)
-            view.layout(self.imageView!).width(UIScreen.main.bounds.width - 16).height(300).centerX().above(self.postButton, 64)
+            view.layout(self.imageView!).width(UIScreen.main.bounds.width - 16).height(300).centerX().above(self.postButton, 64).below(self.descriptionTextView, 8)
         } else if let movieUrl = info[.mediaURL] as? URL {
             self.movieUrl = movieUrl
             self.videoContainerView = VideoContainerView()
@@ -82,7 +82,7 @@ extension PostViewController: UIImagePickerControllerDelegate, UINavigationContr
             videoContainerView?.set(player: avPlayer)
             self.videoContainerView?.play()
             view.layout(self.videoContainerView!).width(UIScreen.main.bounds.width - 16)
-                .height(300).centerX().above(self.postButton, 64)
+                .height(300).centerX().above(self.postButton, 64).below(self.descriptionTextView, 8)
         }
         dismiss(animated: true, completion: nil)
     }
@@ -97,14 +97,14 @@ extension PostViewController: PostViewInterface {
         if media == .image {
             self.imageView = UIImageView()
             self.imageView?.af_setImage(withURL: editedPost.imageURL!)
-            view.layout(self.imageView!).width(UIScreen.main.bounds.width - 16).height(300).centerX().above(self.postButton, 64)
+            view.layout(self.imageView!).width(UIScreen.main.bounds.width - 16).height(300).centerX().above(self.postButton, 64).below(self.descriptionTextView, 8)
         } else if media == .video {
             self.videoContainerView = VideoContainerView()
             let player = AVPlayer(url: editedPost.imageURL!)
             self.videoContainerView?.set(player: player)
             self.videoContainerView?.play()
             view.layout(self.videoContainerView!).width(UIScreen.main.bounds.width - 16)
-                .height(300).centerX().above(self.postButton, 64)
+                .height(300).centerX().above(self.postButton, 64).below(self.descriptionTextView, 8)
         }
     }
 }
