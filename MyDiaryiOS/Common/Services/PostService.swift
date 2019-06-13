@@ -13,14 +13,22 @@ typealias PostCompletionBlock = (DataResponse<Any>) -> Void
 typealias ImageCompletionBlock = (DataResponse<Any>) -> Void
 
 class PostService: NSObject {
+    @discardableResult
     func getPosts(completion: @escaping PostCompletionBlock) -> DataRequest {
         return SessionManager.default.request(URL(string: Constants.API.URLBase!.appendingPathComponent("posts?limit=20&offset=0").absoluteString.removingPercentEncoding!)!, method: .get).responseJSON(completionHandler: completion)
     }
 
+    @discardableResult
     func deletePost(_ postId: Int, completion: @escaping PostCompletionBlock) -> DataRequest {
         return SessionManager.default.request(Constants.API.URLBase!.appendingPathComponent("posts/\(postId)"), method: .delete).responseJSON(completionHandler: completion)
     }
 
+    @discardableResult
+    func editPost(title: String, description: String, postId: Int, completion: @escaping PostCompletionBlock) -> DataRequest {
+        return SessionManager.default.request(Constants.API.URLBase!.appendingPathComponent("posts/\(postId)"), method: .put).responseJSON(completionHandler: completion)
+    }
+
+    @discardableResult
     func createPost(title: String, description: String, completion: @escaping PostCompletionBlock) -> DataRequest {
         let parameters: Parameters = [
             "title": title,

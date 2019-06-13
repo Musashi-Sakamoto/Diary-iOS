@@ -24,12 +24,17 @@ protocol PostViewInterface: ViewInterface {
 
 protocol PostPresenterInterface: PresenterInterface {
     func postButtonClicked(title: String, description: String, data: Data?, isImage: Bool)
+    func editButtonClicked(title: String, description: String, postId: Int, data: Data?, isImage: Bool)
     func cancelButtonClicked()
     func addMediaButtonClicked()
     func setEditedPost(post: Post?)
+    func isEditing() -> Bool
+    func getPostId() -> Int?
 }
 
 protocol PostInteractorInterface: InteractorInterface {
     func creartePost(title: String, description: String, completion: @escaping PostCompletionBlock) -> DataRequest
+    func editPost(title: String, description: String, postId: Int, completion: @escaping PostCompletionBlock) -> DataRequest
     func createImage(data: Data, postId: Int, isImage: Bool, completion: @escaping ImageCompletionBlock)
+    func getEditedPost() -> Post?
 }

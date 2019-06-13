@@ -34,6 +34,15 @@ extension PostInteractor: StoreSubscriber {
 }
 
 extension PostInteractor: PostInteractorInterface {
+    func getEditedPost() -> Post? {
+        return mainStore.state.postDataState.editedPost
+    }
+
+    @discardableResult
+    func editPost(title: String, description: String, postId: Int, completion: @escaping PostCompletionBlock) -> DataRequest {
+        return self._postService.editPost(title: title, description: description, postId: postId, completion: completion)
+    }
+
     @discardableResult
     func creartePost(title: String, description: String, completion: @escaping PostCompletionBlock) -> DataRequest {
         return self._postService.createPost(title: title, description: description, completion: completion)

@@ -36,6 +36,7 @@ class PostViewController: UIViewController {
         self.postButton.pulseColor = .white
         self.postButton.titleColor = .white
         self.postButton.backgroundColor = .purple
+        self.postButton.title = self.presenter.isEditing() ? "Edit" : "Post"
     }
 
     @IBAction func cancelButtonHandler(_ sender: Button) {
@@ -51,7 +52,11 @@ class PostViewController: UIViewController {
         } else if let movie = movieUrl {
             data = try! Data(contentsOf: movie, options: .mappedIfSafe)
         }
-        self.presenter.postButtonClicked(title: self.titleTextField.text!, description: self.descriptionTextView.text, data: data, isImage: isImage)
+        if self.presenter.isEditing() {
+            self.presenter.editButtonClicked(title: self.titleTextField.text!, description: self.descriptionTextView.text, postId: self.presenter.getPostId()!, data: data, isImage: isImage)
+        } else {
+            self.presenter.postButtonClicked(title: self.titleTextField.text!, description: self.descriptionTextView.text, data: data, isImage: isImage)
+        }
     }
 
     @objc
@@ -88,7 +93,6 @@ extension PostViewController: PostViewInterface {
         guard let editedPost = post else { return }
         self.titleTextField.text = editedPost.title
         self.descriptionTextView.text = editedPost.description
-        self.postButton.title = "Edit"
         guard let media = editedPost.mediaType else { return }
         if media == .image {
             self.imageView = UIImageView()
