@@ -41,6 +41,7 @@ private extension MenuPresenter {
         print(response.result.value)
         switch response.response!.statusCode {
         case 200:
+            mainStore.dispatch(LoginUserState.Action.LogoutAction)
             self._authorizationManager.authorizationHeader = nil
             self._wireframe.navigate(to: .login)
         default:

@@ -20,6 +20,7 @@ extension LoginUserState {
     public enum Action: ReSwift.Action {
         case LoginAction(username: String, email: String)
         case ToggleLoginAction
+        case LogoutAction
     }
 }
 
@@ -33,6 +34,9 @@ extension LoginUserState {
             case let .LoginAction(name, email):
                 state.username = name
                 state.email = email
+            case .LogoutAction:
+                state.username = ""
+                state.email = ""
             case .ToggleLoginAction:
                 state.isLogin = !state.isLogin
             }

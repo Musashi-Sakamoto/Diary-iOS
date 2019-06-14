@@ -37,6 +37,8 @@ class MyDiaryiOSStateTests: XCTestCase {
         self.mainStore.dispatch(LoginUserState.Action.LoginAction(username: name, email: email))
         XCTAssertEqual(self.mainStore.state.loginUserState.email, email, "email should be \(email)")
         XCTAssertEqual(self.mainStore.state.loginUserState.username, name, "username should be \(name)")
+        self.mainStore.dispatch(LoginUserState.Action.LogoutAction)
+        XCTAssertEqual(self.mainStore.state.loginUserState.email, "", "email should be empty")
+        XCTAssertEqual(self.mainStore.state.loginUserState.username, "", "username should be empty")
     }
-    
 }
