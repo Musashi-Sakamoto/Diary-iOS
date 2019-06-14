@@ -7,26 +7,36 @@
 //
 
 @testable import MyDiaryiOS
+import ReSwift
 import XCTest
 
-class MyDiaryiOSTests: XCTestCase {
+class MyDiaryiOSStateTests: XCTestCase {
+    let mainStore = Store<AppState>(reducer: appReducer, state: AppState())
+
     override func setUp() {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
+        super.setUp()
     }
 
     override func tearDown() {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
     }
 
-    func testExample() {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
+    func test_ToggleLoginAction() {
+        XCTAssertTrue(self.mainStore.state.loginUserState.isLogin)
+        self.mainStore.dispatch(LoginUserState.Action.ToggleLoginAction)
+        XCTAssertFalse(self.mainStore.state.loginUserState.isLogin)
+        self.mainStore.dispatch(LoginUserState.Action.ToggleLoginAction)
+        XCTAssertTrue(self.mainStore.state.loginUserState.isLogin)
     }
 
-    func testPerformanceExample() {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
-        }
+    func test_LoginActionTest() {
+        let name = "name123"
+        let email = "1292602b@gmail.com"
+        XCTAssertEqual(self.mainStore.state.loginUserState.email, "", "email should be empty")
+        XCTAssertEqual(self.mainStore.state.loginUserState.username, "", "username should be empty")
+        self.mainStore.dispatch(LoginUserState.Action.LoginAction(username: name, email: email))
+        XCTAssertEqual(self.mainStore.state.loginUserState.email, email, "email should be \(email)")
+        XCTAssertEqual(self.mainStore.state.loginUserState.username, name, "username should be \(name)")
     }
+    
 }
