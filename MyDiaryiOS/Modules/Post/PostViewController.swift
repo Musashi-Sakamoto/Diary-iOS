@@ -82,7 +82,7 @@ extension PostViewController: UIImagePickerControllerDelegate, UINavigationContr
             self.videoContainerView?.set(player: avPlayer)
             self.videoContainerView?.play()
             view.layout(self.videoContainerView!).width(UIScreen.main.bounds.width - 16)
-                .height(300).centerX().above(self.postButton, 64).below(self.descriptionTextView, 8)
+                .height(300).centerX().above(self.postButton, 64)
         }
         dismiss(animated: true, completion: nil)
     }
@@ -106,7 +106,7 @@ extension PostViewController: PostViewInterface {
             self.videoContainerView?.set(player: player)
             self.videoContainerView?.play()
             view.layout(self.videoContainerView!).width(UIScreen.main.bounds.width - 16)
-                .height(300).centerX().above(self.postButton, 64).below(self.descriptionTextView, 8)
+                .height(300).centerX().above(self.postButton, 64)
         }
     }
 }
