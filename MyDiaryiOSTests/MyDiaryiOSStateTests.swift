@@ -10,6 +10,11 @@
 import ReSwift
 import XCTest
 
+struct MockUser: UserInterface {
+    var username: String
+    var email: String
+}
+
 class MyDiaryiOSStateTests: XCTestCase {
     var mainStore: Store<AppState>!
     var posts: [Post]!
@@ -36,18 +41,19 @@ class MyDiaryiOSStateTests: XCTestCase {
         XCTAssertTrue(self.mainStore.state.loginUserState.isLogin)
     }
 
-//    func test_LoginActionTest() {
-//        let name = "name123"
-//        let email = "1292602b@gmail.com"
-//        XCTAssertEqual(self.mainStore.state.loginUserState.user?.email, "", "email should be empty")
-//        XCTAssertEqual(self.mainStore.state.loginUserState.user?.username, "", "username should be empty")
-//        self.mainStore.dispatch(LoginUserState.Action.LoginAction(user: <#T##UserInterface?#>)
-//        XCTAssertEqual(self.mainStore.state.loginUserState.email, email, "email should be \(email)")
-//        XCTAssertEqual(self.mainStore.state.loginUserState.username, name, "username should be \(name)")
-//        self.mainStore.dispatch(LoginUserState.Action.LogoutAction)
-//        XCTAssertEqual(self.mainStore.state.loginUserState.email, "", "email should be empty")
-//        XCTAssertEqual(self.mainStore.state.loginUserState.username, "", "username should be empty")
-//    }
+    func test_LoginActionTest() {
+        let name = "name123"
+        let email = "1292602b@gmail.com"
+
+        let user = MockUser(username: name, email: email)
+        XCTAssertNil(self.mainStore.state.loginUserState.user, "user should be nil")
+        self.mainStore.dispatch(LoginUserState.Action.LoginAction(user: user))
+        XCTAssertNotNil(self.mainStore.state.loginUserState.user, "user should not be nil")
+        XCTAssertEqual(self.mainStore.state.loginUserState.user?.email, email, "email should be \(email)")
+        XCTAssertEqual(self.mainStore.state.loginUserState.user?.username, name, "username should be \(name)")
+        self.mainStore.dispatch(LoginUserState.Action.LogoutAction)
+        XCTAssertNil(self.mainStore.state.loginUserState.user, "user should be nil")
+    }
 
 //    func test_getPostTest() {
 //        <#function body#>
