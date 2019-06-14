@@ -38,17 +38,15 @@ extension PostInteractor: PostInteractorInterface {
         return mainStore.state.postDataState.editedPost
     }
 
-    @discardableResult
-    func editPost(title: String, description: String, postId: Int, completion: @escaping PostCompletionBlock) -> DataRequest {
-        return self._postService.editPost(title: title, description: description, postId: postId, completion: completion)
+    func editPost(title: String, description: String, postId: Int, completion: @escaping PostCompletionBlock) {
+        self._postService.editPost(title: title, description: description, postId: postId, completion: completion)
     }
 
-    @discardableResult
-    func creartePost(title: String, description: String, completion: @escaping PostCompletionBlock) -> DataRequest {
-        return self._postService.createPost(title: title, description: description, completion: completion)
+    func creartePost(title: String, description: String, completion: @escaping PostCompletionBlock) {
+        self._postService.createPost(title: title, description: description, completion: completion)
     }
 
     func createImage(data: Data, postId: Int, isImage: Bool, completion: @escaping ImageCompletionBlock) {
-        return self._postService.uploadImage(data: data, postId: postId, isImage: isImage, completion: completion)
+        self._postService.uploadImage(data: data, postId: postId, isImage: isImage, completion: completion)
     }
 }

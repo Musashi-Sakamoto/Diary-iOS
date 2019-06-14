@@ -33,8 +33,8 @@ protocol PostPresenterInterface: PresenterInterface {
 }
 
 protocol PostInteractorInterface: InteractorInterface {
-    func creartePost(title: String, description: String, completion: @escaping PostCompletionBlock) -> DataRequest
-    func editPost(title: String, description: String, postId: Int, completion: @escaping PostCompletionBlock) -> DataRequest
+    func creartePost(title: String, description: String, completion: @escaping PostCompletionBlock)
+    func editPost(title: String, description: String, postId: Int, completion: @escaping PostCompletionBlock)
     func createImage(data: Data, postId: Int, isImage: Bool, completion: @escaping ImageCompletionBlock)
     func getEditedPost() -> PostInterface?
 }

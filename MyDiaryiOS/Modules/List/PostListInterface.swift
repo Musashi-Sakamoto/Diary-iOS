@@ -44,10 +44,8 @@ protocol PostListPresenterInterface: PresenterInterface {
 }
 
 protocol PostListInteractorInterface: InteractorInterface {
-    @discardableResult
-    func getPosts(completion: @escaping PostCompletionBlock) -> DataRequest
-    @discardableResult
-    func deletePost(postId: Int, completion: @escaping PostCompletionBlock) -> DataRequest
+    func getPosts(completion: @escaping PostCompletionBlock)
+    func deletePost(postId: Int, completion: @escaping PostCompletionBlock)
 }
 
 protocol PostViewItemInterface: PostInterface {

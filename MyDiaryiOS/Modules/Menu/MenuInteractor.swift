@@ -33,8 +33,7 @@ extension MenuInteractor: StoreSubscriber {
 }
 
 extension MenuInteractor: MenuInteractorInterface {
-    @discardableResult
-    func logout(completion: @escaping LogoutCompletionBlock) -> DataRequest {
-        return self._userService.logoutUser(completion: completion)
+    func logout(completion: @escaping LogoutCompletionBlock) {
+        self._userService.logoutUser(completion: completion)
     }
 }

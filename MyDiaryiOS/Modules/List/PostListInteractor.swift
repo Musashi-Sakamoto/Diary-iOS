@@ -33,13 +33,11 @@ extension PostListInteractor: StoreSubscriber {
 }
 
 extension PostListInteractor: PostListInteractorInterface {
-    @discardableResult
-    func getPosts(completion: @escaping PostCompletionBlock) -> DataRequest {
-        return self._postService.getPosts(completion: completion)
+    func getPosts(completion: @escaping PostCompletionBlock) {
+        self._postService.getPosts(completion: completion)
     }
 
-    @discardableResult
-    func deletePost(postId: Int, completion: @escaping PostCompletionBlock) -> DataRequest {
-        return self._postService.deletePost(postId, completion: completion)
+    func deletePost(postId: Int, completion: @escaping PostCompletionBlock) {
+        self._postService.deletePost(postId, completion: completion)
     }
 }

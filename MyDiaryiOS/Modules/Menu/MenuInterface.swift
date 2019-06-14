@@ -28,5 +28,5 @@ protocol MenuPresenterInterface: PresenterInterface {
 }
 
 protocol MenuInteractorInterface: InteractorInterface {
-    func logout(completion: @escaping LogoutCompletionBlock) -> DataRequest
+    func logout(completion: @escaping LogoutCompletionBlock)
 }

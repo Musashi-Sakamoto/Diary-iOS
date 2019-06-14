@@ -20,6 +20,7 @@
 		410DAC4122AE48DA00194FB8 /* MenuWireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 410DAC4022AE48DA00194FB8 /* MenuWireframe.swift */; };
 		410DAC4322AE496F00194FB8 /* MenuPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 410DAC4222AE496F00194FB8 /* MenuPresenter.swift */; };
 		410DAC4522AE4B7D00194FB8 /* MenuInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 410DAC4422AE4B7D00194FB8 /* MenuInteractor.swift */; };
+		41212B6022B37512002484F7 /* MyDiaryiOSAPIMockTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41212B5F22B37512002484F7 /* MyDiaryiOSAPIMockTests.swift */; };
 		4153B15F22A75460008A216B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4153B15E22A75460008A216B /* AppDelegate.swift */; };
 		4153B16122A75460008A216B /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4153B16022A75460008A216B /* LoginViewController.swift */; };
 		4153B16422A75460008A216B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4153B16222A75460008A216B /* Main.storyboard */; };
@@ -66,6 +67,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		41212B6222B37512002484F7 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4153B15322A7545F008A216B /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 4153B15A22A7545F008A216B;
+			remoteInfo = MyDiaryiOS;
+		};
 		4153B17022A75462008A216B /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 4153B15322A7545F008A216B /* Project object */;
@@ -95,6 +103,9 @@
 		410DAC4022AE48DA00194FB8 /* MenuWireframe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuWireframe.swift; sourceTree = "<group>"; };
 		410DAC4222AE496F00194FB8 /* MenuPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuPresenter.swift; sourceTree = "<group>"; };
 		410DAC4422AE4B7D00194FB8 /* MenuInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuInteractor.swift; sourceTree = "<group>"; };
+		41212B5D22B37512002484F7 /* MyDiaryiOSAPIMockTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MyDiaryiOSAPIMockTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		41212B5F22B37512002484F7 /* MyDiaryiOSAPIMockTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyDiaryiOSAPIMockTests.swift; sourceTree = "<group>"; };
+		41212B6122B37512002484F7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4153B15B22A7545F008A216B /* MyDiaryiOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyDiaryiOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4153B15E22A75460008A216B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4153B16022A75460008A216B /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -154,6 +165,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		41212B5A22B37512002484F7 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		4153B15822A7545F008A216B /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -204,12 +222,22 @@
 			path = Post;
 			sourceTree = "<group>";
 		};
+		41212B5E22B37512002484F7 /* MyDiaryiOSAPIMockTests */ = {
+			isa = PBXGroup;
+			children = (
+				41212B5F22B37512002484F7 /* MyDiaryiOSAPIMockTests.swift */,
+				41212B6122B37512002484F7 /* Info.plist */,
+			);
+			path = MyDiaryiOSAPIMockTests;
+			sourceTree = "<group>";
+		};
 		4153B15222A7545F008A216B = {
 			isa = PBXGroup;
 			children = (
 				4153B15D22A7545F008A216B /* MyDiaryiOS */,
 				4153B17222A75462008A216B /* MyDiaryiOSTests */,
 				4153B17D22A75462008A216B /* MyDiaryiOSUITests */,
+				41212B5E22B37512002484F7 /* MyDiaryiOSAPIMockTests */,
 				4153B15C22A7545F008A216B /* Products */,
 				B4072CDFE5BAC25C189F1596 /* Pods */,
 				23EADB991DC3F16F7B7EED89 /* Frameworks */,
@@ -222,6 +250,7 @@
 				4153B15B22A7545F008A216B /* MyDiaryiOS.app */,
 				4153B16F22A75462008A216B /* MyDiaryiOSTests.xctest */,
 				4153B17A22A75462008A216B /* MyDiaryiOSUITests.xctest */,
+				41212B5D22B37512002484F7 /* MyDiaryiOSAPIMockTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -418,6 +447,24 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		41212B5C22B37512002484F7 /* MyDiaryiOSAPIMockTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 41212B6622B37512002484F7 /* Build configuration list for PBXNativeTarget "MyDiaryiOSAPIMockTests" */;
+			buildPhases = (
+				41212B5922B37512002484F7 /* Sources */,
+				41212B5A22B37512002484F7 /* Frameworks */,
+				41212B5B22B37512002484F7 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				41212B6322B37512002484F7 /* PBXTargetDependency */,
+			);
+			name = MyDiaryiOSAPIMockTests;
+			productName = MyDiaryiOSAPIMockTests;
+			productReference = 41212B5D22B37512002484F7 /* MyDiaryiOSAPIMockTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		4153B15A22A7545F008A216B /* MyDiaryiOS */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 4153B18322A75462008A216B /* Build configuration list for PBXNativeTarget "MyDiaryiOS" */;
@@ -482,10 +529,14 @@
 		4153B15322A7545F008A216B /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 1010;
+				LastSwiftUpdateCheck = 1020;
 				LastUpgradeCheck = 1010;
 				ORGANIZATIONNAME = musashi;
 				TargetAttributes = {
+					41212B5C22B37512002484F7 = {
+						CreatedOnToolsVersion = 10.2.1;
+						TestTargetID = 4153B15A22A7545F008A216B;
+					};
 					4153B15A22A7545F008A216B = {
 						CreatedOnToolsVersion = 10.1;
 					};
@@ -515,11 +566,19 @@
 				4153B15A22A7545F008A216B /* MyDiaryiOS */,
 				4153B16E22A75462008A216B /* MyDiaryiOSTests */,
 				4153B17922A75462008A216B /* MyDiaryiOSUITests */,
+				41212B5C22B37512002484F7 /* MyDiaryiOSAPIMockTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		41212B5B22B37512002484F7 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		4153B15922A7545F008A216B /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -655,6 +714,14 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		41212B5922B37512002484F7 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				41212B6022B37512002484F7 /* MyDiaryiOSAPIMockTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		4153B15722A7545F008A216B /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -724,6 +791,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		41212B6322B37512002484F7 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 4153B15A22A7545F008A216B /* MyDiaryiOS */;
+			targetProxy = 41212B6222B37512002484F7 /* PBXContainerItemProxy */;
+		};
 		4153B17122A75462008A216B /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 4153B15A22A7545F008A216B /* MyDiaryiOS */;
@@ -756,6 +828,46 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		41212B6422B37512002484F7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = MyDiaryiOSAPIMockTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = musashi.MyDiaryiOSAPIMockTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MyDiaryiOS.app/MyDiaryiOS";
+			};
+			name = Debug;
+		};
+		41212B6522B37512002484F7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = MyDiaryiOSAPIMockTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = musashi.MyDiaryiOSAPIMockTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MyDiaryiOS.app/MyDiaryiOS";
+			};
+			name = Release;
+		};
 		4153B18122A75462008A216B /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -999,6 +1111,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		41212B6622B37512002484F7 /* Build configuration list for PBXNativeTarget "MyDiaryiOSAPIMockTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				41212B6422B37512002484F7 /* Debug */,
+				41212B6522B37512002484F7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		4153B15622A7545F008A216B /* Build configuration list for PBXProject "MyDiaryiOS" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

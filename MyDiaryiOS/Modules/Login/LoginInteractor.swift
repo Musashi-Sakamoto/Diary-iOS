@@ -32,14 +32,12 @@ extension LoginInteractor: StoreSubscriber {
 }
 
 extension LoginInteractor: LoginInteractorInterface {
-    @discardableResult
-    func loginUser(username: String, password: String, completion: @escaping LoginCompletionBlock) -> DataRequest {
-        return self._userService.loginUser(username: username, password: password, completion: completion)
+    func loginUser(username: String, password: String, completion: @escaping LoginCompletionBlock) {
+        self._userService.loginUser(username: username, password: password, completion: completion)
     }
 
-    @discardableResult
-    func signupUser(email: String, username: String, password: String, completion: @escaping SignupCompletionBlock) -> DataRequest {
-        return self._userService.signupUser(email: email, username: username, password: password, completion: completion)
+    func signupUser(email: String, username: String, password: String, completion: @escaping SignupCompletionBlock) {
+        self._userService.signupUser(email: email, username: username, password: password, completion: completion)
     }
 
     func isLogin() -> Bool {
