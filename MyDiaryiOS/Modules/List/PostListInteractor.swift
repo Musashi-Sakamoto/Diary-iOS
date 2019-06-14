@@ -27,7 +27,8 @@ final class PostListInteractor {
 
 extension PostListInteractor: StoreSubscriber {
     func newState(state: PostDataState) {
-        self.presenter?.setPost(state.posts)
+        guard let posts = state.posts as? [PostViewItemInterface] else { return }
+        self.presenter?.setPost(posts)
     }
 }
 

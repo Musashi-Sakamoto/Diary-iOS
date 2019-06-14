@@ -33,9 +33,9 @@ protocol PostListPresenterInterface: PresenterInterface {
     func pulledToRefresh()
 
     func didSelectDeletePost(postId: Int)
-    func didSelectEditPost(post: Post)
+    func didSelectEditPost(post: PostInterface?)
 
-    func setPost(_ posts: [Post]?)
+    func setPost(_ posts: [PostViewItemInterface]?)
 
     func numberOfSections() -> Int
     func numberOrItems(in section: Int) -> Int
@@ -50,7 +50,7 @@ protocol PostListInteractorInterface: InteractorInterface {
     func deletePost(postId: Int, completion: @escaping PostCompletionBlock) -> DataRequest
 }
 
-protocol PostViewItemInterface {
+protocol PostViewItemInterface: PostInterface {
     var title: String? { get }
     var imageURL: URL? { get }
     var mediaType: MediaType? { get }

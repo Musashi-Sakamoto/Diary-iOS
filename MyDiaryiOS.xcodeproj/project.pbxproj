@@ -25,7 +25,7 @@
 		4153B16422A75460008A216B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4153B16222A75460008A216B /* Main.storyboard */; };
 		4153B16622A75462008A216B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4153B16522A75462008A216B /* Assets.xcassets */; };
 		4153B16922A75462008A216B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4153B16722A75462008A216B /* LaunchScreen.storyboard */; };
-		4153B17422A75462008A216B /* MyDiaryiOSTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4153B17322A75462008A216B /* MyDiaryiOSTests.swift */; };
+		4153B17422A75462008A216B /* MyDiaryiOSStateTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4153B17322A75462008A216B /* MyDiaryiOSStateTests.swift */; };
 		4153B17F22A75462008A216B /* MyDiaryiOSUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4153B17E22A75462008A216B /* MyDiaryiOSUITests.swift */; };
 		4153B19222A763CB008A216B /* BaseWireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4153B19122A763CB008A216B /* BaseWireframe.swift */; };
 		4153B19622A77406008A216B /* PresenterInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4153B19522A77406008A216B /* PresenterInterface.swift */; };
@@ -103,7 +103,7 @@
 		4153B16822A75462008A216B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4153B16A22A75462008A216B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4153B16F22A75462008A216B /* MyDiaryiOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MyDiaryiOSTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		4153B17322A75462008A216B /* MyDiaryiOSTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyDiaryiOSTests.swift; sourceTree = "<group>"; };
+		4153B17322A75462008A216B /* MyDiaryiOSStateTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyDiaryiOSStateTests.swift; sourceTree = "<group>"; };
 		4153B17522A75462008A216B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4153B17A22A75462008A216B /* MyDiaryiOSUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MyDiaryiOSUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4153B17E22A75462008A216B /* MyDiaryiOSUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyDiaryiOSUITests.swift; sourceTree = "<group>"; };
@@ -242,7 +242,7 @@
 		4153B17222A75462008A216B /* MyDiaryiOSTests */ = {
 			isa = PBXGroup;
 			children = (
-				4153B17322A75462008A216B /* MyDiaryiOSTests.swift */,
+				4153B17322A75462008A216B /* MyDiaryiOSStateTests.swift */,
 				4153B17522A75462008A216B /* Info.plist */,
 			);
 			path = MyDiaryiOSTests;
@@ -709,7 +709,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4153B17422A75462008A216B /* MyDiaryiOSTests.swift in Sources */,
+				4153B17422A75462008A216B /* MyDiaryiOSStateTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

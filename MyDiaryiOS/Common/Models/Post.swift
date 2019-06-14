@@ -14,7 +14,18 @@ enum MediaType: String {
     case image
 }
 
-public struct Post: Any {
+protocol PostInterface {
+    var id: String { get }
+    var mainTitle: String { get }
+    var description: String { get }
+    var updatedAt: String? { get }
+
+    var url: String? { get }
+
+    var media: MediaType? { get }
+}
+
+public struct Post: PostInterface {
     var id: String
     var mainTitle: String
     var description: String

@@ -111,12 +111,12 @@ extension PostListViewController: UITableViewDataSource {
 }
 
 extension PostListViewController: PostListTableViewCellDelegate {
-    func deleteClicked(item: PostViewItemInterface?) {
+    func deleteClicked(item: PostInterface?) {
         guard let post = item as? Post else { return }
         self.presenter.didSelectDeletePost(postId: Int(post.id) ?? 0)
     }
 
-    func editClicked(item: PostViewItemInterface?) {
+    func editClicked(item: PostInterface?) {
         guard let post = item as? Post else { return }
         print("edit post: \(post.id)")
         self.presenter.didSelectEditPost(post: post)

@@ -34,7 +34,7 @@ extension PostInteractor: StoreSubscriber {
 }
 
 extension PostInteractor: PostInteractorInterface {
-    func getEditedPost() -> Post? {
+    func getEditedPost() -> PostInterface? {
         return mainStore.state.postDataState.editedPost
     }
 

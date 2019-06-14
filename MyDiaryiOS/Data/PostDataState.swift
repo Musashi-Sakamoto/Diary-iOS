@@ -10,20 +10,20 @@ import Foundation
 import ReSwift
 
 public struct PostDataState: StateType {
-    private(set) var posts: [Post]?
-    private(set) var editedPost: Post?
+    private(set) var posts: [PostInterface]?
+    private(set) var editedPost: PostInterface?
 }
 
 extension PostDataState {
-    public enum Action: ReSwift.Action {
-        case setPosts(posts: [Post])
-        case editPosts(post: Post)
+    enum Action: ReSwift.Action {
+        case setPosts(posts: [PostInterface])
+        case editPosts(post: PostInterface?)
         case addPost
     }
 }
 
 extension PostDataState {
-    public static func reducer(action: Action, state: PostDataState?) -> PostDataState {
+    public static func reducer(action: ReSwift.Action, state: PostDataState?) -> PostDataState {
         var state = state ?? PostDataState()
 
         switch action {

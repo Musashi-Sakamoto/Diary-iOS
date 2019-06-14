@@ -25,7 +25,12 @@ class PostService: NSObject {
 
     @discardableResult
     func editPost(title: String, description: String, postId: Int, completion: @escaping PostCompletionBlock) -> DataRequest {
-        return SessionManager.default.request(Constants.API.URLBase!.appendingPathComponent("posts/\(postId)"), method: .put).responseJSON(completionHandler: completion)
+        let parameters: Parameters = [
+            "title": title,
+            "description": description
+        ]
+
+        return SessionManager.default.request(Constants.API.URLBase!.appendingPathComponent("posts/\(postId)"), method: .put, parameters: parameters).responseJSON(completionHandler: completion)
     }
 
     @discardableResult

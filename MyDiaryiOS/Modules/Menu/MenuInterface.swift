@@ -19,12 +19,12 @@ protocol MenuWireframeInterface: WireframeInterface {
 }
 
 protocol MenuViewInterface: ViewInterface {
-    func showProfileInfo(username: String, email: String)
+    func showProfileInfo(user: UserInterface?)
 }
 
 protocol MenuPresenterInterface: PresenterInterface {
     func logoutButtonClicked()
-    func showProfileInfo(username: String, email: String)
+    func showProfileInfo(user: UserInterface?)
 }
 
 protocol MenuInteractorInterface: InteractorInterface {

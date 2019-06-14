@@ -7,15 +7,19 @@
 //
 
 import Foundation
+import SwiftyJSON
 
-struct User: Any {
-    var id: String
-    var username: String
-    var authToken: String
+protocol UserInterface {
+    var email: String { get }
+    var username: String { get }
 }
 
-extension User {
-    var authorizationHeader: String {
-        return String(format: "Bearer %@", self.authToken)
+struct User: UserInterface {
+    var email: String
+    var username: String
+
+    init(jsonObject: JSON) {
+        self.email = jsonObject["user"]["email"].stringValue
+        self.username = jsonObject["user"]["username"].stringValue
     }
 }

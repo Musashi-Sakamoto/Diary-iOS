@@ -25,8 +25,8 @@ final class MenuPresenter {
 }
 
 extension MenuPresenter: MenuPresenterInterface {
-    func showProfileInfo(username: String, email: String) {
-        self._view.showProfileInfo(username: username, email: email)
+    func showProfileInfo(user: UserInterface?) {
+        self._view.showProfileInfo(user: user)
     }
 
     func logoutButtonClicked() {

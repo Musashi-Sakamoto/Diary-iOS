@@ -28,7 +28,7 @@ final class MenuInteractor {
 extension MenuInteractor: StoreSubscriber {
     func newState(state: LoginUserState) {
         print(state)
-        self.presenter?.showProfileInfo(username: state.username, email: state.email)
+        self.presenter?.showProfileInfo(user: state.user)
     }
 }
 

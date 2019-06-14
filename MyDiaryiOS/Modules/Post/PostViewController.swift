@@ -79,7 +79,7 @@ extension PostViewController: UIImagePickerControllerDelegate, UINavigationContr
             self.movieUrl = movieUrl
             self.videoContainerView = VideoContainerView()
             let avPlayer = AVPlayer(url: movieUrl)
-            videoContainerView?.set(player: avPlayer)
+            self.videoContainerView?.set(player: avPlayer)
             self.videoContainerView?.play()
             view.layout(self.videoContainerView!).width(UIScreen.main.bounds.width - 16)
                 .height(300).centerX().above(self.postButton, 64).below(self.descriptionTextView, 8)
@@ -89,11 +89,13 @@ extension PostViewController: UIImagePickerControllerDelegate, UINavigationContr
 }
 
 extension PostViewController: PostViewInterface {
-    func showEditedPost(post: Post?) {
-        guard let editedPost = post else { return }
-        self.titleTextField.text = editedPost.title
+    func showEditedPost(post: PostInterface?) {
+        guard let editedPost = post as? PostViewItemInterface else { return }
+        self.titleTextField.text = editedPost.mainTitle
         self.descriptionTextView.text = editedPost.description
-        guard let media = editedPost.mediaType else { return }
+        self.postButton.title = "Edit"
+
+        guard let media = editedPost.media else { return }
         if media == .image {
             self.imageView = UIImageView()
             self.imageView?.af_setImage(withURL: editedPost.imageURL!)

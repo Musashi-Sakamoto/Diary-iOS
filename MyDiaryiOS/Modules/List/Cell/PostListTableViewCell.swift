@@ -13,8 +13,8 @@ import Material
 import UIKit
 
 protocol PostListTableViewCellDelegate {
-    func deleteClicked(item: PostViewItemInterface?)
-    func editClicked(item: PostViewItemInterface?)
+    func deleteClicked(item: PostInterface?)
+    func editClicked(item: PostInterface?)
 }
 
 class PostListTableViewCell: UITableViewCell {
@@ -137,7 +137,6 @@ class PostListTableViewCell: UITableViewCell {
 
     fileprivate func prepareToolbar(_ item: PostViewItemInterface) {
         self.toolbar = Toolbar(rightViews: nil)
-
         self.toolbar.title = item.title
         self.toolbar.titleLabel.textAlignment = .left
 

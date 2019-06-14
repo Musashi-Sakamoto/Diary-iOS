@@ -34,8 +34,8 @@ class MenuViewController: UITableViewController {
 }
 
 extension MenuViewController: MenuViewInterface {
-    func showProfileInfo(username: String, email: String) {
-        self.usernameLabel.text = username
-        self.emailLabel.text = email
+    func showProfileInfo(user: UserInterface?) {
+        self.usernameLabel.text = user?.username
+        self.emailLabel.text = user?.email
     }
 }

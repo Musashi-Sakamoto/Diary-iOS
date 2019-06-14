@@ -17,7 +17,7 @@ final class PostListPresenter {
 
     private let _authorizationManager = AuthorizationAdapter.shared
 
-    private var _items: [Post] = [] {
+    private var _items: [PostViewItemInterface] = [] {
         didSet {
             self._view.reloadData()
         }
@@ -31,7 +31,7 @@ final class PostListPresenter {
 }
 
 extension PostListPresenter: PostListPresenterInterface {
-    func didSelectEditPost(post: Post) {
+    func didSelectEditPost(post: PostInterface?) {
         self._wireframe.navigate(to: .edit)
         mainStore.dispatch(PostDataState.Action.editPosts(post: post))
     }
@@ -42,7 +42,7 @@ extension PostListPresenter: PostListPresenterInterface {
         }
     }
 
-    func setPost(_ posts: [Post]?) {
+    func setPost(_ posts: [PostViewItemInterface]?) {
         self._items = posts ?? []
     }
 

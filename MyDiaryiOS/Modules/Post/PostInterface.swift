@@ -19,7 +19,7 @@ protocol PostWireframeInterface: WireframeInterface {
 }
 
 protocol PostViewInterface: ViewInterface {
-    func showEditedPost(post: Post?)
+    func showEditedPost(post: PostInterface?)
 }
 
 protocol PostPresenterInterface: PresenterInterface {
@@ -27,7 +27,7 @@ protocol PostPresenterInterface: PresenterInterface {
     func editButtonClicked(title: String, description: String, postId: Int, data: Data?, isImage: Bool)
     func cancelButtonClicked()
     func addMediaButtonClicked()
-    func setEditedPost(post: Post?)
+    func setEditedPost(post: PostInterface?)
     func isEditing() -> Bool
     func getPostId() -> Int?
 }
@@ -36,5 +36,5 @@ protocol PostInteractorInterface: InteractorInterface {
     func creartePost(title: String, description: String, completion: @escaping PostCompletionBlock) -> DataRequest
     func editPost(title: String, description: String, postId: Int, completion: @escaping PostCompletionBlock) -> DataRequest
     func createImage(data: Data, postId: Int, isImage: Bool, completion: @escaping ImageCompletionBlock)
-    func getEditedPost() -> Post?
+    func getEditedPost() -> PostInterface?
 }

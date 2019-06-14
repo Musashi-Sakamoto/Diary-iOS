@@ -34,7 +34,7 @@ extension PostPresenter: PostPresenterInterface {
         return self._interactor.getEditedPost() != nil
     }
 
-    func setEditedPost(post: Post?) {
+    func setEditedPost(post: PostInterface?) {
         self._view.showEditedPost(post: post)
     }
 
@@ -99,7 +99,7 @@ private extension PostPresenter {
     }
 
     private func _handleEditResult(_ response: DataResponse<Any>, _ data: Data?, _ isImage: Bool, postId: Int) {
-        print(response.result.value)
+        print("edit: \(response.request?.url)")
         switch response.response!.statusCode {
         case 204:
             if let data = data {
