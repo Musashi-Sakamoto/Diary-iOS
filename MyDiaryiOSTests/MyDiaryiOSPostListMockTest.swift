@@ -59,10 +59,10 @@ class MockPostListViewController: PostListViewInterface {
 }
 
 class MyDiaryiOSPostLIstMockTests: XCTestCase {
-    var presenter: PostListPresenter!
-    var vc: MockPostListViewController!
-    var interactor: MockPostListInteractor!
-    var wireframe: MockPostListWireframe!
+    var presenter: PostListPresenterInterface!
+    var vc: PostListViewInterface!
+    var interactor: PostListInteractorInterface!
+    var wireframe: PostListWireframeInterface!
 
     override func setUp() {
         super.setUp()
@@ -75,15 +75,18 @@ class MyDiaryiOSPostLIstMockTests: XCTestCase {
     override func tearDown() {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
         self.presenter = nil
+        self.wireframe = nil
+        self.vc = nil
+        self.interactor = nil
         super.tearDown()
     }
 
-    func test_getPosts() {
+    func test_ポスト一覧取得() {
         self.presenter.viewDidLoad()
         XCTAssertEqual(self.presenter.numberOrItems(in: 0), 3, "number should be 3")
     }
 
-    func test_deletePost() {
+    func test_ポスト削除が適切に行われているか() {
         self.presenter.didSelectDeletePost(postId: 1)
         XCTAssertEqual(self.presenter.numberOrItems(in: 0), 2, "number should be 2")
     }
