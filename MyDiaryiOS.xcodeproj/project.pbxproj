@@ -7,8 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0967AB70EA3F94D5F7A18214 /* Pods_MyDiaryiOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B9D219A3C6176B32ECECD19A /* Pods_MyDiaryiOS.framework */; };
-		3ABECD5749C285B87466546F /* Pods_MyDiaryiOSUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B1507FA3409E2BB3D6093B02 /* Pods_MyDiaryiOSUITests.framework */; };
 		410DAC3122AE180F00194FB8 /* PostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 410DAC3022AE180F00194FB8 /* PostViewController.swift */; };
 		410DAC3322AE182500194FB8 /* Post.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 410DAC3222AE182500194FB8 /* Post.storyboard */; };
 		410DAC3522AE187900194FB8 /* PostInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = 410DAC3422AE187900194FB8 /* PostInterface.swift */; };
@@ -47,7 +45,7 @@
 		419AFCAE22AF8ABE0081892A /* AppReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 419AFCAD22AF8ABE0081892A /* AppReducer.swift */; };
 		419AFCB222AF96C70081892A /* LoginUserState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 419AFCB122AF96C70081892A /* LoginUserState.swift */; };
 		419AFCB422AF9EA50081892A /* PostDataState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 419AFCB322AF9EA50081892A /* PostDataState.swift */; };
-		41B7B64422B389CC007A608C /* MockTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41B7B64322B389CC007A608C /* MockTest.swift */; };
+		41B7B64422B389CC007A608C /* MyDiaryiOSPostListMockTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41B7B64322B389CC007A608C /* MyDiaryiOSPostListMockTest.swift */; };
 		41B8E87F22A8AE03003157C8 /* PostListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41B8E87E22A8AE03003157C8 /* PostListViewController.swift */; };
 		41B8E88122A8AE13003157C8 /* PostListInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41B8E88022A8AE13003157C8 /* PostListInterface.swift */; };
 		41B8E88322A8AF7D003157C8 /* PostListWireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41B8E88222A8AF7D003157C8 /* PostListWireframe.swift */; };
@@ -60,7 +58,10 @@
 		41B8E89A22A8EB1E003157C8 /* PostListTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 41B8E89822A8EB1E003157C8 /* PostListTableViewCell.xib */; };
 		41B8E89C22AA297E003157C8 /* AVPlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41B8E89B22AA297E003157C8 /* AVPlayerView.swift */; };
 		41B8E89E22AA2DF3003157C8 /* ThemeInitializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41B8E89D22AA2DF3003157C8 /* ThemeInitializer.swift */; };
-		7B9CDF2CB496135BB4827096 /* Pods_MyDiaryiOSTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F59C34A82D0C435AE418008A /* Pods_MyDiaryiOSTests.framework */; };
+		91C23AF7734E7AC7CB1C7A23 /* Pods_MyDiaryiOSTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6045A485FDF1F881FA10ACA2 /* Pods_MyDiaryiOSTests.framework */; };
+		C0BD7C83468E7162B36E05F4 /* Pods_MyDiaryiOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 668F49C2826C167060DE5EE9 /* Pods_MyDiaryiOS.framework */; };
+		D41687C7A2E00F6A6CDF7B8A /* Pods_MyDiaryiOSUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CF9F1EA4098CB7D7A61BC7EE /* Pods_MyDiaryiOSUITests.framework */; };
+		EB14112122B47CF80020C18B /* MyDiaryiOSLoginMockTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB14112022B47CF80020C18B /* MyDiaryiOSLoginMockTests.swift */; };
 		EB6B0D1D22AB65BD007B14F5 /* AppToolbarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB6B0D1C22AB65BD007B14F5 /* AppToolbarController.swift */; };
 		EB6B0D1F22AB6D8E007B14F5 /* AppNavigatinoDrawerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB6B0D1E22AB6D8E007B14F5 /* AppNavigatinoDrawerController.swift */; };
 		EB6B0D2222AB6E23007B14F5 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB6B0D2122AB6E23007B14F5 /* MenuViewController.swift */; };
@@ -84,7 +85,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		19BD1D59F2539F9CC63C3A00 /* Pods-MyDiaryiOSTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyDiaryiOSTests.debug.xcconfig"; path = "Target Support Files/Pods-MyDiaryiOSTests/Pods-MyDiaryiOSTests.debug.xcconfig"; sourceTree = "<group>"; };
+		3DB345D9A0E0FA1F2213339D /* Pods-MyDiaryiOSUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyDiaryiOSUITests.release.xcconfig"; path = "Target Support Files/Pods-MyDiaryiOSUITests/Pods-MyDiaryiOSUITests.release.xcconfig"; sourceTree = "<group>"; };
 		410DAC3022AE180F00194FB8 /* PostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostViewController.swift; sourceTree = "<group>"; };
 		410DAC3222AE182500194FB8 /* Post.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Post.storyboard; sourceTree = "<group>"; };
 		410DAC3422AE187900194FB8 /* PostInterface.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostInterface.swift; sourceTree = "<group>"; };
@@ -129,7 +130,7 @@
 		419AFCAD22AF8ABE0081892A /* AppReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppReducer.swift; sourceTree = "<group>"; };
 		419AFCB122AF96C70081892A /* LoginUserState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginUserState.swift; sourceTree = "<group>"; };
 		419AFCB322AF9EA50081892A /* PostDataState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostDataState.swift; sourceTree = "<group>"; };
-		41B7B64322B389CC007A608C /* MockTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockTest.swift; sourceTree = "<group>"; };
+		41B7B64322B389CC007A608C /* MyDiaryiOSPostListMockTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyDiaryiOSPostListMockTest.swift; sourceTree = "<group>"; };
 		41B8E87E22A8AE03003157C8 /* PostListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostListViewController.swift; sourceTree = "<group>"; };
 		41B8E88022A8AE13003157C8 /* PostListInterface.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostListInterface.swift; sourceTree = "<group>"; };
 		41B8E88222A8AF7D003157C8 /* PostListWireframe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostListWireframe.swift; sourceTree = "<group>"; };
@@ -142,17 +143,18 @@
 		41B8E89822A8EB1E003157C8 /* PostListTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PostListTableViewCell.xib; sourceTree = "<group>"; };
 		41B8E89B22AA297E003157C8 /* AVPlayerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AVPlayerView.swift; sourceTree = "<group>"; };
 		41B8E89D22AA2DF3003157C8 /* ThemeInitializer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeInitializer.swift; sourceTree = "<group>"; };
-		60497AD1E6651012C386A15E /* Pods-MyDiaryiOSUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyDiaryiOSUITests.debug.xcconfig"; path = "Target Support Files/Pods-MyDiaryiOSUITests/Pods-MyDiaryiOSUITests.debug.xcconfig"; sourceTree = "<group>"; };
-		67930AA2DEA017201D67173C /* Pods-MyDiaryiOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyDiaryiOS.release.xcconfig"; path = "Target Support Files/Pods-MyDiaryiOS/Pods-MyDiaryiOS.release.xcconfig"; sourceTree = "<group>"; };
-		71632F8F439C59541B99320F /* Pods-MyDiaryiOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyDiaryiOS.debug.xcconfig"; path = "Target Support Files/Pods-MyDiaryiOS/Pods-MyDiaryiOS.debug.xcconfig"; sourceTree = "<group>"; };
-		9EB583DBD7D652F2368D8104 /* Pods-MyDiaryiOSUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyDiaryiOSUITests.release.xcconfig"; path = "Target Support Files/Pods-MyDiaryiOSUITests/Pods-MyDiaryiOSUITests.release.xcconfig"; sourceTree = "<group>"; };
-		B1507FA3409E2BB3D6093B02 /* Pods_MyDiaryiOSUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MyDiaryiOSUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		B9D219A3C6176B32ECECD19A /* Pods_MyDiaryiOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MyDiaryiOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		493BFD5EB0E91502F7A52D9C /* Pods-MyDiaryiOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyDiaryiOS.debug.xcconfig"; path = "Target Support Files/Pods-MyDiaryiOS/Pods-MyDiaryiOS.debug.xcconfig"; sourceTree = "<group>"; };
+		6045A485FDF1F881FA10ACA2 /* Pods_MyDiaryiOSTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MyDiaryiOSTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		668F49C2826C167060DE5EE9 /* Pods_MyDiaryiOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MyDiaryiOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7A728D41AAA2DAD0594DFEDD /* Pods-MyDiaryiOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyDiaryiOS.release.xcconfig"; path = "Target Support Files/Pods-MyDiaryiOS/Pods-MyDiaryiOS.release.xcconfig"; sourceTree = "<group>"; };
+		A185A62B672E945232597634 /* Pods-MyDiaryiOSTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyDiaryiOSTests.release.xcconfig"; path = "Target Support Files/Pods-MyDiaryiOSTests/Pods-MyDiaryiOSTests.release.xcconfig"; sourceTree = "<group>"; };
+		C8BE200E9688DCCC0DC6EE20 /* Pods-MyDiaryiOSUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyDiaryiOSUITests.debug.xcconfig"; path = "Target Support Files/Pods-MyDiaryiOSUITests/Pods-MyDiaryiOSUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		CF9F1EA4098CB7D7A61BC7EE /* Pods_MyDiaryiOSUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MyDiaryiOSUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E7917D5CA821781CEC679FF3 /* Pods-MyDiaryiOSTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyDiaryiOSTests.debug.xcconfig"; path = "Target Support Files/Pods-MyDiaryiOSTests/Pods-MyDiaryiOSTests.debug.xcconfig"; sourceTree = "<group>"; };
+		EB14112022B47CF80020C18B /* MyDiaryiOSLoginMockTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyDiaryiOSLoginMockTests.swift; sourceTree = "<group>"; };
 		EB6B0D1C22AB65BD007B14F5 /* AppToolbarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppToolbarController.swift; sourceTree = "<group>"; };
 		EB6B0D1E22AB6D8E007B14F5 /* AppNavigatinoDrawerController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppNavigatinoDrawerController.swift; sourceTree = "<group>"; };
 		EB6B0D2122AB6E23007B14F5 /* MenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
-		F20BD04048D987EAE1B69E8C /* Pods-MyDiaryiOSTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyDiaryiOSTests.release.xcconfig"; path = "Target Support Files/Pods-MyDiaryiOSTests/Pods-MyDiaryiOSTests.release.xcconfig"; sourceTree = "<group>"; };
-		F59C34A82D0C435AE418008A /* Pods_MyDiaryiOSTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MyDiaryiOSTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -160,7 +162,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0967AB70EA3F94D5F7A18214 /* Pods_MyDiaryiOS.framework in Frameworks */,
+				C0BD7C83468E7162B36E05F4 /* Pods_MyDiaryiOS.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -168,7 +170,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7B9CDF2CB496135BB4827096 /* Pods_MyDiaryiOSTests.framework in Frameworks */,
+				91C23AF7734E7AC7CB1C7A23 /* Pods_MyDiaryiOSTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -176,21 +178,34 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3ABECD5749C285B87466546F /* Pods_MyDiaryiOSUITests.framework in Frameworks */,
+				D41687C7A2E00F6A6CDF7B8A /* Pods_MyDiaryiOSUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		23EADB991DC3F16F7B7EED89 /* Frameworks */ = {
+		1AA718BB14EF649B90DC4596 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				B9D219A3C6176B32ECECD19A /* Pods_MyDiaryiOS.framework */,
-				F59C34A82D0C435AE418008A /* Pods_MyDiaryiOSTests.framework */,
-				B1507FA3409E2BB3D6093B02 /* Pods_MyDiaryiOSUITests.framework */,
+				668F49C2826C167060DE5EE9 /* Pods_MyDiaryiOS.framework */,
+				6045A485FDF1F881FA10ACA2 /* Pods_MyDiaryiOSTests.framework */,
+				CF9F1EA4098CB7D7A61BC7EE /* Pods_MyDiaryiOSUITests.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		3E2CEE5482A9F3C5E95C9CDF /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				493BFD5EB0E91502F7A52D9C /* Pods-MyDiaryiOS.debug.xcconfig */,
+				7A728D41AAA2DAD0594DFEDD /* Pods-MyDiaryiOS.release.xcconfig */,
+				E7917D5CA821781CEC679FF3 /* Pods-MyDiaryiOSTests.debug.xcconfig */,
+				A185A62B672E945232597634 /* Pods-MyDiaryiOSTests.release.xcconfig */,
+				C8BE200E9688DCCC0DC6EE20 /* Pods-MyDiaryiOSUITests.debug.xcconfig */,
+				3DB345D9A0E0FA1F2213339D /* Pods-MyDiaryiOSUITests.release.xcconfig */,
+			);
+			path = Pods;
 			sourceTree = "<group>";
 		};
 		410DAC2F22AE16CB00194FB8 /* Post */ = {
@@ -213,8 +228,8 @@
 				4153B17222A75462008A216B /* MyDiaryiOSTests */,
 				4153B17D22A75462008A216B /* MyDiaryiOSUITests */,
 				4153B15C22A7545F008A216B /* Products */,
-				B4072CDFE5BAC25C189F1596 /* Pods */,
-				23EADB991DC3F16F7B7EED89 /* Frameworks */,
+				3E2CEE5482A9F3C5E95C9CDF /* Pods */,
+				1AA718BB14EF649B90DC4596 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -244,7 +259,8 @@
 		4153B17222A75462008A216B /* MyDiaryiOSTests */ = {
 			isa = PBXGroup;
 			children = (
-				41B7B64322B389CC007A608C /* MockTest.swift */,
+				EB14112022B47CF80020C18B /* MyDiaryiOSLoginMockTests.swift */,
+				41B7B64322B389CC007A608C /* MyDiaryiOSPostListMockTest.swift */,
 				4153B17322A75462008A216B /* MyDiaryiOSStateTests.swift */,
 				4153B17522A75462008A216B /* Info.plist */,
 			);
@@ -392,19 +408,6 @@
 			path = Cell;
 			sourceTree = "<group>";
 		};
-		B4072CDFE5BAC25C189F1596 /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				71632F8F439C59541B99320F /* Pods-MyDiaryiOS.debug.xcconfig */,
-				67930AA2DEA017201D67173C /* Pods-MyDiaryiOS.release.xcconfig */,
-				19BD1D59F2539F9CC63C3A00 /* Pods-MyDiaryiOSTests.debug.xcconfig */,
-				F20BD04048D987EAE1B69E8C /* Pods-MyDiaryiOSTests.release.xcconfig */,
-				60497AD1E6651012C386A15E /* Pods-MyDiaryiOSUITests.debug.xcconfig */,
-				9EB583DBD7D652F2368D8104 /* Pods-MyDiaryiOSUITests.release.xcconfig */,
-			);
-			path = Pods;
-			sourceTree = "<group>";
-		};
 		EB6B0D2022AB6E10007B14F5 /* Menu */ = {
 			isa = PBXGroup;
 			children = (
@@ -425,12 +428,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 4153B18322A75462008A216B /* Build configuration list for PBXNativeTarget "MyDiaryiOS" */;
 			buildPhases = (
-				51E9EB8824F615C6EA4B7E76 /* [CP] Check Pods Manifest.lock */,
+				A2243C96CC9105C463C1C12F /* [CP] Check Pods Manifest.lock */,
 				4153B15722A7545F008A216B /* Sources */,
 				4153B15822A7545F008A216B /* Frameworks */,
 				4153B15922A7545F008A216B /* Resources */,
 				4153B18C22A756BF008A216B /* ShellScript */,
-				834B785329315A6DC6DE73B1 /* [CP] Embed Pods Frameworks */,
+				1EAEE3559ABC04C9C8053F8F /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -445,7 +448,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 4153B18622A75462008A216B /* Build configuration list for PBXNativeTarget "MyDiaryiOSTests" */;
 			buildPhases = (
-				2CB5275EAC881C3E5F811147 /* [CP] Check Pods Manifest.lock */,
+				56BC63FCD66225941602EFFD /* [CP] Check Pods Manifest.lock */,
 				4153B16B22A75462008A216B /* Sources */,
 				4153B16C22A75462008A216B /* Frameworks */,
 				4153B16D22A75462008A216B /* Resources */,
@@ -464,7 +467,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 4153B18922A75462008A216B /* Build configuration list for PBXNativeTarget "MyDiaryiOSUITests" */;
 			buildPhases = (
-				9F5CC1793C3706995907A5EE /* [CP] Check Pods Manifest.lock */,
+				1726DE3B2EFD9F9370B2ACF3 /* [CP] Check Pods Manifest.lock */,
 				4153B17622A75462008A216B /* Sources */,
 				4153B17722A75462008A216B /* Frameworks */,
 				4153B17822A75462008A216B /* Resources */,
@@ -555,7 +558,63 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		2CB5275EAC881C3E5F811147 /* [CP] Check Pods Manifest.lock */ = {
+		1726DE3B2EFD9F9370B2ACF3 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-MyDiaryiOSUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		1EAEE3559ABC04C9C8053F8F /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-MyDiaryiOS/Pods-MyDiaryiOS-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-MyDiaryiOS/Pods-MyDiaryiOS-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-MyDiaryiOS/Pods-MyDiaryiOS-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		4153B18C22A756BF008A216B /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/SwiftLint/swiftlint\"\n\"${PODS_ROOT}/SwiftFormat/CommandLineTool/swiftformat\" . --self insert\n\n\n";
+		};
+		56BC63FCD66225941602EFFD /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -577,24 +636,7 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		4153B18C22A756BF008A216B /* ShellScript */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-			);
-			outputFileListPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/SwiftLint/swiftlint\"\n\"${PODS_ROOT}/SwiftFormat/CommandLineTool/swiftformat\" . --self insert\n\n\n";
-		};
-		51E9EB8824F615C6EA4B7E76 /* [CP] Check Pods Manifest.lock */ = {
+		A2243C96CC9105C463C1C12F /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -610,45 +652,6 @@
 			);
 			outputPaths = (
 				"$(DERIVED_FILE_DIR)/Pods-MyDiaryiOS-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		834B785329315A6DC6DE73B1 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-MyDiaryiOS/Pods-MyDiaryiOS-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-MyDiaryiOS/Pods-MyDiaryiOS-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-MyDiaryiOS/Pods-MyDiaryiOS-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		9F5CC1793C3706995907A5EE /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-MyDiaryiOSUITests-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -713,7 +716,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				4153B17422A75462008A216B /* MyDiaryiOSStateTests.swift in Sources */,
-				41B7B64422B389CC007A608C /* MockTest.swift in Sources */,
+				EB14112122B47CF80020C18B /* MyDiaryiOSLoginMockTests.swift in Sources */,
+				41B7B64422B389CC007A608C /* MyDiaryiOSPostListMockTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -878,7 +882,7 @@
 		};
 		4153B18422A75462008A216B /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 71632F8F439C59541B99320F /* Pods-MyDiaryiOS.debug.xcconfig */;
+			baseConfigurationReference = 493BFD5EB0E91502F7A52D9C /* Pods-MyDiaryiOS.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -897,7 +901,7 @@
 		};
 		4153B18522A75462008A216B /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 67930AA2DEA017201D67173C /* Pods-MyDiaryiOS.release.xcconfig */;
+			baseConfigurationReference = 7A728D41AAA2DAD0594DFEDD /* Pods-MyDiaryiOS.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -916,7 +920,7 @@
 		};
 		4153B18722A75462008A216B /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 19BD1D59F2539F9CC63C3A00 /* Pods-MyDiaryiOSTests.debug.xcconfig */;
+			baseConfigurationReference = E7917D5CA821781CEC679FF3 /* Pods-MyDiaryiOSTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -938,7 +942,7 @@
 		};
 		4153B18822A75462008A216B /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = F20BD04048D987EAE1B69E8C /* Pods-MyDiaryiOSTests.release.xcconfig */;
+			baseConfigurationReference = A185A62B672E945232597634 /* Pods-MyDiaryiOSTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -960,7 +964,7 @@
 		};
 		4153B18A22A75462008A216B /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 60497AD1E6651012C386A15E /* Pods-MyDiaryiOSUITests.debug.xcconfig */;
+			baseConfigurationReference = C8BE200E9688DCCC0DC6EE20 /* Pods-MyDiaryiOSUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -981,7 +985,7 @@
 		};
 		4153B18B22A75462008A216B /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 9EB583DBD7D652F2368D8104 /* Pods-MyDiaryiOSUITests.release.xcconfig */;
+			baseConfigurationReference = 3DB345D9A0E0FA1F2213339D /* Pods-MyDiaryiOSUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;

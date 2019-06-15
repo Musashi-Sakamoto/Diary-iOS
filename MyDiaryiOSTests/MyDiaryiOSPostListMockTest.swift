@@ -12,14 +12,15 @@ import SwiftyJSON
 import XCTest
 
 class MockPostListInteractor: PostListInteractorInterface {
+    var posts: [PostInterface] = [
+        MockPost(id: "1", mainTitle: "title1", description: "description1", updatedAt: "12920788:125:11", url: nil, media: nil),
+        MockPost(id: "2", mainTitle: "title2", description: "description2", updatedAt: "12920788:125:11", url: nil, media: nil),
+        MockPost(id: "3", mainTitle: "title3", description: "description3", updatedAt: "12920788:125:11", url: nil, media: nil)
+    ]
     func getPosts(completion: @escaping PostCompletionBlock) {
         let value: [String: [String: [PostInterface]]] = [
             "posts": [
-                "rows": [
-                    MockPost(id: "1", mainTitle: "title1", description: "description1", updatedAt: "12920788:125:11", url: nil, media: nil),
-                    MockPost(id: "2", mainTitle: "title2", description: "description2", updatedAt: "12920788:125:11", url: nil, media: nil),
-                    MockPost(id: "3", mainTitle: "title3", description: "description3", updatedAt: "12920788:125:11", url: nil, media: nil)
-                ]
+                "rows": posts
             ]
         ]
         let result = Result<Any>.success(value)
@@ -28,7 +29,15 @@ class MockPostListInteractor: PostListInteractorInterface {
         completion(dataResponse)
     }
 
-    func deletePost(postId: Int, completion: @escaping PostCompletionBlock) {}
+    func deletePost(postId: Int, completion: @escaping PostCompletionBlock) {
+        self.posts.removeAll { post -> Bool in
+            Int(post.id) == postId
+        }
+        let result = Result<Any>.success("")
+        let httpResponse = HTTPURLResponse(url: Constants.API.URLBase!.appendingPathComponent("posts/\(postId)"), statusCode: 204, httpVersion: nil, headerFields: nil)
+        let dataResponse = DataResponse(request: nil, response: httpResponse, data: nil, result: result)
+        completion(dataResponse)
+    }
 }
 
 class MockPostListWireframe: PostListWireframeInterface {
@@ -49,7 +58,7 @@ class MockPostListViewController: PostListViewInterface {
     func setLoadingVisible(_ visible: Bool) {}
 }
 
-class MyDiaryiOSAPIMockTests: XCTestCase {
+class MyDiaryiOSPostLIstMockTests: XCTestCase {
     var presenter: PostListPresenter!
     var vc: MockPostListViewController!
     var interactor: MockPostListInteractor!
@@ -74,16 +83,8 @@ class MyDiaryiOSAPIMockTests: XCTestCase {
         XCTAssertEqual(self.presenter.numberOrItems(in: 0), 3, "number should be 3")
     }
 
-    //これいる？
-    func test_getPostsInteractor() {
-        let testExpectation = expectation(description: "status code 200")
-        let callback = { (response: DataResponse<Any>) in
-            XCTAssertEqual(response.response!.statusCode, 200, "status code must be 200")
-            let jsonObject = JSON(response.result.value)["posts"]["rows"].arrayValue
-            XCTAssertEqual(jsonObject.count, 3, "count should be 3")
-            testExpectation.fulfill()
-        }
-        interactor.getPosts(completion: callback)
-        wait(for: [testExpectation], timeout: 1)
+    func test_deletePost() {
+        self.presenter.didSelectDeletePost(postId: 1)
+        XCTAssertEqual(self.presenter.numberOrItems(in: 0), 2, "number should be 2")
     }
 }
