@@ -146,12 +146,12 @@ class MyDiaryiOSLoginMockTests: XCTestCase {
         XCTAssertTrue(self.interactor.isLoginAPICalled, "login api should be called")
         XCTAssertNotNil(self.wireframe.errorAlertText, "error text should not be nil")
         XCTAssertFalse(self.wireframe.isNavigateToPostListCalled, "should not be navigated")
-        
+
         self.presenter.loginButtonClicked(username: "username", password: "password2")
         XCTAssertTrue(self.interactor.isLoginAPICalled, "login api should be called")
         XCTAssertNotNil(self.wireframe.errorAlertText, "error text should not be nil")
         XCTAssertFalse(self.wireframe.isNavigateToPostListCalled, "should not be navigated")
-        
+
         self.presenter.loginButtonClicked(username: "username", password: "password")
         XCTAssertTrue(self.interactor.isLoginAPICalled, "login api should be called")
         XCTAssertTrue(self.wireframe.isNavigateToPostListCalled, "should be navigated")

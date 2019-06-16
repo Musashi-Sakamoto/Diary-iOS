@@ -62,6 +62,7 @@
 		C0BD7C83468E7162B36E05F4 /* Pods_MyDiaryiOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 668F49C2826C167060DE5EE9 /* Pods_MyDiaryiOS.framework */; };
 		D41687C7A2E00F6A6CDF7B8A /* Pods_MyDiaryiOSUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CF9F1EA4098CB7D7A61BC7EE /* Pods_MyDiaryiOSUITests.framework */; };
 		EB14112122B47CF80020C18B /* MyDiaryiOSLoginMockTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB14112022B47CF80020C18B /* MyDiaryiOSLoginMockTests.swift */; };
+		EB14112322B611490020C18B /* PostMockTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB14112222B611490020C18B /* PostMockTests.swift */; };
 		EB6B0D1D22AB65BD007B14F5 /* AppToolbarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB6B0D1C22AB65BD007B14F5 /* AppToolbarController.swift */; };
 		EB6B0D1F22AB6D8E007B14F5 /* AppNavigatinoDrawerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB6B0D1E22AB6D8E007B14F5 /* AppNavigatinoDrawerController.swift */; };
 		EB6B0D2222AB6E23007B14F5 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB6B0D2122AB6E23007B14F5 /* MenuViewController.swift */; };
@@ -152,6 +153,7 @@
 		CF9F1EA4098CB7D7A61BC7EE /* Pods_MyDiaryiOSUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MyDiaryiOSUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E7917D5CA821781CEC679FF3 /* Pods-MyDiaryiOSTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyDiaryiOSTests.debug.xcconfig"; path = "Target Support Files/Pods-MyDiaryiOSTests/Pods-MyDiaryiOSTests.debug.xcconfig"; sourceTree = "<group>"; };
 		EB14112022B47CF80020C18B /* MyDiaryiOSLoginMockTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyDiaryiOSLoginMockTests.swift; sourceTree = "<group>"; };
+		EB14112222B611490020C18B /* PostMockTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostMockTests.swift; sourceTree = "<group>"; };
 		EB6B0D1C22AB65BD007B14F5 /* AppToolbarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppToolbarController.swift; sourceTree = "<group>"; };
 		EB6B0D1E22AB6D8E007B14F5 /* AppNavigatinoDrawerController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppNavigatinoDrawerController.swift; sourceTree = "<group>"; };
 		EB6B0D2122AB6E23007B14F5 /* MenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
@@ -259,6 +261,7 @@
 		4153B17222A75462008A216B /* MyDiaryiOSTests */ = {
 			isa = PBXGroup;
 			children = (
+				EB14112222B611490020C18B /* PostMockTests.swift */,
 				EB14112022B47CF80020C18B /* MyDiaryiOSLoginMockTests.swift */,
 				41B7B64322B389CC007A608C /* MyDiaryiOSPostListMockTest.swift */,
 				4153B17322A75462008A216B /* MyDiaryiOSStateTests.swift */,
@@ -716,6 +719,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4153B17422A75462008A216B /* MyDiaryiOSStateTests.swift in Sources */,
+				EB14112322B611490020C18B /* PostMockTests.swift in Sources */,
 				EB14112122B47CF80020C18B /* MyDiaryiOSLoginMockTests.swift in Sources */,
 				41B7B64422B389CC007A608C /* MyDiaryiOSPostListMockTest.swift in Sources */,
 			);
