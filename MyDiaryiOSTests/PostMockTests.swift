@@ -14,6 +14,7 @@ import XCTest
 class MockPostInteractor: PostInteractorInterface {
     var isCreatePostAPICalled = false
     var isEditPostAPICalled = false
+    var isCreateImageAPICalled = false
     var editedPost: PostInterface?
     func creartePost(title: String, description: String, completion: @escaping PostCompletionBlock) {
         self.isCreatePostAPICalled = true
@@ -33,7 +34,13 @@ class MockPostInteractor: PostInteractorInterface {
         completion(dataResponse)
     }
 
-    func createImage(data: Data, postId: Int, isImage: Bool, completion: @escaping ImageCompletionBlock) {}
+    func createImage(data: Data, postId: Int, isImage: Bool, completion: @escaping ImageCompletionBlock) {
+        self.isCreateImageAPICalled = true
+        let result = Result<Any>.success("image")
+        let httpResponse = HTTPURLResponse(url: Constants.API.URLBase!.appendingPathComponent("images"), statusCode: 201, httpVersion: nil, headerFields: nil)
+        let dataResponse = DataResponse(request: nil, response: httpResponse, data: nil, result: result)
+        completion(dataResponse)
+    }
 
     func getEditedPost() -> PostInterface? {
         return self.editedPost
@@ -119,6 +126,21 @@ class PostMockTests: XCTestCase {
         XCTAssertFalse(self.interactor.isEditPostAPICalled)
         self.presenter.editButtonClicked(title: "title", description: "edit description", postId: Int(post.id)!, data: nil, isImage: true)
         XCTAssertTrue(self.interactor.isEditPostAPICalled)
+        XCTAssertTrue(self.wireframe.isNavigateToPostListCalled)
+    }
+
+    func test_ポスト写真選択() {
+        XCTAssertFalse(self.wireframe.isNavigateToLibraryCalled)
+        self.presenter.addMediaButtonClicked()
+        XCTAssertTrue(self.wireframe.isNavigateToLibraryCalled)
+
+        self.presenter.postButtonClicked(title: "title", description: "description", data: Data(), isImage: true)
+        XCTAssertTrue(self.interactor.isCreateImageAPICalled)
+    }
+
+    func test_キャンセルボタンを押した時にポストリストに線維() {
+        XCTAssertFalse(self.wireframe.isNavigateToPostListCalled)
+        self.presenter.cancelButtonClicked()
         XCTAssertTrue(self.wireframe.isNavigateToPostListCalled)
     }
 }
