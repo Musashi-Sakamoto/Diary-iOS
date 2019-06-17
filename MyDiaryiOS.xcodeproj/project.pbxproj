@@ -46,6 +46,7 @@
 		419AFCB222AF96C70081892A /* LoginUserState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 419AFCB122AF96C70081892A /* LoginUserState.swift */; };
 		419AFCB422AF9EA50081892A /* PostDataState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 419AFCB322AF9EA50081892A /* PostDataState.swift */; };
 		41B7B64422B389CC007A608C /* MyDiaryiOSPostListMockTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41B7B64322B389CC007A608C /* MyDiaryiOSPostListMockTest.swift */; };
+		41B7B64822B75BEA007A608C /* PostList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41B7B64722B75BEA007A608C /* PostList.swift */; };
 		41B8E87F22A8AE03003157C8 /* PostListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41B8E87E22A8AE03003157C8 /* PostListViewController.swift */; };
 		41B8E88122A8AE13003157C8 /* PostListInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41B8E88022A8AE13003157C8 /* PostListInterface.swift */; };
 		41B8E88322A8AF7D003157C8 /* PostListWireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41B8E88222A8AF7D003157C8 /* PostListWireframe.swift */; };
@@ -132,6 +133,7 @@
 		419AFCB122AF96C70081892A /* LoginUserState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginUserState.swift; sourceTree = "<group>"; };
 		419AFCB322AF9EA50081892A /* PostDataState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostDataState.swift; sourceTree = "<group>"; };
 		41B7B64322B389CC007A608C /* MyDiaryiOSPostListMockTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyDiaryiOSPostListMockTest.swift; sourceTree = "<group>"; };
+		41B7B64722B75BEA007A608C /* PostList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostList.swift; sourceTree = "<group>"; };
 		41B8E87E22A8AE03003157C8 /* PostListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostListViewController.swift; sourceTree = "<group>"; };
 		41B8E88022A8AE13003157C8 /* PostListInterface.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostListInterface.swift; sourceTree = "<group>"; };
 		41B8E88222A8AF7D003157C8 /* PostListWireframe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostListWireframe.swift; sourceTree = "<group>"; };
@@ -273,6 +275,7 @@
 		4153B17D22A75462008A216B /* MyDiaryiOSUITests */ = {
 			isa = PBXGroup;
 			children = (
+				41B7B64722B75BEA007A608C /* PostList.swift */,
 				4153B17E22A75462008A216B /* MyDiaryiOSUITests.swift */,
 				4153B18022A75462008A216B /* Info.plist */,
 			);
@@ -748,6 +751,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4153B17F22A75462008A216B /* MyDiaryiOSUITests.swift in Sources */,
+				41B7B64822B75BEA007A608C /* PostList.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

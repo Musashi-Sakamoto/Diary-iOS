@@ -10,9 +10,11 @@ import XCTest
 
 class MyDiaryiOSUITests: XCTestCase {
     var app: XCUIApplication!
+    var emailTextField: XCUIElement!
     var usernameTextField: XCUIElement!
     var passwordTextField: XCUIElement!
     var loginButton: XCUIElement!
+    var signupButton: XCUIElement!
     override func setUp() {
         // Put setup code here. This method is called before the invocation of each test method in the class.
 
@@ -22,9 +24,11 @@ class MyDiaryiOSUITests: XCTestCase {
         // UI tests must launch the application that they test. Doing this in setup will make sure it happens for each test method.
         self.app = XCUIApplication()
         self.app.launch()
+        self.emailTextField = self.app.textFields["email"]
         self.usernameTextField = self.app.textFields["username"]
         self.passwordTextField = self.app.secureTextFields["password"]
         self.loginButton = self.app.buttons["Login"]
+        self.signupButton = self.app.buttons["Signup"]
 
         // In UI tests it’s important to set the initial state - such as interface orientation - required for your tests before they run. The setUp method is a good place to do this.
     }
@@ -42,9 +46,52 @@ class MyDiaryiOSUITests: XCTestCase {
         XCTAssertTrue(self.passwordTextField.exists)
 
         self.app.buttons["To Signup"].tap()
-        XCTAssertTrue(self.app.textFields["email"].exists)
+        XCTAssertTrue(self.emailTextField.exists)
         self.app.buttons["To Login"].tap()
         XCTAssertTrue(self.app.buttons["To Signup"].exists)
+    }
+
+    func test_サインアップバリデーション() {
+        self.app.buttons["To Signup"].tap()
+
+        self.signupButton.tap()
+        self.waitForHudToAppear()
+        self.waitForHudToDisappear()
+
+        self.emailTextField.tap()
+        self.emailTextField.typeText("dummy@dumcum.com")
+
+        self.signupButton.tap()
+        self.waitForHudToAppear()
+        self.waitForHudToDisappear()
+
+        self.usernameTextField.tap()
+
+        self.usernameTextField.typeText("musashi")
+
+        self.signupButton.tap()
+        self.waitForHudToAppear()
+        self.waitForHudToDisappear()
+
+        self.passwordTextField.tap()
+        self.passwordTextField.typeText("password")
+
+        self.signupButton.tap()
+
+        self.waitForHudToAppear()
+        self.waitForHudToDisappear()
+
+        self.usernameTextField.tap()
+
+        self.usernameTextField.typeText("")
+
+        self.signupButton.tap()
+        self.waitForHudToAppear()
+        self.waitForHudToDisappear()
+
+        self.usernameTextField.tap()
+
+        self.usernameTextField.typeText("musashi")
     }
 
     func test_ログインバリデーション() {
@@ -86,9 +133,8 @@ class MyDiaryiOSUITests: XCTestCase {
         self.passwordTextField.typeText("1292602b")
 
         self.loginButton.tap()
-        XCUIApplication().buttons["Login"].tap()
 
-        XCTAssertTrue(self.app.navigationBars.element)
+        XCTAssertTrue(self.app.staticTexts["PostList"].exists)
     }
 
     func waitForCondition(element: XCUIElement, predicate: NSPredicate, timeout: TimeInterval = 3) {
