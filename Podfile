@@ -24,6 +24,13 @@ target 'MyDiaryiOS' do
   target 'MyDiaryiOSUITests' do
     inherit! :search_paths
     # Pods for testing
+    pod 'Alamofire'
+    pod 'AlamofireImage'
+    pod 'AlamofireNetworkActivityIndicator'
+    pod 'PKHUD'
+    pod 'SwiftyJSON', '4.0'
+    pod 'Material'
+    pod 'ReSwift'
   end
 
 end

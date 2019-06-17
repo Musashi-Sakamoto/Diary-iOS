@@ -60,7 +60,7 @@
 		41B8E89E22AA2DF3003157C8 /* ThemeInitializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41B8E89D22AA2DF3003157C8 /* ThemeInitializer.swift */; };
 		91C23AF7734E7AC7CB1C7A23 /* Pods_MyDiaryiOSTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6045A485FDF1F881FA10ACA2 /* Pods_MyDiaryiOSTests.framework */; };
 		C0BD7C83468E7162B36E05F4 /* Pods_MyDiaryiOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 668F49C2826C167060DE5EE9 /* Pods_MyDiaryiOS.framework */; };
-		D41687C7A2E00F6A6CDF7B8A /* Pods_MyDiaryiOSUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CF9F1EA4098CB7D7A61BC7EE /* Pods_MyDiaryiOSUITests.framework */; };
+		E6784E9D2871DF63F54323D3 /* Pods_MyDiaryiOSUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CF296308C1581DA88ECDCF75 /* Pods_MyDiaryiOSUITests.framework */; };
 		EB14112122B47CF80020C18B /* MyDiaryiOSLoginMockTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB14112022B47CF80020C18B /* MyDiaryiOSLoginMockTests.swift */; };
 		EB14112322B611490020C18B /* PostMockTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB14112222B611490020C18B /* PostMockTests.swift */; };
 		EB6B0D1D22AB65BD007B14F5 /* AppToolbarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB6B0D1C22AB65BD007B14F5 /* AppToolbarController.swift */; };
@@ -150,7 +150,7 @@
 		7A728D41AAA2DAD0594DFEDD /* Pods-MyDiaryiOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyDiaryiOS.release.xcconfig"; path = "Target Support Files/Pods-MyDiaryiOS/Pods-MyDiaryiOS.release.xcconfig"; sourceTree = "<group>"; };
 		A185A62B672E945232597634 /* Pods-MyDiaryiOSTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyDiaryiOSTests.release.xcconfig"; path = "Target Support Files/Pods-MyDiaryiOSTests/Pods-MyDiaryiOSTests.release.xcconfig"; sourceTree = "<group>"; };
 		C8BE200E9688DCCC0DC6EE20 /* Pods-MyDiaryiOSUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyDiaryiOSUITests.debug.xcconfig"; path = "Target Support Files/Pods-MyDiaryiOSUITests/Pods-MyDiaryiOSUITests.debug.xcconfig"; sourceTree = "<group>"; };
-		CF9F1EA4098CB7D7A61BC7EE /* Pods_MyDiaryiOSUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MyDiaryiOSUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		CF296308C1581DA88ECDCF75 /* Pods_MyDiaryiOSUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MyDiaryiOSUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E7917D5CA821781CEC679FF3 /* Pods-MyDiaryiOSTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyDiaryiOSTests.debug.xcconfig"; path = "Target Support Files/Pods-MyDiaryiOSTests/Pods-MyDiaryiOSTests.debug.xcconfig"; sourceTree = "<group>"; };
 		EB14112022B47CF80020C18B /* MyDiaryiOSLoginMockTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyDiaryiOSLoginMockTests.swift; sourceTree = "<group>"; };
 		EB14112222B611490020C18B /* PostMockTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostMockTests.swift; sourceTree = "<group>"; };
@@ -180,7 +180,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D41687C7A2E00F6A6CDF7B8A /* Pods_MyDiaryiOSUITests.framework in Frameworks */,
+				E6784E9D2871DF63F54323D3 /* Pods_MyDiaryiOSUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -192,7 +192,7 @@
 			children = (
 				668F49C2826C167060DE5EE9 /* Pods_MyDiaryiOS.framework */,
 				6045A485FDF1F881FA10ACA2 /* Pods_MyDiaryiOSTests.framework */,
-				CF9F1EA4098CB7D7A61BC7EE /* Pods_MyDiaryiOSUITests.framework */,
+				CF296308C1581DA88ECDCF75 /* Pods_MyDiaryiOSUITests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -474,6 +474,7 @@
 				4153B17622A75462008A216B /* Sources */,
 				4153B17722A75462008A216B /* Frameworks */,
 				4153B17822A75462008A216B /* Resources */,
+				A363CB3F3EAE1AF60CA8771E /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -659,6 +660,23 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A363CB3F3EAE1AF60CA8771E /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-MyDiaryiOSUITests/Pods-MyDiaryiOSUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-MyDiaryiOSUITests/Pods-MyDiaryiOSUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-MyDiaryiOSUITests/Pods-MyDiaryiOSUITests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
