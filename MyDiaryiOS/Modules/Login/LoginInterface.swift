@@ -32,11 +32,9 @@ protocol LoginPresenterInterface: PresenterInterface {
 }
 
 protocol LoginInteractorInterface: InteractorInterface {
-    @discardableResult
-    func loginUser(username: String, password: String, completion: @escaping LoginCompletionBlock) -> DataRequest
+    func loginUser(username: String, password: String, completion: @escaping LoginCompletionBlock)
 
-    @discardableResult
-    func signupUser(email: String, username: String, password: String, completion: @escaping SignupCompletionBlock) -> DataRequest
+    func signupUser(email: String, username: String, password: String, completion: @escaping SignupCompletionBlock)
 
     func isLogin() -> Bool
 }

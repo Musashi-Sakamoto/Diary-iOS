@@ -20,6 +20,6 @@ struct User: UserInterface {
 
     init(jsonObject: JSON) {
         self.email = jsonObject["user"]["email"].stringValue
-        self.username = jsonObject["user"]["username"].stringValue
+        self.username = jsonObject["user"]["name"].stringValue
     }
 }

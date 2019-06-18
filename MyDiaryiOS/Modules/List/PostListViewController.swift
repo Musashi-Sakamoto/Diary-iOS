@@ -44,6 +44,10 @@ class PostListViewController: UIViewController {
             .width(60)
             .height(60)
             .bottomTrailingSafe(bottom: 20, trailing: 20)
+    }
+
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
         if let toolbar = toolbarController?.toolbar {
             toolbar.title = "PostList"
             toolbar.leftViews.forEach { $0.isHidden = false }
