@@ -50,11 +50,17 @@ class PostList: XCTestCase {
 
     func test_ログアウト() {
         self.app.buttons["cm menu white"].tap()
-        self.app.tables/*@START_MENU_TOKEN@*/.cells.buttons["Logout"]/*[[".cells.buttons[\"Logout\"]",".buttons[\"Logout\"]"],[[[-1,1],[-1,0]]],[1]]@END_MENU_TOKEN@*/.tap()
+        self.app.tables/*@START_MENU_TOKEN@*/.buttons["Logout"]/*[[".cells.buttons[\"Logout\"]",".buttons[\"Logout\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/.tap()
         XCTAssertTrue(self.app.staticTexts["Login"].exists)
     }
 
-    func test_ポスト作成と削除() {
+    func test_プロフィール情報確認() {
+        self.app.buttons["cm menu white"].tap()
+        XCTAssertTrue(self.app.tables.cells.staticTexts["musashi"].exists)
+        XCTAssertTrue(self.app.tables.cells.staticTexts["1292602b@gmail.com"].exists)
+    }
+
+    func test_ポスト作成() {
         self.waitForLogin()
         let title = "title title"
         let description = "type text description type text description type text description type text description type text description type text description type text description "
@@ -72,12 +78,35 @@ class PostList: XCTestCase {
         self.app.textViews["description"].typeText(description)
         self.app.buttons["Post"].tap()
         XCTAssertTrue(self.app.staticTexts["PostList"].exists)
-        let firstCell = self.app.cells.element(boundBy: 0)
-        XCTAssertTrue(firstCell.staticTexts[title].exists, "\(title) exists")
+    }
 
-        self.app.cells.element(boundBy: 0).buttons["cm more horiz white"].tap()
-        self.app.cells.element(boundBy: 0).buttons["cm delete white"].tap()
-        XCTAssertFalse(firstCell.staticTexts[title].exists, "\(title) exists")
+    func test_編集() {
+        let title = "update title"
+        let description = "update "
+        let firstCell = self.app.cells.element(boundBy: 0)
+
+        firstCell.buttons["cm more horiz white"].firstMatch.tap()
+        firstCell.buttons["cm pen white"].tap()
+
+        XCTAssertTrue(self.app.textFields["titleTextField"].exists)
+        XCTAssertTrue(self.app.textViews["description"].exists)
+
+        self.app.textFields["titleTextField"].tap()
+        self.app.textFields["titleTextField"].typeText(title)
+
+        self.app.textViews["description"].tap()
+        self.app.textViews["description"].typeText(description)
+
+        self.app.buttons["Edit"].tap()
+
+        XCTAssertTrue(firstCell.staticTexts["title title\(title)"].exists)
+    }
+
+    func test_削除() {
+        let firstCell = self.app.cells.element(boundBy: 0)
+
+        firstCell.buttons["cm more horiz white"].firstMatch.tap()
+        firstCell.buttons["cm close white"].tap()
     }
 
     func waitForCondition(element: XCUIElement, predicate: NSPredicate, timeout: TimeInterval = 3) {
